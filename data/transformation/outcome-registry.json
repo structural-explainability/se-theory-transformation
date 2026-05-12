@@ -1,0 +1,35 @@
+{
+  "$schema": "../schema/outcome-registry.schema.json",
+  "outcomes": [
+    {
+      "code": "PRS",
+      "name": "preserves",
+      "summary": "The transformation preserves the structure under the criteria being evaluated."
+    },
+    {
+      "code": "BRK",
+      "name": "breaks",
+      "summary": "The transformation breaks the structure under the criteria being evaluated."
+    },
+    {
+      "code": "INH",
+      "name": "inherits",
+      "summary": "A derived structure inherits selected structure from the source."
+    },
+    {
+      "code": "IGN",
+      "name": "ignores",
+      "summary": "The transformation is not structurally relevant under the criteria being evaluated."
+    },
+    {
+      "code": "MIX",
+      "name": "mixed",
+      "summary": "The transformation has partial, conditional, or mixed structural effects."
+    },
+    {
+      "code": "UNK",
+      "name": "unknown",
+      "summary": "The structural effect is unresolved or intentionally unspecified."
+    }
+  ]
+}

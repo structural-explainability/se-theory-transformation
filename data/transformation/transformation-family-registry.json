@@ -1,0 +1,65 @@
+{
+  "$schema": "../schema/transformation-family-registry.schema.json",
+  "families": [
+    {
+      "id": "structural",
+      "name": "Structural",
+      "summary": "Transformations that rearrange, expose, duplicate, embed, or reference structure.",
+      "operators": ["CP", "PR", "EM", "RF", "RO"]
+    },
+    {
+      "id": "decomposition",
+      "name": "Decomposition",
+      "summary": "Transformations that divide structure into multiple derived structures.",
+      "operators": ["SP"]
+    },
+    {
+      "id": "aggregation",
+      "name": "Aggregation",
+      "summary": "Transformations that combine multiple structures into a derived structure.",
+      "operators": ["MG"]
+    },
+    {
+      "id": "compression",
+      "name": "Compression",
+      "summary": "Transformations that reduce structure into a compressed representation.",
+      "operators": ["CL"]
+    },
+    {
+      "id": "elaboration",
+      "name": "Elaboration",
+      "summary": "Transformations that expose, derive, or unfold additional structure.",
+      "operators": ["EX"]
+    },
+    {
+      "id": "relocation",
+      "name": "Relocation",
+      "summary": "Transformations that move structure across time, place, context, or frame.",
+      "operators": ["SH"]
+    },
+    {
+      "id": "evolution",
+      "name": "Evolution",
+      "summary": "Transformations that create successor states or divergent continuities.",
+      "operators": ["VS", "BR", "RV"]
+    },
+    {
+      "id": "contextual",
+      "name": "Contextual",
+      "summary": "Transformations that attach or remove contextual dependencies.",
+      "operators": ["BD", "UB"]
+    },
+    {
+      "id": "normative",
+      "name": "Normative",
+      "summary": "Transformations that govern permission or admissibility.",
+      "operators": ["AZ"]
+    },
+    {
+      "id": "observational",
+      "name": "Observational",
+      "summary": "Transformations that create evidentiary assertions about structure or change.",
+      "operators": ["AT"]
+    }
+  ]
+}

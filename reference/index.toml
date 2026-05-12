@@ -1,0 +1,38 @@
+schema = "se-reference-index-1"
+repo = "se-theory-transformation"
+surface_module = "SETheoryTransformation"
+
+[[artifact]]
+id = "operator-registry"
+kind = "transformation-operator-registry"
+format = "json"
+path = "data/transformation/operator-registry.json"
+generated = true
+
+[[artifact]]
+id = "transformation-family-registry"
+kind = "transformation-family-registry"
+format = "json"
+path = "data/transformation/transformation-family-registry.json"
+generated = true
+
+[[artifact]]
+id = "outcome-registry"
+kind = "transformation-outcome-registry"
+format = "json"
+path = "data/transformation/outcome-registry.json"
+generated = true
+
+[[artifact]]
+id = "composition-rules"
+kind = "transformation-composition-registry"
+format = "json"
+path = "data/transformation/composition-rules.json"
+generated = true
+
+[[artifact]]
+id = "orthogonality-matrix"
+kind = "transformation-orthogonality-registry"
+format = "json"
+path = "data/transformation/orthogonality-matrix.json"
+generated = true

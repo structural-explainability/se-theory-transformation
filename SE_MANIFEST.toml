@@ -1,0 +1,102 @@
+# ============================================================
+# SE_MANIFEST.toml (Repository Declaration)
+# se-theory-transformation
+# ============================================================
+
+schema = "se-manifest-schema"
+schema_url = "https://github.com/structural-explainability/se-manifest-schema/blob/main/manifest-schema.toml"
+
+# === Identity ===
+
+[meta]
+purpose = "Declares the transformation theory repository for the Structural Explainability ecosystem."
+
+[repo]
+name = "se-theory-transformation"
+org = "structural-explainability"
+class = "theory"
+kind = "foundation"
+status = "active"
+since = "2026"
+summary = "Lean 4 formalization of foundational transformation operators, families, composition, and orthogonality."
+
+[layer]
+space = "formal-theory"
+role = "foundational-transformation-theory"
+
+# === Dependencies ===
+
+[depends]
+required = []
+optional = []
+
+# === Provided artifacts ===
+
+[provides]
+# Logical artifacts exposed by this repository.
+# These are stable identifiers, not file paths.
+artifacts = [
+  "lean-library",
+  "operator-registry",
+  "transformation-catalog",
+  "transformation-family-registry",
+  "outcome-registry",
+  "composition-rules",
+  "orthogonality-matrix",
+  "transformation-schemas",
+]
+
+# === Scope ===
+
+[scope]
+includes = [
+  "foundational transformation operators",
+  "transformation family definitions",
+  "operator composition rules",
+  "operator orthogonality relations",
+  "transformation outcome vocabulary",
+  "machine-readable transformation registries",
+  "Lean formalization of transformation vocabulary",
+]
+
+excludes = [
+  "neutral substrate primitives",
+  "substrate well-formedness",
+  "substrate separation constraints",
+  "identity persistence behavior",
+  "regime persistence semantics",
+  "regime classification matrices",
+  "regime profile derivations",
+  "mapping semantics",
+  "operational validation logic",
+  "repository governance rules",
+  "schema definitions for other repositories",
+  "domain-specific mappings or data",
+  "runtime systems",
+]
+
+# === Validation ===
+
+[validation]
+# Validates repository declaration, manifest schema conformance,
+# reference artifacts, and Lean public surface coverage.
+entrypoint = "uv run python -m se_theory_transformation validate"
+strict_entrypoint = "uv run python -m se_theory_transformation validate --strict"
+tag_entrypoint = "uv run python -m se_theory_transformation validate --require-tag"
+
+# === Behavior / governance ===
+
+[naming]
+pattern = "se-theory-*"
+
+[governance]
+authority = "structural-explainability"
+
+# === External references ===
+
+[citation]
+cff = "CITATION.cff"
+preferred = "CITATION.cff"
+
+[traceability]
+identifier_map = "reference/index.toml"

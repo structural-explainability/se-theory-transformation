@@ -1,0 +1,77 @@
+{
+  "$schema": "../schema/composition-rules.schema.json",
+  "rules": [
+    {
+      "left": "CP",
+      "right": "RF",
+      "relation": "composable",
+      "summary": "A copied structure may be referenced."
+    },
+    {
+      "left": "RF",
+      "right": "CP",
+      "relation": "conditionally-composable",
+      "summary": "A reference may be copied as a reference, but this does not copy the referenced structure."
+    },
+    {
+      "left": "PR",
+      "right": "CL",
+      "relation": "composable",
+      "summary": "A projection may be collapsed into a reduced representation."
+    },
+    {
+      "left": "CL",
+      "right": "EX",
+      "relation": "conditionally-composable",
+      "summary": "Collapsed structure may be expanded only if expansion rules preserve or reconstruct enough structure."
+    },
+    {
+      "left": "SP",
+      "right": "MG",
+      "relation": "inverse-like",
+      "summary": "A split followed by merge may resemble reversal, but only if distinctions are recoverable."
+    },
+    {
+      "left": "MG",
+      "right": "SP",
+      "relation": "inverse-like",
+      "summary": "A merge followed by split may recover components only when provenance or partition criteria are retained."
+    },
+    {
+      "left": "BD",
+      "right": "UB",
+      "relation": "inverse-like",
+      "summary": "Binding followed by unbinding may restore prior dependency state if no other transformations depend on the binding."
+    },
+    {
+      "left": "UB",
+      "right": "BD",
+      "relation": "inverse-like",
+      "summary": "Unbinding followed by rebinding may restore dependency only if the same constraint is reapplied."
+    },
+    {
+      "left": "VS",
+      "right": "BR",
+      "relation": "composable",
+      "summary": "A versioned successor may branch into multiple continuities."
+    },
+    {
+      "left": "BR",
+      "right": "VS",
+      "relation": "composable",
+      "summary": "Each branch may later receive versioned successor states."
+    },
+    {
+      "left": "AZ",
+      "right": "AT",
+      "relation": "composable",
+      "summary": "An authorized transformation pathway may be attested."
+    },
+    {
+      "left": "AT",
+      "right": "AZ",
+      "relation": "conditionally-composable",
+      "summary": "An attestation may support authorization, but does not itself authorize."
+    }
+  ]
+}

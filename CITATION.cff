@@ -1,0 +1,50 @@
+# ============================================================
+# CITATION.cff (How to cite this project)
+# ============================================================
+
+# REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# USAGE: See https://citation-file-format.github.io/ for details.
+
+cff-version: "1.2.0"
+type: software
+
+title: "SE Theory: Transformation"
+version: "0.1.0"
+date-released: "2026-05-12"
+
+authors:
+  - family-names: Case
+    given-names: Denise M.
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+    affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
+
+year: 2026
+repository-code: "https://github.com/structural-explainability/se-theory-transformation"
+url: "https://github.com/structural-explainability/se-theory-transformation"
+
+license: MIT
+
+abstract: >
+  Lean 4 formalization of foundational transformation theory for
+  Structural Explainability. This repository defines transformation
+  operators, transformation families, composition rules, orthogonality
+  relations, outcome vocabulary, and machine-readable transformation
+  registries. It does not define neutral substrate primitives,
+  identity persistence behavior, regime persistence semantics, domain
+  mappings, or operational validation.
+
+keywords:
+  - structural-explainability
+  - transformation-theory
+  - transformation-operators
+  - operator-registry
+  - transformation-families
+  - composition-rules
+  - orthogonality
+  - lean4
+  - theorem-proving
+  - formal-verification
+  - machine-readable-semantics
+  - proof-carrying
+
+message: "If you use this work, please cite it using the metadata in this file."

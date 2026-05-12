@@ -1,0 +1,31 @@
+# ============================================================
+# lakefile.toml
+# ============================================================
+
+# REQ.FILE.PROJECT.IDENTITY
+#   Declares the externally visible identity and build surface of this package.
+#   Sections marked CUSTOM are expected to vary by repository.
+
+# === REQUIRED PROJECT IDENTITY ===
+
+name = "se-theory-transformation"
+version = "0.1.0"
+license = "MIT"
+
+# === BUILD CONFIGURATION ===
+
+defaultTargets = ["SETheoryTransformation"]
+
+# === EXPORT LIBRARY (public, exported) ===
+
+[[lean_lib]]
+name = "SETheoryTransformation"
+srcDir = "."
+roots = ["SETheoryTransformation"]
+
+# === TEST LIBRARIES (internal, not exported) ===
+
+[[lean_lib]]
+name = "TestExport"
+srcDir = "test"
+roots = ["TestExport"]
