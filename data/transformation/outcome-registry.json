@@ -1,35 +1,58 @@
 {
-  "$schema": "../schema/outcome-registry.schema.json",
+  "schema": "se-outcome-registry-1",
+  "source": "se-theory-transformation",
+  "namespace": "se.transformation",
+  "artifact": "outcome-registry",
+  "reference_artifact": "transformation-outcomes",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-outcomes.toml",
   "outcomes": [
     {
-      "code": "PRS",
-      "name": "preserves",
-      "summary": "The transformation preserves the structure under the criteria being evaluated."
+      "order": 1,
+      "id": "BRK",
+      "label": "Break",
+      "lean_constructor": "BRK",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The transformation breaks identity."
     },
     {
-      "code": "BRK",
-      "name": "breaks",
-      "summary": "The transformation breaks the structure under the criteria being evaluated."
+      "order": 2,
+      "id": "IGN",
+      "label": "Ignore",
+      "lean_constructor": "IGN",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The transformation has no effect on identity."
     },
     {
-      "code": "INH",
-      "name": "inherits",
-      "summary": "A derived structure inherits selected structure from the source."
+      "order": 3,
+      "id": "INH",
+      "label": "Inherited",
+      "lean_constructor": "INH",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The outcome is inherited from a prior or enclosing transformation."
     },
     {
-      "code": "IGN",
-      "name": "ignores",
-      "summary": "The transformation is not structurally relevant under the criteria being evaluated."
+      "order": 4,
+      "id": "MIX",
+      "label": "Mixed",
+      "lean_constructor": "MIX",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The outcome is mixed: identity is preserved in some components and broken in others."
     },
     {
-      "code": "MIX",
-      "name": "mixed",
-      "summary": "The transformation has partial, conditional, or mixed structural effects."
+      "order": 5,
+      "id": "PRS",
+      "label": "Preserve",
+      "lean_constructor": "PRS",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The transformation preserves identity."
     },
     {
-      "code": "UNK",
-      "name": "unknown",
-      "summary": "The structural effect is unresolved or intentionally unspecified."
+      "order": 6,
+      "id": "UNK",
+      "label": "Unknown",
+      "lean_constructor": "UNK",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The outcome is unresolved or intentionally unspecified."
     }
   ]
 }

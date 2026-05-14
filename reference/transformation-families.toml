@@ -1,0 +1,162 @@
+# ============================================================
+# Transformation Families
+# se-theory-transformation
+# ============================================================
+# Fourteen named families grouping operators by structural behavior.
+# Families are the mid-level classification between operator codes
+# and transformation kinds.
+#
+# STATUS: draft
+# Family identities match SETheoryTransformation.Registry.referenceFamilies.
+# Operator mappings match Domain/Operator/Semantics.lean.
+# Kind mappings match familyKind in Domain/Operator/Semantics.lean.
+#
+# This file does not define persistence behavior.
+
+[meta]
+source = "se-theory-transformation"
+namespace = "se.transformation"
+artifact = "transformation-families"
+version = "0.1.0"
+status = "draft"
+
+[family.Aggregation]
+order = 1
+id = "Aggregation"
+label = "Aggregation"
+lean_constructor = "aggregation"
+kind = "structural"
+source_module = "SETheoryTransformation.Domain.Family.Aggregation"
+description = "Transformations that combine multiple referents or structural components into a unified whole."
+operator_codes = ["MG"]
+
+[family.Association]
+order = 2
+id = "Association"
+label = "Association"
+lean_constructor = "association"
+kind = "relational"
+source_module = "SETheoryTransformation.Domain.Family.Association"
+description = "Transformations that establish, alter, or represent relations among referents without implying containment."
+operator_codes = ["LK"]
+
+[family.Attestation]
+order = 3
+id = "Attestation"
+label = "Attestation"
+lean_constructor = "attestation"
+kind = "observational"
+source_module = "SETheoryTransformation.Domain.Family.Attestation"
+description = "Transformations that record evidence, verification, or claims about a referent."
+operator_codes = ["AT"]
+
+[family.Branching]
+order = 4
+id = "Branching"
+label = "Branching"
+lean_constructor = "branching"
+kind = "temporal"
+source_module = "SETheoryTransformation.Domain.Family.Branching"
+description = "Transformations that produce divergent continuations from a referent."
+operator_codes = ["BR"]
+
+[family.Containment]
+order = 5
+id = "Containment"
+label = "Containment"
+lean_constructor = "containment"
+kind = "organizational"
+source_module = "SETheoryTransformation.Domain.Family.Containment"
+description = "Transformations that place a referent within a containing structure or organizational enclosure."
+operator_codes = ["EM"]
+
+[family.Contextual]
+order = 6
+id = "Contextual"
+label = "Contextual"
+lean_constructor = "contextual"
+kind = "contextual"
+source_module = "SETheoryTransformation.Domain.TransformationFamily"
+description = "Transformations that bind, unbind, or otherwise alter contextual placement or applicability."
+operator_codes = ["BD", "UB"]
+note = "No separate Domain/Family/Contextual.lean file was shown; constructor and mappings are confirmed through TransformationFamily and Operator.Semantics."
+
+[family.Decomposition]
+order = 7
+id = "Decomposition"
+label = "Decomposition"
+lean_constructor = "decomposition"
+kind = "structural"
+source_module = "SETheoryTransformation.Domain.Family.Decomposition"
+description = "Transformations that divide a referent into constituent components, parts, branches, or sub-referents."
+operator_codes = ["SP"]
+
+[family.Migration]
+order = 8
+id = "Migration"
+label = "Migration"
+lean_constructor = "migration"
+kind = "relational"
+source_module = "SETheoryTransformation.Domain.Family.Migration"
+description = "Transformations that relocate a referent across a relation, bearer, context, or structural position while maintaining linkage."
+operator_codes = ["SH"]
+
+[family.Normative]
+order = 9
+id = "Normative"
+label = "Normative"
+lean_constructor = "normative"
+kind = "normative"
+source_module = "SETheoryTransformation.Domain.Family.Normative"
+description = "Transformations that apply, alter, or record normative authority, permission, or standing."
+operator_codes = ["AZ"]
+
+[family.Projection]
+order = 10
+id = "Projection"
+label = "Projection"
+lean_constructor = "projection"
+kind = "observational"
+source_module = "SETheoryTransformation.Domain.Family.Projection"
+description = "Transformations that derive a partial view, selected representation, or projection of a referent."
+operator_codes = ["PR"]
+
+[family.Replication]
+order = 11
+id = "Replication"
+label = "Replication"
+lean_constructor = "replication"
+kind = "observational"
+source_module = "SETheoryTransformation.Domain.Family.Replication"
+description = "Transformations that produce a duplicate, replica, copy, or copied representation of a referent."
+operator_codes = ["CP"]
+
+[family.Reorganization]
+order = 12
+id = "Reorganization"
+label = "Reorganization"
+lean_constructor = "reorganization"
+kind = "organizational"
+source_module = "SETheoryTransformation.Domain.Family.Reorganization"
+description = "Transformations that alter arrangement, ordering, or organizational placement without necessarily changing membership."
+operator_codes = ["RO"]
+
+[family.Scaling]
+order = 13
+id = "Scaling"
+label = "Scaling"
+lean_constructor = "scaling"
+kind = "structural"
+source_module = "SETheoryTransformation.Domain.Family.Scaling"
+description = "Transformations that increase or decrease structural scale, detail, complexity, or elaboration."
+operator_codes = ["CL", "EX"]
+
+[family.Versioning]
+order = 14
+id = "Versioning"
+label = "Versioning"
+lean_constructor = "versioning"
+kind = "temporal"
+source_module = "SETheoryTransformation.Domain.Family.Versioning"
+description = "Transformations that produce, identify, restore, or relate temporally ordered versions of a referent."
+operator_codes = ["RV", "VS"]

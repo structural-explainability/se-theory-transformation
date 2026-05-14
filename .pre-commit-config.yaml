@@ -118,7 +118,7 @@ repos:
       - id: markdownlint
         name: E2) Markdown lint
         language: system
-        entry: npx markdownlint-cli "**/*.md" --fix
+        entry: npx markdownlint-cli2 "**/*.md" --fix
         pass_filenames: false
         always_run: true
 

@@ -1,4 +1,572 @@
 {
-  "": "",
-  "items": []
+  "schema": "se-transformation-catalog-1",
+  "source": "se-theory-transformation",
+  "namespace": "se.transformation",
+  "artifact": "transformation-catalog",
+  "reference_paths": [
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/composition-rules.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/orthogonality-rules.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-families.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-kinds.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-operators.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-outcomes.toml"
+  ],
+  "operators": [
+    {
+      "order": 1,
+      "code": "AT",
+      "label": "attest",
+      "family": "attestation",
+      "kind": "observational",
+      "description": "Records a verified claim about a referent. Adds attestation metadata or evidence without defining persistence behavior.",
+      "id": "AT"
+    },
+    {
+      "order": 2,
+      "code": "AZ",
+      "label": "authorize",
+      "family": "normative",
+      "kind": "normative",
+      "description": "Grants permission, authority, or normative standing to a subject or referent within a defined scope.",
+      "id": "AZ"
+    },
+    {
+      "order": 3,
+      "code": "BD",
+      "label": "bind",
+      "family": "contextual",
+      "kind": "contextual",
+      "description": "Associates a referent with a context, bearer, scope, or applicability setting.",
+      "id": "BD"
+    },
+    {
+      "order": 4,
+      "code": "BR",
+      "label": "branch",
+      "family": "branching",
+      "kind": "temporal",
+      "description": "Creates a divergent continuation from a referent, producing one or more forward paths.",
+      "id": "BR"
+    },
+    {
+      "order": 5,
+      "code": "CL",
+      "label": "collapse",
+      "family": "scaling",
+      "kind": "structural",
+      "description": "Reduces structural scale or complexity by collapsing nested, redundant, or expanded structure.",
+      "id": "CL"
+    },
+    {
+      "order": 6,
+      "code": "CP",
+      "label": "copy",
+      "family": "replication",
+      "kind": "observational",
+      "description": "Produces a duplicate, replica, or copied representation of a referent.",
+      "id": "CP"
+    },
+    {
+      "order": 7,
+      "code": "EM",
+      "label": "embed",
+      "family": "containment",
+      "kind": "organizational",
+      "description": "Places a referent inside a containing structure, establishing containment or embedded placement.",
+      "id": "EM"
+    },
+    {
+      "order": 8,
+      "code": "EX",
+      "label": "expand",
+      "family": "scaling",
+      "kind": "structural",
+      "description": "Increases structural scale, detail, or complexity by expanding a referent into a more elaborated form.",
+      "id": "EX"
+    },
+    {
+      "order": 9,
+      "code": "LK",
+      "label": "link",
+      "family": "association",
+      "kind": "relational",
+      "description": "Establishes an association or relation between referents without by itself implying containment or persistence.",
+      "id": "LK"
+    },
+    {
+      "order": 10,
+      "code": "MG",
+      "label": "merge",
+      "family": "aggregation",
+      "kind": "structural",
+      "description": "Combines two or more referents or structural components into a unified referent or aggregate.",
+      "id": "MG"
+    },
+    {
+      "order": 11,
+      "code": "PR",
+      "label": "project",
+      "family": "projection",
+      "kind": "observational",
+      "description": "Derives a partial view, projection, or selected representation of a referent.",
+      "id": "PR"
+    },
+    {
+      "order": 12,
+      "code": "RO",
+      "label": "reorder",
+      "family": "reorganization",
+      "kind": "organizational",
+      "description": "Changes the ordering or arrangement of components without necessarily changing their membership.",
+      "id": "RO"
+    },
+    {
+      "order": 13,
+      "code": "RV",
+      "label": "revert",
+      "family": "versioning",
+      "kind": "temporal",
+      "description": "Returns, restores, or relates a referent to a prior version along a provenance or version chain.",
+      "id": "RV"
+    },
+    {
+      "order": 14,
+      "code": "SH",
+      "label": "shift",
+      "family": "migration",
+      "kind": "relational",
+      "description": "Relocates a referent across a relation, bearer, context, or structural position while maintaining linkage.",
+      "id": "SH"
+    },
+    {
+      "order": 15,
+      "code": "SP",
+      "label": "split",
+      "family": "decomposition",
+      "kind": "structural",
+      "description": "Divides a referent into two or more components, parts, branches, or sub-referents.",
+      "id": "SP"
+    },
+    {
+      "order": 16,
+      "code": "UB",
+      "label": "unbind",
+      "family": "contextual",
+      "kind": "contextual",
+      "description": "Removes, releases, or severs a contextual binding between a referent and its current context, bearer, or scope.",
+      "id": "UB"
+    },
+    {
+      "order": 17,
+      "code": "VS",
+      "label": "version",
+      "family": "versioning",
+      "kind": "temporal",
+      "description": "Produces or identifies a temporally ordered version or successor of a referent.",
+      "id": "VS"
+    }
+  ],
+  "families": [
+    {
+      "order": 1,
+      "id": "Aggregation",
+      "label": "Aggregation",
+      "lean_constructor": "aggregation",
+      "kind": "structural",
+      "source_module": "SETheoryTransformation.Domain.Family.Aggregation",
+      "description": "Transformations that combine multiple referents or structural components into a unified whole.",
+      "operator_codes": [
+        "MG"
+      ]
+    },
+    {
+      "order": 2,
+      "id": "Association",
+      "label": "Association",
+      "lean_constructor": "association",
+      "kind": "relational",
+      "source_module": "SETheoryTransformation.Domain.Family.Association",
+      "description": "Transformations that establish, alter, or represent relations among referents without implying containment.",
+      "operator_codes": [
+        "LK"
+      ]
+    },
+    {
+      "order": 3,
+      "id": "Attestation",
+      "label": "Attestation",
+      "lean_constructor": "attestation",
+      "kind": "observational",
+      "source_module": "SETheoryTransformation.Domain.Family.Attestation",
+      "description": "Transformations that record evidence, verification, or claims about a referent.",
+      "operator_codes": [
+        "AT"
+      ]
+    },
+    {
+      "order": 4,
+      "id": "Branching",
+      "label": "Branching",
+      "lean_constructor": "branching",
+      "kind": "temporal",
+      "source_module": "SETheoryTransformation.Domain.Family.Branching",
+      "description": "Transformations that produce divergent continuations from a referent.",
+      "operator_codes": [
+        "BR"
+      ]
+    },
+    {
+      "order": 5,
+      "id": "Containment",
+      "label": "Containment",
+      "lean_constructor": "containment",
+      "kind": "organizational",
+      "source_module": "SETheoryTransformation.Domain.Family.Containment",
+      "description": "Transformations that place a referent within a containing structure or organizational enclosure.",
+      "operator_codes": [
+        "EM"
+      ]
+    },
+    {
+      "order": 6,
+      "id": "Contextual",
+      "label": "Contextual",
+      "lean_constructor": "contextual",
+      "kind": "contextual",
+      "source_module": "SETheoryTransformation.Domain.TransformationFamily",
+      "description": "Transformations that bind, unbind, or otherwise alter contextual placement or applicability.",
+      "operator_codes": [
+        "BD",
+        "UB"
+      ],
+      "note": "No separate Domain/Family/Contextual.lean file was shown; constructor and mappings are confirmed through TransformationFamily and Operator.Semantics."
+    },
+    {
+      "order": 7,
+      "id": "Decomposition",
+      "label": "Decomposition",
+      "lean_constructor": "decomposition",
+      "kind": "structural",
+      "source_module": "SETheoryTransformation.Domain.Family.Decomposition",
+      "description": "Transformations that divide a referent into constituent components, parts, branches, or sub-referents.",
+      "operator_codes": [
+        "SP"
+      ]
+    },
+    {
+      "order": 8,
+      "id": "Migration",
+      "label": "Migration",
+      "lean_constructor": "migration",
+      "kind": "relational",
+      "source_module": "SETheoryTransformation.Domain.Family.Migration",
+      "description": "Transformations that relocate a referent across a relation, bearer, context, or structural position while maintaining linkage.",
+      "operator_codes": [
+        "SH"
+      ]
+    },
+    {
+      "order": 9,
+      "id": "Normative",
+      "label": "Normative",
+      "lean_constructor": "normative",
+      "kind": "normative",
+      "source_module": "SETheoryTransformation.Domain.Family.Normative",
+      "description": "Transformations that apply, alter, or record normative authority, permission, or standing.",
+      "operator_codes": [
+        "AZ"
+      ]
+    },
+    {
+      "order": 10,
+      "id": "Projection",
+      "label": "Projection",
+      "lean_constructor": "projection",
+      "kind": "observational",
+      "source_module": "SETheoryTransformation.Domain.Family.Projection",
+      "description": "Transformations that derive a partial view, selected representation, or projection of a referent.",
+      "operator_codes": [
+        "PR"
+      ]
+    },
+    {
+      "order": 11,
+      "id": "Replication",
+      "label": "Replication",
+      "lean_constructor": "replication",
+      "kind": "observational",
+      "source_module": "SETheoryTransformation.Domain.Family.Replication",
+      "description": "Transformations that produce a duplicate, replica, copy, or copied representation of a referent.",
+      "operator_codes": [
+        "CP"
+      ]
+    },
+    {
+      "order": 12,
+      "id": "Reorganization",
+      "label": "Reorganization",
+      "lean_constructor": "reorganization",
+      "kind": "organizational",
+      "source_module": "SETheoryTransformation.Domain.Family.Reorganization",
+      "description": "Transformations that alter arrangement, ordering, or organizational placement without necessarily changing membership.",
+      "operator_codes": [
+        "RO"
+      ]
+    },
+    {
+      "order": 13,
+      "id": "Scaling",
+      "label": "Scaling",
+      "lean_constructor": "scaling",
+      "kind": "structural",
+      "source_module": "SETheoryTransformation.Domain.Family.Scaling",
+      "description": "Transformations that increase or decrease structural scale, detail, complexity, or elaboration.",
+      "operator_codes": [
+        "CL",
+        "EX"
+      ]
+    },
+    {
+      "order": 14,
+      "id": "Versioning",
+      "label": "Versioning",
+      "lean_constructor": "versioning",
+      "kind": "temporal",
+      "source_module": "SETheoryTransformation.Domain.Family.Versioning",
+      "description": "Transformations that produce, identify, restore, or relate temporally ordered versions of a referent.",
+      "operator_codes": [
+        "RV",
+        "VS"
+      ]
+    }
+  ],
+  "kinds": [
+    {
+      "order": 1,
+      "id": "Contextual",
+      "label": "Contextual",
+      "lean_constructor": "contextual",
+      "source_module": "SETheoryTransformation.Domain.Kind.Contextual",
+      "description": "Transformations that change the interpretive frame, applicability context, or situational placement of a referent without necessarily altering its internal structure.",
+      "family_ids": [],
+      "basis_elements": [
+        "RC"
+      ],
+      "note": "family_ids and basis_elements require Domain/Kind/Contextual.lean review."
+    },
+    {
+      "order": 2,
+      "id": "Normative",
+      "label": "Normative",
+      "lean_constructor": "normative",
+      "source_module": "SETheoryTransformation.Domain.Kind.Normative",
+      "description": "Transformations that apply, alter, record, or reposition normative conditions associated with a referent. Normative transformations concern obligation, permission, authorization, attestation, or related normative structures without by themselves deciding persistence.",
+      "family_ids": [],
+      "basis_elements": [],
+      "note": "family_ids and basis_elements require Domain/Kind/Normative.lean review."
+    },
+    {
+      "order": 3,
+      "id": "Observational",
+      "label": "Observational",
+      "lean_constructor": "observational",
+      "source_module": "SETheoryTransformation.Domain.Kind.Observational",
+      "description": "Transformations that produce a view, record, measurement, projection, or observation of a referent without necessarily changing the referent itself.",
+      "family_ids": [
+        "Projection"
+      ],
+      "basis_elements": [
+        "AN",
+        "PV"
+      ],
+      "note": "family_ids and basis_elements require Domain/Kind/Observational.lean review."
+    },
+    {
+      "order": 4,
+      "id": "Organizational",
+      "label": "Organizational",
+      "lean_constructor": "organizational",
+      "source_module": "SETheoryTransformation.Domain.Kind.Organizational",
+      "description": "Transformations that change organizational arrangement, grouping, administrative placement, or structural ordering of referents within a larger configuration.",
+      "family_ids": [
+        "Aggregation",
+        "Decomposition",
+        "Reorganization"
+      ],
+      "basis_elements": [
+        "AD",
+        "BF",
+        "RF",
+        "SE"
+      ],
+      "note": "family_ids and basis_elements require Domain/Kind/Organizational.lean review."
+    },
+    {
+      "order": 5,
+      "id": "Relational",
+      "label": "Relational",
+      "lean_constructor": "relational",
+      "source_module": "SETheoryTransformation.Domain.Kind.Relational",
+      "description": "Transformations that change relations among referents, including association, containment, linkage, dependency, or referential connection.",
+      "family_ids": [],
+      "basis_elements": [
+        "RA",
+        "RC"
+      ],
+      "note": "family_ids and basis_elements require Domain/Kind/Relational.lean review."
+    },
+    {
+      "order": 6,
+      "id": "Structural",
+      "label": "Structural",
+      "lean_constructor": "structural",
+      "source_module": "SETheoryTransformation.Domain.Kind.Structural",
+      "description": "Transformations that alter the structural composition, arrangement, partitioning, or combination of a referent. Structural transformations include combining, dividing, and rearranging structural components.",
+      "family_ids": [
+        "Aggregation",
+        "Decomposition",
+        "Reorganization"
+      ],
+      "basis_elements": [
+        "AD",
+        "BF",
+        "RF",
+        "SE"
+      ],
+      "note": "family_ids and basis_elements require Domain/Kind/Structural.lean review."
+    },
+    {
+      "order": 7,
+      "id": "Temporal",
+      "label": "Temporal",
+      "lean_constructor": "temporal",
+      "source_module": "SETheoryTransformation.Domain.Kind.Temporal",
+      "description": "Transformations that relate a referent to temporal predecessors, successors, versions, continuations, or migrations across time-indexed states.",
+      "family_ids": [
+        "Branching",
+        "Migration",
+        "Versioning"
+      ],
+      "basis_elements": [
+        "BF",
+        "RA",
+        "RF"
+      ],
+      "note": "family_ids and basis_elements require Domain/Kind/Temporal.lean review."
+    }
+  ],
+  "outcomes": [
+    {
+      "order": 1,
+      "id": "BRK",
+      "label": "Break",
+      "lean_constructor": "BRK",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The transformation breaks identity."
+    },
+    {
+      "order": 2,
+      "id": "IGN",
+      "label": "Ignore",
+      "lean_constructor": "IGN",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The transformation has no effect on identity."
+    },
+    {
+      "order": 3,
+      "id": "INH",
+      "label": "Inherited",
+      "lean_constructor": "INH",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The outcome is inherited from a prior or enclosing transformation."
+    },
+    {
+      "order": 4,
+      "id": "MIX",
+      "label": "Mixed",
+      "lean_constructor": "MIX",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The outcome is mixed: identity is preserved in some components and broken in others."
+    },
+    {
+      "order": 5,
+      "id": "PRS",
+      "label": "Preserve",
+      "lean_constructor": "PRS",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The transformation preserves identity."
+    },
+    {
+      "order": 6,
+      "id": "UNK",
+      "label": "Unknown",
+      "lean_constructor": "UNK",
+      "source_module": "SETheoryTransformation.Outcome",
+      "description": "The outcome is unresolved or intentionally unspecified."
+    }
+  ],
+  "composition_rules": [
+    {
+      "order": 1,
+      "id": "authorize_then_attest",
+      "left": "AZ",
+      "right": "AT",
+      "relation": "composable",
+      "lean_def": "authorizeThenAttest",
+      "source_module": "SETheoryTransformation.Reference.Composition",
+      "description": "Authorization followed by attestation applies a normative condition and then records a verified claim about it.",
+      "note": "AZ and AT are also classified as orthogonal in Reference.Orthogonality. Composable and orthogonal are not contradictory: AZ affects normative status; AT records a claim."
+    },
+    {
+      "order": 2,
+      "id": "bind_then_unbind",
+      "left": "BD",
+      "right": "UB",
+      "relation": "inverseLike",
+      "lean_def": "bindThenUnbind",
+      "source_module": "SETheoryTransformation.Reference.Composition",
+      "description": "Bind followed by unbind establishes and then removes a bearer, context, or applicability association.",
+      "note": "Composition relation only; does not assert persistence restoration."
+    },
+    {
+      "order": 3,
+      "id": "split_then_merge",
+      "left": "SP",
+      "right": "MG",
+      "relation": "inverseLike",
+      "lean_def": "splitThenMerge",
+      "source_module": "SETheoryTransformation.Reference.Composition",
+      "description": "Split followed by merge divides and then recombines a structure.",
+      "note": "Composition relation only; does not assert identity restoration."
+    }
+  ],
+  "orthogonality_rules": [
+    {
+      "id": "authorize_and_attest",
+      "left": "AZ",
+      "right": "AT",
+      "relation": "orthogonal",
+      "lean_def": "authorizeAndAttest",
+      "source_module": "SETheoryTransformation.Reference.Orthogonality",
+      "note": "Authorize and Attest operate on distinct normative effect domains."
+    },
+    {
+      "id": "project_and_collapse",
+      "left": "PR",
+      "right": "CL",
+      "relation": "overlapping",
+      "lean_def": "projectAndCollapse",
+      "source_module": "SETheoryTransformation.Reference.Orthogonality",
+      "note": "Project and Collapse share a partial structural effect domain (both reduce structure)."
+    },
+    {
+      "id": "split_and_merge",
+      "left": "SP",
+      "right": "MG",
+      "relation": "inverseLike",
+      "lean_def": "splitAndMerge",
+      "source_module": "SETheoryTransformation.Reference.Orthogonality",
+      "note": "Split and Merge are structural inverses in the Decomposition/Aggregation family pair."
+    }
+  ]
 }

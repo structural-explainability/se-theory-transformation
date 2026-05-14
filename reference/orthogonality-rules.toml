@@ -1,0 +1,72 @@
+# ============================================================
+# Orthogonality Rules
+# se-theory-transformation
+# ============================================================
+# Canonical seed rules specifying the orthogonality relation for
+# operator pairs. Orthogonality is symmetric: {left, right} is
+# unordered.
+#
+# OrthogonalityRelation values:
+#   orthogonal   - no shared effect domain; operators do not interfere
+#   inverseLike  - symmetric inverse relationship
+#   overlapping  - partial shared effect domain
+#
+# Seed rules are confirmed from:
+#   SETheoryTransformation.Reference.Orthogonality
+#
+# Additional rules to be added as the operator catalog grows.
+# The generated data/transformation/orthogonality-matrix.json is
+# derived from this file.
+
+[meta]
+source = "se-theory-transformation"
+namespace = "se.transformation"
+artifact = "orthogonality-rules"
+version = "0.1.0"
+status = "canonical"
+
+# ---------------------------------------------------------------
+# orthogonal pairs
+# These operators have no shared effect domain.
+# ---------------------------------------------------------------
+
+[rule.authorize_and_attest]
+id = "authorize_and_attest"
+left = "AZ"
+right = "AT"
+relation = "orthogonal"
+lean_def = "authorizeAndAttest"
+source_module = "SETheoryTransformation.Reference.Orthogonality"
+note = "Authorize and Attest operate on distinct normative effect domains."
+
+# ---------------------------------------------------------------
+# inverseLike pairs
+# These operators stand in a symmetric inverse relationship.
+# ---------------------------------------------------------------
+
+[rule.split_and_merge]
+id = "split_and_merge"
+left = "SP"
+right = "MG"
+relation = "inverseLike"
+lean_def = "splitAndMerge"
+source_module = "SETheoryTransformation.Reference.Orthogonality"
+note = "Split and Merge are structural inverses in the Decomposition/Aggregation family pair."
+
+# ---------------------------------------------------------------
+# overlapping pairs
+# These operators share a partial effect domain.
+# ---------------------------------------------------------------
+
+[rule.project_and_collapse]
+id = "project_and_collapse"
+left = "PR"
+right = "CL"
+relation = "overlapping"
+lean_def = "projectAndCollapse"
+source_module = "SETheoryTransformation.Reference.Orthogonality"
+note = "Project and Collapse share a partial structural effect domain (both reduce structure)."
+
+# ---------------------------------------------------------------
+# Additional rules: to be added as operator catalog grows
+# ---------------------------------------------------------------

@@ -2,6 +2,72 @@ schema = "se-reference-index-1"
 repo = "se-theory-transformation"
 surface_module = "SETheoryTransformation"
 
+# ---------------------------------------------------------------
+# REFERENCE artifacts are hand-authored, canonical, source-of-truth.
+# Paths: reference/*.toml
+# ---------------------------------------------------------------
+
+[[artifact]]
+id = "composition-rules"
+kind = "transformation-composition-rules"
+format = "toml"
+path = "reference/composition-rules.toml"
+generated = false
+
+[[artifact]]
+id = "orthogonality-rules"
+kind = "transformation-orthogonality-rules"
+format = "toml"
+path = "reference/orthogonality-rules.toml"
+generated = false
+
+[[artifact]]
+id = "transformation-families"
+kind = "transformation-family-definitions"
+format = "toml"
+path = "reference/transformation-families.toml"
+generated = false
+
+[[artifact]]
+id = "transformation-kinds"
+kind = "transformation-kind-definitions"
+format = "toml"
+path = "reference/transformation-kinds.toml"
+generated = false
+
+[[artifact]]
+id = "transformation-operators"
+kind = "transformation-operator-definitions"
+format = "toml"
+path = "reference/transformation-operators.toml"
+generated = false
+
+[[artifact]]
+id = "transformation-outcomes"
+kind = "transformation-outcome-definitions"
+format = "toml"
+path = "reference/transformation-outcomes.toml"
+generated = false
+
+[[artifact]]
+id = "transformation-types"
+kind = "transformation-type-registry"
+format = "toml"
+path = "reference/transformation-types.toml"
+generated = false
+
+# ---------------------------------------------------------------
+# DATA artifacts are machine-generated, derived from reference + Lean.
+# Paths: data/transformation/*.json
+# ---------------------------------------------------------------
+
+[[artifact]]
+id = "composition-registry"
+kind = "transformation-composition-registry"
+format = "json"
+path = "data/transformation/composition-registry.json"
+generated = true
+
 [[artifact]]
 id = "operator-registry"
 kind = "transformation-operator-registry"
@@ -10,10 +76,10 @@ path = "data/transformation/operator-registry.json"
 generated = true
 
 [[artifact]]
-id = "transformation-family-registry"
-kind = "transformation-family-registry"
+id = "orthogonality-matrix"
+kind = "transformation-orthogonality-registry"
 format = "json"
-path = "data/transformation/transformation-family-registry.json"
+path = "data/transformation/orthogonality-matrix.json"
 generated = true
 
 [[artifact]]
@@ -24,15 +90,15 @@ path = "data/transformation/outcome-registry.json"
 generated = true
 
 [[artifact]]
-id = "composition-rules"
-kind = "transformation-composition-registry"
+id = "transformation-catalog"
+kind = "transformation-catalog"
 format = "json"
-path = "data/transformation/composition-rules.json"
+path = "data/transformation/transformation-catalog.json"
 generated = true
 
 [[artifact]]
-id = "orthogonality-matrix"
-kind = "transformation-orthogonality-registry"
+id = "transformation-family-registry"
+kind = "transformation-family-registry"
 format = "json"
-path = "data/transformation/orthogonality-matrix.json"
+path = "data/transformation/transformation-family-registry.json"
 generated = true

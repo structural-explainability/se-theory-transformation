@@ -1,26 +1,43 @@
 # Orthogonality
 
-Orthogonality describes whether two operators define independent kinds of
-change.
+Orthogonality describes structural independence among transformation
+operators.
 
-Orthogonality is not value judgment. It is a clarity test.
+An orthogonality rule describes whether two operators have distinct, shared,
+dependent, conflicting, inverse-like, or unresolved effect domains. It does not
+assert persistence.
 
-## Relation types
+## Authority
 
-| Relation     | Meaning                                                                   |
-| ------------ | ------------------------------------------------------------------------- |
-| orthogonal   | The operators describe independent dimensions of change.                  |
-| overlapping  | The operators share some semantic territory.                              |
-| dependent    | One operator requires or presupposes the other.                           |
-| inverse-like | The operators move in opposing structural directions.                     |
-| conflicting  | The operators cannot both apply coherently under the same interpretation. |
-| unknown      | The relation is unresolved.                                               |
+The authoritative Lean definitions are in:
+
+```text
+SETheoryTransformation/Relation/Orthogonality.lean
+SETheoryTransformation/Reference/Orthogonality.lean
+```
+
+The reference registry mirror is in:
+
+```text
+reference/orthogonality-rules.toml
+```
+
+Generated data artifacts are in:
+
+```text
+data/transformation/orthogonality-matrix.json
+```
 
 ## Use
 
-Orthogonality testing helps prevent the operator vocabulary from becoming
-duplicative or confused.
+Orthogonality helps keep the operator vocabulary distinguishable.
+
+It is a structural independence check, not a value judgment.
 
 ## Rule
 
-Operators should be distinct before they are composed.
+```text
+Orthogonality describes independence.
+Composition describes sequencing.
+Persistence is evaluated downstream.
+```

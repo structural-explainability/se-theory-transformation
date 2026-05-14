@@ -9,7 +9,7 @@
 # === REQUIRED PROJECT IDENTITY ===
 
 name = "se-theory-transformation"
-version = "0.1.0"
+version = "0.2.0"
 license = "MIT"
 
 # === BUILD CONFIGURATION ===
@@ -26,6 +26,18 @@ roots = ["SETheoryTransformation"]
 # === TEST LIBRARIES (internal, not exported) ===
 
 [[lean_lib]]
-name = "TestExport"
+name = "TestAll"
 srcDir = "test"
-roots = ["TestExport"]
+roots = ["TestAll"]
+
+[[lean_lib]]
+name = "TestAdmissibility"
+srcDir = "test"
+
+[[lean_lib]]
+name = "TestComposition"
+srcDir = "test"
+
+[[lean_lib]]
+name = "TestOrthogonality"
+srcDir = "test"

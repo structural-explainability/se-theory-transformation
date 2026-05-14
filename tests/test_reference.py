@@ -401,7 +401,7 @@ def test_find_repo_root_returns_path() -> None:
 
 
 # ---------------------------------------------------------------------------
-# run_scaffold — integration against real repo
+# run_scaffold - integration against real repo
 # ---------------------------------------------------------------------------
 
 
@@ -421,7 +421,7 @@ def test_run_scaffold_dry_run_writes_nothing(tmp_path: Path) -> None:
 
 
 # ---------------------------------------------------------------------------
-# run_ref_validate — integration against real repo
+# run_ref_validate - integration against real repo
 # ---------------------------------------------------------------------------
 
 
@@ -437,7 +437,7 @@ def test_run_ref_validate_strict_no_hard_failures() -> None:
 
 
 # ---------------------------------------------------------------------------
-# run_scaffold — behaviour with a synthetic repo
+# run_scaffold - behaviour with a synthetic repo
 # ---------------------------------------------------------------------------
 
 

@@ -18,7 +18,7 @@ class = "theory"
 kind = "foundation"
 status = "active"
 since = "2026"
-summary = "Lean 4 formalization of foundational transformation operators, families, composition, and orthogonality."
+summary = "Lean 4 formalization of foundational transformation operators, families, kinds, composition, and orthogonality."
 
 [layer]
 space = "formal-theory"
@@ -41,7 +41,7 @@ artifacts = [
   "transformation-catalog",
   "transformation-family-registry",
   "outcome-registry",
-  "composition-rules",
+  "composition-registry",
   "orthogonality-matrix",
   "transformation-schemas",
 ]
@@ -52,7 +52,10 @@ artifacts = [
 includes = [
   "foundational transformation operators",
   "transformation family definitions",
-  "operator composition rules",
+  "transformation kind definitions",
+  "operator-to-family mappings",
+  "family-to-kind mappings",
+  "operator composition relations",
   "operator orthogonality relations",
   "transformation outcome vocabulary",
   "machine-readable transformation registries",
@@ -63,10 +66,14 @@ excludes = [
   "neutral substrate primitives",
   "substrate well-formedness",
   "substrate separation constraints",
+  "identity regimes",
+  "regime profiles",
   "identity persistence behavior",
   "regime persistence semantics",
   "regime classification matrices",
   "regime profile derivations",
+  "accountable entities",
+  "exchange protocols",
   "mapping semantics",
   "operational validation logic",
   "repository governance rules",
@@ -79,10 +86,11 @@ excludes = [
 
 [validation]
 # Validates repository declaration, manifest schema conformance,
-# reference artifacts, and Lean public surface coverage.
-entrypoint = "uv run python -m se_theory_transformation validate"
-strict_entrypoint = "uv run python -m se_theory_transformation validate --strict"
-tag_entrypoint = "uv run python -m se_theory_transformation validate --require-tag"
+# reference artifacts, generated artifacts, and Lean public surface coverage.
+entrypoint = "uv run se-validate"
+strict_entrypoint = "uv run se-validate --strict"
+reference_entrypoint = "uv run se-ref-validate"
+export_check_entrypoint = "uv run se-ref-export --check"
 
 # === Behavior / governance ===
 

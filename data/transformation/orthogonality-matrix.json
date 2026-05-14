@@ -1,65 +1,37 @@
 {
-  "$schema": "../schema/orthogonality-matrix.schema.json",
-  "relations": [
+  "schema": "se-orthogonality-registry-1",
+  "source": "se-theory-transformation",
+  "namespace": "se.transformation",
+  "artifact": "orthogonality-matrix",
+  "reference_artifact": "orthogonality-rules",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/orthogonality-rules.toml",
+  "rules": [
     {
-      "left": "CP",
-      "right": "RF",
-      "relation": "overlapping",
-      "summary": "Both create access to structure, but copy duplicates presentation while reference links indirectly."
-    },
-    {
-      "left": "PR",
-      "right": "CL",
-      "relation": "overlapping",
-      "summary": "Both reduce available structure, but projection selects while collapse compresses."
-    },
-    {
-      "left": "EM",
-      "right": "BD",
-      "relation": "overlapping",
-      "summary": "Embedding places structure within containment; binding attaches dependency or constraint."
-    },
-    {
-      "left": "SP",
-      "right": "MG",
-      "relation": "inverse-like",
-      "summary": "Split and merge move in opposing structural directions."
-    },
-    {
-      "left": "CL",
-      "right": "EX",
-      "relation": "inverse-like",
-      "summary": "Collapse reduces structure; expand exposes or elaborates structure."
-    },
-    {
-      "left": "BD",
-      "right": "UB",
-      "relation": "inverse-like",
-      "summary": "Bind and unbind move in opposing dependency directions."
-    },
-    {
-      "left": "VS",
-      "right": "BR",
-      "relation": "overlapping",
-      "summary": "Both define successor structure, but versioning is sequential while branching is divergent."
-    },
-    {
+      "id": "authorize_and_attest",
       "left": "AZ",
       "right": "AT",
       "relation": "orthogonal",
-      "summary": "Authorization concerns permission; attestation concerns evidence."
+      "lean_def": "authorizeAndAttest",
+      "source_module": "SETheoryTransformation.Reference.Orthogonality",
+      "note": "Authorize and Attest operate on distinct normative effect domains."
     },
     {
-      "left": "SH",
-      "right": "RO",
-      "relation": "orthogonal",
-      "summary": "Shift relocates across frame; reorder rearranges internal order."
+      "id": "project_and_collapse",
+      "left": "PR",
+      "right": "CL",
+      "relation": "overlapping",
+      "lean_def": "projectAndCollapse",
+      "source_module": "SETheoryTransformation.Reference.Orthogonality",
+      "note": "Project and Collapse share a partial structural effect domain (both reduce structure)."
     },
     {
-      "left": "RF",
-      "right": "EM",
-      "relation": "orthogonal",
-      "summary": "Reference links indirectly; embedding places structure inside a containing structure."
+      "id": "split_and_merge",
+      "left": "SP",
+      "right": "MG",
+      "relation": "inverseLike",
+      "lean_def": "splitAndMerge",
+      "source_module": "SETheoryTransformation.Reference.Orthogonality",
+      "note": "Split and Merge are structural inverses in the Decomposition/Aggregation family pair."
     }
   ]
 }

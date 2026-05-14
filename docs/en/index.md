@@ -3,27 +3,27 @@
 Lean 4 formalization of foundational transformation theory for Structural
 Explainability.
 
-This repository defines kinds of change. It does not define what survives those
-changes.
+This repository defines structural transformation vocabulary and relations.
+It does not decide what persists through those transformations.
 
 ## Core principle
 
 ```text
 Transformations are defined independently.
-Persistence is evaluated relative to them.
+Persistence is evaluated downstream.
 ```
 
 ## Scope
 
 This repository covers:
 
-- transformation operator vocabulary
-- transformation family vocabulary
-- composition relation vocabulary
-- orthogonality relation vocabulary
+- transformation operator, family, and kind vocabulary
+- operator-to-family and family-to-kind mappings
+- composition and orthogonality relations
 - transformation outcome vocabulary
+- Lean-side reference enumerations
 - machine-readable transformation registries
-- Lean public import surface
+- public Lean import surface
 
 It does not own:
 
@@ -31,79 +31,54 @@ It does not own:
 - identity regimes
 - regime profiles
 - persistence behavior
-- regime persistence semantics
+- accountable entities
+- exchange protocols
 - domain mappings
 - runtime systems
 
-## Operators
+## Public Lean import
 
-```text
-CP  copy
-PR  project
-EM  embed
-RF  reference
-RO  reorder
-
-SP  split
-MG  merge
-CL  collapse
-EX  expand
-
-SH  shift
-VS  version
-BR  branch
-RV  revert
-
-BD  bind
-UB  unbind
-AZ  authorize
-AT  attest
-```
-
-## Outcomes
-
-```text
-PRS  preserves structure
-BRK  breaks structure
-INH  inherits structure
-IGN  ignores structure
-MIX  mixed / partial
-UNK  unresolved
-```
-
-Outcome vocabulary names structural effects. Persistence-specific interpretation
-belongs downstream.
-
-## Lean surface
-
-Single public import surface:
+Downstream Lean projects should import the public surface:
 
 ```lean
 import SETheoryTransformation
 ```
 
-Primary modules:
+The public surface is curated in:
 
 ```text
 SETheoryTransformation.lean
-SETheoryTransformation/TransformationClass.lean
-SETheoryTransformation/Operator/Codes.lean
-SETheoryTransformation/Composition.lean
-SETheoryTransformation/Orthogonality.lean
-SETheoryTransformation/Outcome.lean
+SETheoryTransformation/Surface.lean
 ```
 
-## Authority
+## Authoritative source files
 
-Lean source files are the only authoritative definition of:
+Lean source files are authoritative for formal definitions, mappings,
+relations, predicates, proof obligations, and reference rules.
 
-- types
-- predicates
-- theorems
-- proof obligations
-- formal transformation relations
+Primary locations:
 
-Machine-readable registries must mirror the Lean surface.
+```text
+SETheoryTransformation/Domain/
+SETheoryTransformation/Relation/
+SETheoryTransformation/Reference/
+SETheoryTransformation/Registry.lean
+SETheoryTransformation/Outcome.lean
+SETheoryTransformation/Conformance.lean
+```
+
+Machine-readable reference artifacts mirror the Lean surface:
+
+```text
+reference/
+data/transformation/
+```
+
+Schemas for generated data artifacts are in:
+
+```text
+data/schema/
+```
 
 ## Documentation rule
 
@@ -116,7 +91,7 @@ formal semantics absent from Lean.
 
 ```shell
 lake build
-lake build TestExport
+lake build TestAll
 uv run se-validate --strict
 uv run python -m pyright
 uv run python -m pytest

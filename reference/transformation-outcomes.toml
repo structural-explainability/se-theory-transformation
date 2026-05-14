@@ -1,0 +1,67 @@
+# ============================================================
+# Transformation Outcomes
+# se-theory-transformation
+# ============================================================
+# Outcome vocabulary used when evaluating structural effects of a
+# transformation operator.
+#
+# STATUS: draft
+# Outcome identities match SETheoryTransformation.Registry.referenceOutcomes.
+# Constructors match SETheoryTransformation.Outcome.TransformationOutcome.
+#
+# Persistence-specific interpretation belongs downstream.
+
+[meta]
+source = "se-theory-transformation"
+namespace = "se.transformation"
+artifact = "transformation-outcomes"
+version = "0.1.0"
+status = "draft"
+
+[outcome.BRK]
+order = 1
+id = "BRK"
+label = "Break"
+lean_constructor = "BRK"
+source_module = "SETheoryTransformation.Outcome"
+description = "The transformation breaks identity."
+
+[outcome.IGN]
+order = 2
+id = "IGN"
+label = "Ignore"
+lean_constructor = "IGN"
+source_module = "SETheoryTransformation.Outcome"
+description = "The transformation has no effect on identity."
+
+[outcome.INH]
+order = 3
+id = "INH"
+label = "Inherited"
+lean_constructor = "INH"
+source_module = "SETheoryTransformation.Outcome"
+description = "The outcome is inherited from a prior or enclosing transformation."
+
+[outcome.MIX]
+order = 4
+id = "MIX"
+label = "Mixed"
+lean_constructor = "MIX"
+source_module = "SETheoryTransformation.Outcome"
+description = "The outcome is mixed: identity is preserved in some components and broken in others."
+
+[outcome.PRS]
+order = 5
+id = "PRS"
+label = "Preserve"
+lean_constructor = "PRS"
+source_module = "SETheoryTransformation.Outcome"
+description = "The transformation preserves identity."
+
+[outcome.UNK]
+order = 6
+id = "UNK"
+label = "Unknown"
+lean_constructor = "UNK"
+source_module = "SETheoryTransformation.Outcome"
+description = "The outcome is unresolved or intentionally unspecified."

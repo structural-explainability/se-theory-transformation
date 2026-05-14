@@ -1,65 +1,182 @@
 {
-  "$schema": "../schema/transformation-family-registry.schema.json",
+  "schema": "se-transformation-family-registry-1",
+  "source": "se-theory-transformation",
+  "namespace": "se.transformation",
+  "artifact": "transformation-family-registry",
+  "reference_artifact": "transformation-families",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-families.toml",
   "families": [
     {
-      "id": "structural",
-      "name": "Structural",
-      "summary": "Transformations that rearrange, expose, duplicate, embed, or reference structure.",
-      "operators": ["CP", "PR", "EM", "RF", "RO"]
+      "order": 1,
+      "id": "Aggregation",
+      "label": "Aggregation",
+      "lean_constructor": "aggregation",
+      "kind": "structural",
+      "source_module": "SETheoryTransformation.Domain.Family.Aggregation",
+      "description": "Transformations that combine multiple referents or structural components into a unified whole.",
+      "operator_codes": [
+        "MG"
+      ]
     },
     {
-      "id": "decomposition",
-      "name": "Decomposition",
-      "summary": "Transformations that divide structure into multiple derived structures.",
-      "operators": ["SP"]
+      "order": 2,
+      "id": "Association",
+      "label": "Association",
+      "lean_constructor": "association",
+      "kind": "relational",
+      "source_module": "SETheoryTransformation.Domain.Family.Association",
+      "description": "Transformations that establish, alter, or represent relations among referents without implying containment.",
+      "operator_codes": [
+        "LK"
+      ]
     },
     {
-      "id": "aggregation",
-      "name": "Aggregation",
-      "summary": "Transformations that combine multiple structures into a derived structure.",
-      "operators": ["MG"]
+      "order": 3,
+      "id": "Attestation",
+      "label": "Attestation",
+      "lean_constructor": "attestation",
+      "kind": "observational",
+      "source_module": "SETheoryTransformation.Domain.Family.Attestation",
+      "description": "Transformations that record evidence, verification, or claims about a referent.",
+      "operator_codes": [
+        "AT"
+      ]
     },
     {
-      "id": "compression",
-      "name": "Compression",
-      "summary": "Transformations that reduce structure into a compressed representation.",
-      "operators": ["CL"]
+      "order": 4,
+      "id": "Branching",
+      "label": "Branching",
+      "lean_constructor": "branching",
+      "kind": "temporal",
+      "source_module": "SETheoryTransformation.Domain.Family.Branching",
+      "description": "Transformations that produce divergent continuations from a referent.",
+      "operator_codes": [
+        "BR"
+      ]
     },
     {
-      "id": "elaboration",
-      "name": "Elaboration",
-      "summary": "Transformations that expose, derive, or unfold additional structure.",
-      "operators": ["EX"]
+      "order": 5,
+      "id": "Containment",
+      "label": "Containment",
+      "lean_constructor": "containment",
+      "kind": "organizational",
+      "source_module": "SETheoryTransformation.Domain.Family.Containment",
+      "description": "Transformations that place a referent within a containing structure or organizational enclosure.",
+      "operator_codes": [
+        "EM"
+      ]
     },
     {
-      "id": "relocation",
-      "name": "Relocation",
-      "summary": "Transformations that move structure across time, place, context, or frame.",
-      "operators": ["SH"]
+      "order": 6,
+      "id": "Contextual",
+      "label": "Contextual",
+      "lean_constructor": "contextual",
+      "kind": "contextual",
+      "source_module": "SETheoryTransformation.Domain.TransformationFamily",
+      "description": "Transformations that bind, unbind, or otherwise alter contextual placement or applicability.",
+      "operator_codes": [
+        "BD",
+        "UB"
+      ],
+      "note": "No separate Domain/Family/Contextual.lean file was shown; constructor and mappings are confirmed through TransformationFamily and Operator.Semantics."
     },
     {
-      "id": "evolution",
-      "name": "Evolution",
-      "summary": "Transformations that create successor states or divergent continuities.",
-      "operators": ["VS", "BR", "RV"]
+      "order": 7,
+      "id": "Decomposition",
+      "label": "Decomposition",
+      "lean_constructor": "decomposition",
+      "kind": "structural",
+      "source_module": "SETheoryTransformation.Domain.Family.Decomposition",
+      "description": "Transformations that divide a referent into constituent components, parts, branches, or sub-referents.",
+      "operator_codes": [
+        "SP"
+      ]
     },
     {
-      "id": "contextual",
-      "name": "Contextual",
-      "summary": "Transformations that attach or remove contextual dependencies.",
-      "operators": ["BD", "UB"]
+      "order": 8,
+      "id": "Migration",
+      "label": "Migration",
+      "lean_constructor": "migration",
+      "kind": "relational",
+      "source_module": "SETheoryTransformation.Domain.Family.Migration",
+      "description": "Transformations that relocate a referent across a relation, bearer, context, or structural position while maintaining linkage.",
+      "operator_codes": [
+        "SH"
+      ]
     },
     {
-      "id": "normative",
-      "name": "Normative",
-      "summary": "Transformations that govern permission or admissibility.",
-      "operators": ["AZ"]
+      "order": 9,
+      "id": "Normative",
+      "label": "Normative",
+      "lean_constructor": "normative",
+      "kind": "normative",
+      "source_module": "SETheoryTransformation.Domain.Family.Normative",
+      "description": "Transformations that apply, alter, or record normative authority, permission, or standing.",
+      "operator_codes": [
+        "AZ"
+      ]
     },
     {
-      "id": "observational",
-      "name": "Observational",
-      "summary": "Transformations that create evidentiary assertions about structure or change.",
-      "operators": ["AT"]
+      "order": 10,
+      "id": "Projection",
+      "label": "Projection",
+      "lean_constructor": "projection",
+      "kind": "observational",
+      "source_module": "SETheoryTransformation.Domain.Family.Projection",
+      "description": "Transformations that derive a partial view, selected representation, or projection of a referent.",
+      "operator_codes": [
+        "PR"
+      ]
+    },
+    {
+      "order": 11,
+      "id": "Replication",
+      "label": "Replication",
+      "lean_constructor": "replication",
+      "kind": "observational",
+      "source_module": "SETheoryTransformation.Domain.Family.Replication",
+      "description": "Transformations that produce a duplicate, replica, copy, or copied representation of a referent.",
+      "operator_codes": [
+        "CP"
+      ]
+    },
+    {
+      "order": 12,
+      "id": "Reorganization",
+      "label": "Reorganization",
+      "lean_constructor": "reorganization",
+      "kind": "organizational",
+      "source_module": "SETheoryTransformation.Domain.Family.Reorganization",
+      "description": "Transformations that alter arrangement, ordering, or organizational placement without necessarily changing membership.",
+      "operator_codes": [
+        "RO"
+      ]
+    },
+    {
+      "order": 13,
+      "id": "Scaling",
+      "label": "Scaling",
+      "lean_constructor": "scaling",
+      "kind": "structural",
+      "source_module": "SETheoryTransformation.Domain.Family.Scaling",
+      "description": "Transformations that increase or decrease structural scale, detail, complexity, or elaboration.",
+      "operator_codes": [
+        "CL",
+        "EX"
+      ]
+    },
+    {
+      "order": 14,
+      "id": "Versioning",
+      "label": "Versioning",
+      "lean_constructor": "versioning",
+      "kind": "temporal",
+      "source_module": "SETheoryTransformation.Domain.Family.Versioning",
+      "description": "Transformations that produce, identify, restore, or relate temporally ordered versions of a referent.",
+      "operator_codes": [
+        "RV",
+        "VS"
+      ]
     }
   ]
 }

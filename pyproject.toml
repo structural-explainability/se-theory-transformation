@@ -41,10 +41,10 @@ docs = [
 
 [project.scripts]
 se-validate = "se_theory_transformation.cli:validate_main"
-se-manifest-schema-validate = "se_theory_transformation.cli:schema_validate_main"
 se-manifest-version-sync = "se_theory_transformation.cli:sync_main"
 se-ref-scaffold = "se_theory_transformation.cli:ref_scaffold_main"
 se-ref-validate = "se_theory_transformation.cli:ref_validate_main"
+se-ref-export = "se_theory_transformation.cli:ref_export_main"
 
 # ============================================================
 # SECTION 2: TOOL CONFIGURATION (Professional basics)
@@ -170,5 +170,5 @@ packages = ["src/se_theory_transformation"]  # REQ.PACKAGES: Discovery rooted at
 [tool.hatch.version]
 # WHY: Version derived from git tags at build time
 source = "vcs"
-fallback-version = "0.1.0"              # Used when no git tags present (fresh clone, CI).
+fallback-version = "0.2.0"              # Used when no git tags present (fresh clone, CI).
 tag-pattern = "^(?:v)?(?P<version>\\d+\\.\\d+\\.\\d+)$"

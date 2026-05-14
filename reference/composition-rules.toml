@@ -1,0 +1,77 @@
+# ============================================================
+# Composition Rules
+# se-theory-transformation
+# ============================================================
+# Canonical seed rules specifying the composition relation for
+# ordered operator pairs (left, right).
+#
+# Composition is about sequencing only. It does not decide whether
+# identity, meaning, obligation, evidence, context, or persistence
+# survives the sequence.
+#
+# CompositionRelation values:
+#   absorbing                 - the second operator dominates, erases, or absorbs the first
+#   composable                - the operator sequence is generally meaningful
+#   conditionallyComposable   - the operator sequence is meaningful only under additional constraints
+#   inverseLike               - the operators move in opposing directions but may not fully reverse
+#   nonComposable             - the operator sequence is structurally invalid or incoherent
+#   redundant                 - the second operator adds no relevant structural change
+#   unknown                   - the composition relation is unresolved or intentionally unspecified
+#
+# Seed rules are confirmed from:
+#   SETheoryTransformation.Reference.Composition
+#
+# Additional rules may be added as the operator catalog grows.
+# The generated data/transformation/composition-registry.json is
+# derived from this file.
+
+[meta]
+source = "se-theory-transformation"
+namespace = "se.transformation"
+artifact = "composition-rules"
+version = "0.1.0"
+status = "canonical"
+
+# ---------------------------------------------------------------
+# composable pairs
+# These ordered pairs produce a meaningful transformation sequence.
+# ---------------------------------------------------------------
+
+[rule.authorize_then_attest]
+order = 1
+id = "authorize_then_attest"
+left = "AZ"
+right = "AT"
+relation = "composable"
+lean_def = "authorizeThenAttest"
+source_module = "SETheoryTransformation.Reference.Composition"
+description = "Authorization followed by attestation applies a normative condition and then records a verified claim about it."
+note = "AZ and AT are also classified as orthogonal in Reference.Orthogonality. Composable and orthogonal are not contradictory: AZ affects normative status; AT records a claim."
+
+# ---------------------------------------------------------------
+# inverseLike pairs
+# These ordered pairs move in opposing directions but may not fully
+# reverse in every downstream interpretation.
+# ---------------------------------------------------------------
+
+[rule.bind_then_unbind]
+order = 2
+id = "bind_then_unbind"
+left = "BD"
+right = "UB"
+relation = "inverseLike"
+lean_def = "bindThenUnbind"
+source_module = "SETheoryTransformation.Reference.Composition"
+description = "Bind followed by unbind establishes and then removes a bearer, context, or applicability association."
+note = "Composition relation only; does not assert persistence restoration."
+
+[rule.split_then_merge]
+order = 3
+id = "split_then_merge"
+left = "SP"
+right = "MG"
+relation = "inverseLike"
+lean_def = "splitThenMerge"
+source_module = "SETheoryTransformation.Reference.Composition"
+description = "Split followed by merge divides and then recombines a structure."
+note = "Composition relation only; does not assert identity restoration."

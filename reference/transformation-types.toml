@@ -1,0 +1,138 @@
+# ============================================================
+# Transformation Types
+# se-theory-transformation
+# ============================================================
+# Public Lean type and structure registry for the transformation
+# theory surface.
+#
+# STATUS: draft
+# This file indexes actual Lean vocabulary exposed by the theory layer.
+# It does not define persistence behavior, regime behavior, identity
+# outcomes, or operational validation policy.
+
+schema = "se-type-registry-1"
+repo = "se-theory-transformation"
+surface_module = "SETheoryTransformation.Surface"
+namespace = "SETheoryTransformation"
+
+[type.CompositionRelation]
+order = 1
+id = "CompositionRelation"
+cite_id = "TR.TYPE.CompositionRelation"
+name = "Composition relation"
+lean_symbol = "CompositionRelation"
+source_module = "SETheoryTransformation.Relation.Composition"
+description = "Classification of the sequencing relationship between two transformation operators."
+constructors = [
+  "absorbing",
+  "composable",
+  "conditionallyComposable",
+  "inverseLike",
+  "nonComposable",
+  "redundant",
+  "unknown",
+]
+
+[type.CompositionRule]
+order = 2
+id = "CompositionRule"
+cite_id = "TR.TYPE.CompositionRule"
+name = "Composition rule"
+lean_symbol = "CompositionRule"
+source_module = "SETheoryTransformation.Relation.Composition"
+description = "A rule assigning a composition relation to an ordered pair of transformation operators."
+
+[type.OperatorCode]
+order = 3
+id = "OperatorCode"
+cite_id = "TR.TYPE.OperatorCode"
+name = "Operator code"
+lean_symbol = "OperatorCode"
+source_module = "SETheoryTransformation.Domain.Operator.Codes"
+description = "Canonical two-letter code identifying a transformation operator."
+
+[type.OrthogonalityRelation]
+order = 4
+id = "OrthogonalityRelation"
+cite_id = "TR.TYPE.OrthogonalityRelation"
+name = "Orthogonality relation"
+lean_symbol = "OrthogonalityRelation"
+source_module = "SETheoryTransformation.Relation.Orthogonality"
+description = "Classification of the structural independence relationship between two transformation operators."
+constructors = [
+  "conflicting",
+  "dependent",
+  "inverseLike",
+  "orthogonal",
+  "overlapping",
+  "unknown",
+]
+
+[type.OrthogonalityRule]
+order = 5
+id = "OrthogonalityRule"
+cite_id = "TR.TYPE.OrthogonalityRule"
+name = "Orthogonality rule"
+lean_symbol = "OrthogonalityRule"
+source_module = "SETheoryTransformation.Relation.Orthogonality"
+description = "A rule assigning an orthogonality relation to an unordered pair of transformation operators."
+
+[type.TransformationFamily]
+order = 6
+id = "TransformationFamily"
+cite_id = "TR.TYPE.TransformationFamily"
+name = "Transformation family"
+lean_symbol = "TransformationFamily"
+source_module = "SETheoryTransformation.Domain.TransformationFamily"
+description = "Mid-level behavioral category grouping transformation operators by shared structural behavior."
+constructors = [
+  "aggregation",
+  "association",
+  "attestation",
+  "branching",
+  "containment",
+  "contextual",
+  "decomposition",
+  "migration",
+  "normative",
+  "projection",
+  "replication",
+  "reorganization",
+  "scaling",
+  "versioning",
+]
+
+[type.TransformationKind]
+order = 7
+id = "TransformationKind"
+cite_id = "TR.TYPE.TransformationKind"
+name = "Transformation kind"
+lean_symbol = "TransformationKind"
+source_module = "SETheoryTransformation.Domain.TransformationKind"
+description = "Broad behavioral category of transformation. Each family belongs to exactly one transformation kind."
+constructors = [
+  "contextual",
+  "normative",
+  "observational",
+  "organizational",
+  "relational",
+  "structural",
+  "temporal",
+]
+
+[type.TransformationOutcome]
+order = 8
+id = "TransformationOutcome"
+cite_id = "TR.TYPE.TransformationOutcome"
+name = "Transformation outcome"
+lean_symbol = "TransformationOutcome"
+source_module = "SETheoryTransformation.Outcome"
+description = "Outcome vocabulary for transformation analysis. This registry does not assign regime-specific persistence behavior."
+constructors = [
+  "BRK",
+  "IGN",
+  "INH",
+  "MIX",
+  "PRS",
+  "UNK",
+]

@@ -1,0 +1,95 @@
+# ============================================================
+# Transformation Kinds
+# se-theory-transformation
+# ============================================================
+# Seven broad kinds providing the highest-level classification
+# of transformation behavior. Kinds organize families.
+#
+# STATUS: draft
+# Kind identities confirmed from TransformationKind.lean.
+# family_ids mappings are provisional and require review of
+# Domain/Kind/*.lean files for confirmation.
+
+[meta]
+source = "se-theory-transformation"
+namespace = "se.transformation"
+artifact = "transformation-kinds"
+version = "0.1.0"
+status = "draft"
+
+[kind.Contextual]
+order = 1
+id = "Contextual"
+label = "Contextual"
+lean_constructor = "contextual"
+source_module = "SETheoryTransformation.Domain.Kind.Contextual"
+description = "Transformations that change the interpretive frame, applicability context, or situational placement of a referent without necessarily altering its internal structure."
+family_ids = []
+basis_elements = ["RC"]
+note = "family_ids and basis_elements require Domain/Kind/Contextual.lean review."
+
+[kind.Normative]
+order = 2
+id = "Normative"
+label = "Normative"
+lean_constructor = "normative"
+source_module = "SETheoryTransformation.Domain.Kind.Normative"
+description = "Transformations that apply, alter, record, or reposition normative conditions associated with a referent. Normative transformations concern obligation, permission, authorization, attestation, or related normative structures without by themselves deciding persistence."
+family_ids = []
+basis_elements = []
+note = "family_ids and basis_elements require Domain/Kind/Normative.lean review."
+
+[kind.Observational]
+order = 3
+id = "Observational"
+label = "Observational"
+lean_constructor = "observational"
+source_module = "SETheoryTransformation.Domain.Kind.Observational"
+description = "Transformations that produce a view, record, measurement, projection, or observation of a referent without necessarily changing the referent itself."
+family_ids = ["Projection"]
+basis_elements = ["AN", "PV"]
+note = "family_ids and basis_elements require Domain/Kind/Observational.lean review."
+
+[kind.Organizational]
+order = 4
+id = "Organizational"
+label = "Organizational"
+lean_constructor = "organizational"
+source_module = "SETheoryTransformation.Domain.Kind.Organizational"
+description = "Transformations that change organizational arrangement, grouping, administrative placement, or structural ordering of referents within a larger configuration."
+family_ids = ["Aggregation", "Decomposition", "Reorganization"]
+basis_elements = ["AD", "BF", "RF", "SE"]
+note = "family_ids and basis_elements require Domain/Kind/Organizational.lean review."
+
+[kind.Relational]
+order = 5
+id = "Relational"
+label = "Relational"
+lean_constructor = "relational"
+source_module = "SETheoryTransformation.Domain.Kind.Relational"
+description = "Transformations that change relations among referents, including association, containment, linkage, dependency, or referential connection."
+family_ids = []
+basis_elements = ["RA", "RC"]
+note = "family_ids and basis_elements require Domain/Kind/Relational.lean review."
+
+[kind.Structural]
+order = 6
+id = "Structural"
+label = "Structural"
+lean_constructor = "structural"
+source_module = "SETheoryTransformation.Domain.Kind.Structural"
+description = "Transformations that alter the structural composition, arrangement, partitioning, or combination of a referent. Structural transformations include combining, dividing, and rearranging structural components."
+family_ids = ["Aggregation", "Decomposition", "Reorganization"]
+basis_elements = ["AD", "BF", "RF", "SE"]
+note = "family_ids and basis_elements require Domain/Kind/Structural.lean review."
+
+[kind.Temporal]
+order = 7
+id = "Temporal"
+label = "Temporal"
+lean_constructor = "temporal"
+source_module = "SETheoryTransformation.Domain.Kind.Temporal"
+description = "Transformations that relate a referent to temporal predecessors, successors, versions, continuations, or migrations across time-indexed states."
+family_ids = ["Branching", "Migration", "Versioning"]
+basis_elements = ["BF", "RA", "RF"]
+note = "family_ids and basis_elements require Domain/Kind/Temporal.lean review."

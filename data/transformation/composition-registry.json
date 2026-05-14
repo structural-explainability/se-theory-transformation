@@ -1,0 +1,43 @@
+{
+  "schema": "se-composition-registry-1",
+  "source": "se-theory-transformation",
+  "namespace": "se.transformation",
+  "artifact": "composition-registry",
+  "reference_artifact": "composition-rules",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/composition-rules.toml",
+  "rules": [
+    {
+      "order": 1,
+      "id": "authorize_then_attest",
+      "left": "AZ",
+      "right": "AT",
+      "relation": "composable",
+      "lean_def": "authorizeThenAttest",
+      "source_module": "SETheoryTransformation.Reference.Composition",
+      "description": "Authorization followed by attestation applies a normative condition and then records a verified claim about it.",
+      "note": "AZ and AT are also classified as orthogonal in Reference.Orthogonality. Composable and orthogonal are not contradictory: AZ affects normative status; AT records a claim."
+    },
+    {
+      "order": 2,
+      "id": "bind_then_unbind",
+      "left": "BD",
+      "right": "UB",
+      "relation": "inverseLike",
+      "lean_def": "bindThenUnbind",
+      "source_module": "SETheoryTransformation.Reference.Composition",
+      "description": "Bind followed by unbind establishes and then removes a bearer, context, or applicability association.",
+      "note": "Composition relation only; does not assert persistence restoration."
+    },
+    {
+      "order": 3,
+      "id": "split_then_merge",
+      "left": "SP",
+      "right": "MG",
+      "relation": "inverseLike",
+      "lean_def": "splitThenMerge",
+      "source_module": "SETheoryTransformation.Reference.Composition",
+      "description": "Split followed by merge divides and then recombines a structure.",
+      "note": "Composition relation only; does not assert identity restoration."
+    }
+  ]
+}

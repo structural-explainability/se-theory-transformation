@@ -1,124 +1,163 @@
 {
-  "$schema": "../schema/operator-registry.schema.json",
+  "schema": "se-operator-registry-1",
+  "source": "se-theory-transformation",
+  "namespace": "se.transformation",
+  "artifact": "operator-registry",
+  "reference_artifact": "transformation-operators",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-operators.toml",
   "operators": [
     {
-      "code": "CP",
-      "name": "copy",
-      "family": "structural",
-      "summary": "Duplicate a representation without transferring or terminating the source.",
-      "notes": "Copy creates another presentation of structure. It does not by itself decide persistence."
-    },
-    {
-      "code": "PR",
-      "name": "project",
-      "family": "structural",
-      "summary": "Expose a selected view while omitting other structure.",
-      "notes": "Projection preserves only the selected surface."
-    },
-    {
-      "code": "EM",
-      "name": "embed",
-      "family": "structural",
-      "summary": "Place a structure inside a larger containing structure.",
-      "notes": "Embedding adds containment or inclusion without requiring transformation of the embedded item."
-    },
-    {
-      "code": "RF",
-      "name": "reference",
-      "family": "structural",
-      "summary": "Create an indirect pointer or citation to another structure.",
-      "notes": "Reference links without copying or embedding."
-    },
-    {
-      "code": "RO",
-      "name": "reorder",
-      "family": "structural",
-      "summary": "Rearrange structure without adding or removing declared parts.",
-      "notes": "Reordering may preserve some structures and break others depending on downstream semantics."
-    },
-    {
-      "code": "SP",
-      "name": "split",
-      "family": "decomposition",
-      "summary": "Separate one structure into multiple derived structures.",
-      "notes": "Split does not itself determine whether descendants inherit identity."
-    },
-    {
-      "code": "MG",
-      "name": "merge",
-      "family": "aggregation",
-      "summary": "Combine multiple structures into one derived structure.",
-      "notes": "Merge may aggregate, absorb, or destroy distinctions depending on downstream semantics."
-    },
-    {
-      "code": "CL",
-      "name": "collapse",
-      "family": "compression",
-      "summary": "Compress structure into a reduced representation.",
-      "notes": "Collapse is stronger than projection because it may replace internal structure with summary form."
-    },
-    {
-      "code": "EX",
-      "name": "expand",
-      "family": "elaboration",
-      "summary": "Expose or generate additional internal structure from a prior representation.",
-      "notes": "Expansion may reveal implicit structure or add derived structure."
-    },
-    {
-      "code": "SH",
-      "name": "shift",
-      "family": "relocation",
-      "summary": "Move structure across time, location, context, or frame.",
-      "notes": "Shift is neutral about whether identity survives relocation."
-    },
-    {
-      "code": "VS",
-      "name": "version",
-      "family": "evolution",
-      "summary": "Create a controlled successor state with declared lineage.",
-      "notes": "Versioning differs from branching because it declares a sequential successor."
-    },
-    {
-      "code": "BR",
-      "name": "branch",
-      "family": "evolution",
-      "summary": "Create multiple divergent continuities from a source.",
-      "notes": "Branching creates parallel successor paths."
-    },
-    {
-      "code": "RV",
-      "name": "revert",
-      "family": "evolution",
-      "summary": "Return toward a prior declared state.",
-      "notes": "Revert references an earlier state but does not erase intervening history unless specified elsewhere."
-    },
-    {
-      "code": "BD",
-      "name": "bind",
-      "family": "contextual",
-      "summary": "Attach a constraint, condition, context, or dependency.",
-      "notes": "Binding adds dependency structure."
-    },
-    {
-      "code": "UB",
-      "name": "unbind",
-      "family": "contextual",
-      "summary": "Remove a constraint, condition, context, or dependency.",
-      "notes": "Unbinding removes dependency structure."
-    },
-    {
-      "code": "AZ",
-      "name": "authorize",
-      "family": "normative",
-      "summary": "Declare that a transformation pathway is permitted.",
-      "notes": "Authorization governs admissibility, not persistence."
-    },
-    {
+      "order": 1,
       "code": "AT",
-      "name": "attest",
-      "family": "observational",
-      "summary": "Assert that a structure, state, or transformation has evidentiary standing.",
-      "notes": "Attestation is observational. It does not create the thing attested."
+      "label": "attest",
+      "family": "attestation",
+      "kind": "observational",
+      "description": "Records a verified claim about a referent. Adds attestation metadata or evidence without defining persistence behavior.",
+      "id": "AT"
+    },
+    {
+      "order": 2,
+      "code": "AZ",
+      "label": "authorize",
+      "family": "normative",
+      "kind": "normative",
+      "description": "Grants permission, authority, or normative standing to a subject or referent within a defined scope.",
+      "id": "AZ"
+    },
+    {
+      "order": 3,
+      "code": "BD",
+      "label": "bind",
+      "family": "contextual",
+      "kind": "contextual",
+      "description": "Associates a referent with a context, bearer, scope, or applicability setting.",
+      "id": "BD"
+    },
+    {
+      "order": 4,
+      "code": "BR",
+      "label": "branch",
+      "family": "branching",
+      "kind": "temporal",
+      "description": "Creates a divergent continuation from a referent, producing one or more forward paths.",
+      "id": "BR"
+    },
+    {
+      "order": 5,
+      "code": "CL",
+      "label": "collapse",
+      "family": "scaling",
+      "kind": "structural",
+      "description": "Reduces structural scale or complexity by collapsing nested, redundant, or expanded structure.",
+      "id": "CL"
+    },
+    {
+      "order": 6,
+      "code": "CP",
+      "label": "copy",
+      "family": "replication",
+      "kind": "observational",
+      "description": "Produces a duplicate, replica, or copied representation of a referent.",
+      "id": "CP"
+    },
+    {
+      "order": 7,
+      "code": "EM",
+      "label": "embed",
+      "family": "containment",
+      "kind": "organizational",
+      "description": "Places a referent inside a containing structure, establishing containment or embedded placement.",
+      "id": "EM"
+    },
+    {
+      "order": 8,
+      "code": "EX",
+      "label": "expand",
+      "family": "scaling",
+      "kind": "structural",
+      "description": "Increases structural scale, detail, or complexity by expanding a referent into a more elaborated form.",
+      "id": "EX"
+    },
+    {
+      "order": 9,
+      "code": "LK",
+      "label": "link",
+      "family": "association",
+      "kind": "relational",
+      "description": "Establishes an association or relation between referents without by itself implying containment or persistence.",
+      "id": "LK"
+    },
+    {
+      "order": 10,
+      "code": "MG",
+      "label": "merge",
+      "family": "aggregation",
+      "kind": "structural",
+      "description": "Combines two or more referents or structural components into a unified referent or aggregate.",
+      "id": "MG"
+    },
+    {
+      "order": 11,
+      "code": "PR",
+      "label": "project",
+      "family": "projection",
+      "kind": "observational",
+      "description": "Derives a partial view, projection, or selected representation of a referent.",
+      "id": "PR"
+    },
+    {
+      "order": 12,
+      "code": "RO",
+      "label": "reorder",
+      "family": "reorganization",
+      "kind": "organizational",
+      "description": "Changes the ordering or arrangement of components without necessarily changing their membership.",
+      "id": "RO"
+    },
+    {
+      "order": 13,
+      "code": "RV",
+      "label": "revert",
+      "family": "versioning",
+      "kind": "temporal",
+      "description": "Returns, restores, or relates a referent to a prior version along a provenance or version chain.",
+      "id": "RV"
+    },
+    {
+      "order": 14,
+      "code": "SH",
+      "label": "shift",
+      "family": "migration",
+      "kind": "relational",
+      "description": "Relocates a referent across a relation, bearer, context, or structural position while maintaining linkage.",
+      "id": "SH"
+    },
+    {
+      "order": 15,
+      "code": "SP",
+      "label": "split",
+      "family": "decomposition",
+      "kind": "structural",
+      "description": "Divides a referent into two or more components, parts, branches, or sub-referents.",
+      "id": "SP"
+    },
+    {
+      "order": 16,
+      "code": "UB",
+      "label": "unbind",
+      "family": "contextual",
+      "kind": "contextual",
+      "description": "Removes, releases, or severs a contextual binding between a referent and its current context, bearer, or scope.",
+      "id": "UB"
+    },
+    {
+      "order": 17,
+      "code": "VS",
+      "label": "version",
+      "family": "versioning",
+      "kind": "temporal",
+      "description": "Produces or identifies a temporally ordered version or successor of a referent.",
+      "id": "VS"
     }
   ]
 }

@@ -1,26 +1,41 @@
 # Composition
 
-Composition describes how transformation operators may be sequenced.
+Composition describes sequencing among transformation operators.
 
-A composition rule does not assert persistence.
+A composition rule describes whether one operator may meaningfully follow
+another operator. It does not assert persistence.
 
-It only describes whether the second transformation can meaningfully follow
-the first transformation.
+## Authority
 
-## Relation types
+The authoritative Lean definitions are in:
 
-| Relation | Meaning |
-| --- | --- |
-| composable | The sequence is generally meaningful. |
-| conditionally-composable | The sequence is meaningful only under stated constraints. |
-| non-composable | The sequence is structurally invalid or incoherent. |
-| redundant | The second transformation adds no relevant structural change. |
-| absorbing | The second transformation dominates or erases the first. |
-| inverse-like | The transformations move in opposing directions but may not fully reverse. |
-| unknown | The relation is unresolved. |
+```text
+SETheoryTransformation/Relation/Composition.lean
+SETheoryTransformation/Reference/Composition.lean
+```
+
+The reference registry mirror is in:
+
+```text
+reference/composition-rules.toml
+```
+
+Generated data artifacts are in:
+
+```text
+data/transformation/composition-registry.json
+```
 
 ## Rule
 
 ```text
 Composition describes sequencing.
 Persistence describes survival.
+```
+
+## Notes
+
+Composition and orthogonality answer different questions.
+
+Two operators may be composable because they form a meaningful sequence while
+also being orthogonal because they affect distinct domains.

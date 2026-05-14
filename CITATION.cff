@@ -9,8 +9,8 @@ cff-version: "1.2.0"
 type: software
 
 title: "SE Theory: Transformation"
-version: "0.1.0"
-date-released: "2026-05-12"
+version: "0.2.0"
+date-released: "2026-05-14"
 
 authors:
   - family-names: Case
@@ -27,11 +27,13 @@ license: MIT
 abstract: >
   Lean 4 formalization of foundational transformation theory for
   Structural Explainability. This repository defines transformation
-  operators, transformation families, composition rules, orthogonality
-  relations, outcome vocabulary, and machine-readable transformation
-  registries. It does not define neutral substrate primitives,
-  identity persistence behavior, regime persistence semantics, domain
-  mappings, or operational validation.
+  operators, transformation families, transformation kinds,
+  operator-family-kind mappings, composition and orthogonality
+  relation vocabularies, outcome vocabulary, Lean-side reference
+  enumerations, and machine-readable transformation registries.
+  It does not define neutral substrate primitives, identity regimes,
+  persistence behavior, regime persistence semantics, accountable
+  entities, exchange protocols, domain mappings, or runtime systems.
 
 keywords:
   - structural-explainability
@@ -39,7 +41,8 @@ keywords:
   - transformation-operators
   - operator-registry
   - transformation-families
-  - composition-rules
+  - transformation-kinds
+  - composition
   - orthogonality
   - lean4
   - theorem-proving

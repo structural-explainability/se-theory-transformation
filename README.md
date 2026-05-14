@@ -12,309 +12,124 @@
 
 > Lean 4 formalization of foundational transformation theory for Structural Explainability.
 
-This repository defines
-transformation operators, transformation families,
-composition vocabulary, admissibility vocabulary,
-and orthogonality tests.
+This repository defines structural transformation vocabulary and relations.
 
-It does not define persistence, regime identity, or
-domain-specific survival criteria.
-Those belong downstream.
+It does not decide what persists through a transformation. Persistence,
+identity-regime behavior, domain-specific survival criteria, and operational
+policy belong downstream.
 
-## Transformations
+## Core principle
 
+```text
 Transformations are defined independently.
-Persistence is evaluated relative to them.
-
-## Dependencies
-
-None.
-This repository is upstream of neutral substrate,
-identity regimes, and persistence theory.
-
-## Covers
-
-- Transformation operator vocabulary
-- Transformation family registry
-- Composition relation vocabulary
-- Orthogonality relation vocabulary
-- Transformation outcome vocabulary
-- Machine-readable operator registries
-- Machine-readable composition rules
-- Machine-readable orthogonality matrix
-- JSON schemas for transformation registries
-- Lean types for operator codes, composition relations, orthogonality relations, and outcomes
-- Example composition witnesses
-- Example orthogonality witnesses
-
-## Owns
-
-### Transformation operators
-
-```text
-CP  copy
-PR  project
-EM  embed
-RF  reference
-RO  reorder
-
-SP  split
-MG  merge
-CL  collapse
-EX  expand
-
-SH  shift
-VS  version
-BR  branch
-RV  revert
-
-BD  bind
-UB  unbind
-AZ  authorize
-AT  attest
+Persistence is evaluated downstream.
 ```
 
-### Transformation families
+## Scope
 
-- structural
-- decomposition
-- aggregation
-- compression
-- elaboration
-- relocation
-- evolution
-- contextual
-- normative
-- observational
+This repository covers:
 
-### Composition relation vocabulary
+- transformation operator vocabulary
+- transformation family vocabulary
+- transformation kind vocabulary
+- operator-to-family mappings
+- family-to-kind mappings
+- composition relation vocabulary
+- orthogonality relation vocabulary
+- transformation outcome vocabulary
+- Lean-side reference enumerations
+- machine-readable transformation registries
+- public Lean import surface
 
-- composable
-- conditionally-composable
-- non-composable
-- redundant
-- absorbing
-- inverse-like
-- unknown
+It does not own:
 
-### Orthogonality relation vocabulary
+- neutral substrate primitives
+- identity regimes
+- regime profiles
+- regime classification matrices
+- persistence behavior
+- regime persistence semantics
+- accountable entities
+- exchange protocols
+- domain mappings
+- runtime systems
 
-- orthogonal
-- overlapping
-- dependent
-- inverse-like
-- conflicting
-- unknown
+## Public Lean import
 
-### Transformation outcome vocabulary
+Downstream Lean projects should import the public surface:
 
-Outcome vocabulary used when evaluating structural effects.
-Persistence-specific interpretation belongs downstream.
-
-```text
-PRS  preserves structure
-BRK  breaks structure
-INH  inherits structure
-IGN  ignores structure
-MIX  mixed / partial
-UNK  unresolved
+```lean
+import SETheoryTransformation
 ```
 
-## Does not own
-
-- Neutral substrate primitives
-- Identity regimes
-- Regime profiles
-- Regime classification matrices
-- Persistence behavior
-- Regime persistence semantics
-- Domain mappings or operational validation
-- Runtime systems
-
-## Design Constraints
-
-- Lean is the only source of truth for correctness.
-- Registries are descriptive/exported artifacts, not independent authorities.
-- No persistence claims are made in this repository.
-- No regime-specific survival criteria are defined here.
-- No cross-repo imports are required at this layer.
-- All formal guarantees are expressed as Lean definitions, predicates, or theorems.
-
-## Documentation Constraints
-
-- The documentation layer is descriptive only.
-- Documentation sections must mirror Lean module structure.
-- Documentation must not introduce formal semantics absent from Lean.
-
-### Authority
-
-Lean source files are the only authoritative definition of:
-
-- types
-- predicates
-- theorems
-- proof obligations
-- formal transformation relations
-
-Machine-readable registries must mirror the Lean surface.
-
-### Prohibited in docs
-
-- Restating formal definitions in alternative incompatible form
-- Introducing new terminology not present in Lean or registries
-- Encoding rules or invariants not present in Lean
-- Making persistence claims
-- Making regime-specific claims
-- Diverging naming from Lean modules
-
-### Allowed in docs
-
-- Explanatory summaries
-- Structural descriptions
-- Navigation and orientation
-- Non-authoritative theorem descriptions
-- Registry summaries
-
-## Contents
+The public import surface is curated in:
 
 ```text
-se-theory-transformation/
-  README.md
-  AGENTS.md
-  AGENT_CONDUCT.md
-  CITATION.cff
-  LICENSE
-  MANIFEST.toml
-  SE_MANIFEST.toml
-
-  lakefile.toml
-  lean-toolchain
-
-  SETheoryTransformation/
-    Basic.lean
-    TransformationClass.lean
-    Operator.lean
-    Family.lean
-    Composition.lean
-    Outcome.lean
-    Orthogonality.lean
-    Registry.lean
-
-    Transformation/
-      Primitive.lean
-      Structural.lean
-      Temporal.lean
-      Contextual.lean
-      Normative.lean
-      Observational.lean
-
-    Operator/
-      Codes.lean
-      Semantics.lean
-      Admissibility.lean
-
-    Family/
-      Branching.lean
-      Decomposition.lean
-      Aggregation.lean
-      Projection.lean
-      Reorganization.lean
-      Versioning.lean
-      Migration.lean
-
-    Examples/
-      Composition.lean
-      Orthogonality.lean
-
-    Tests/
-      Orthogonality.lean
-      Composition.lean
-      Admissibility.lean
-
-  data/
-    transformation/
-      operator-registry.json
-      transformation-catalog.json
-      transformation-family-registry.json
-      outcome-registry.json
-      composition-rules.json
-      orthogonality-matrix.json
-
-    schema/
-      operator-registry.schema.json
-      transformation-catalog.schema.json
-      transformation-family-registry.schema.json
-      outcome-registry.schema.json
-      composition-rules.schema.json
-      orthogonality-matrix.schema.json
-
-  docs/
-    index.md
-    theory/
-      transformation-theory.md
-      operator-vocabulary.md
-      composition.md
-      orthogonality.md
-      admissibility.md
-
-    examples/
-      split.md
-      merge.md
-      branch.md
-      project.md
-      version.md
-      reorganization.md
-
-    diagrams/
-      operator-taxonomy.md
-      composition-flow.md
-      orthogonality-grid.md
-
-  scripts/
-    export_contracts.py
-    validate_registries.py
-    generate_reports.py
-
-  reports/
-    operator_registry_report.md
-    orthogonality_report.md
-    composition_report.md
-
-  tests/
-    test_registry_shapes.py
-    test_operator_codes.py
-    test_schema_validation.py
+SETheoryTransformation.lean
+SETheoryTransformation/Surface.lean
 ```
 
-## See Especially
+## Key Lean types
+
+The central public vocabulary includes:
 
 ```text
-SETheoryTransformation/Operator/Codes.lean
-SETheoryTransformation/Operator/Semantics.lean
-SETheoryTransformation/Family/*.lean
-data/transformation/operator-registry.json
-data/transformation/transformation-family-registry.json
-data/transformation/orthogonality-matrix.json
+OperatorCode
+TransformationFamily
+TransformationKind
+CompositionRelation
+CompositionRule
+OrthogonalityRelation
+OrthogonalityRule
+TransformationOutcome
 ```
+
+Constructor-level vocabulary is intentionally not duplicated here. See the Lean
+source files and reference registries for current values.
+
+## Authority
+
+Lean source files are authoritative for formal definitions, mappings,
+relations, predicates, proof obligations, and reference rules.
+
+Primary Lean locations:
+
+```text
+SETheoryTransformation/Domain/
+SETheoryTransformation/Relation/
+SETheoryTransformation/Reference/
+SETheoryTransformation/Outcome.lean
+SETheoryTransformation/Registry.lean
+SETheoryTransformation/Conformance.lean
+```
+
+Machine-readable artifacts mirror the Lean surface and reference registries:
+
+```text
+reference/
+data/transformation/
+```
+
+Schemas for generated data artifacts are in:
+
+```text
+data/schema/
+```
+
+## Documentation rule
+
+Documentation is descriptive only.
+
+It may provide orientation, summaries, and navigation. It must not introduce
+formal semantics absent from Lean.
 
 ## Build
-
-Use VS Code Menu:
-View / Command Palette / `Developer: Reload Window` to refresh.
 
 ```shell
 elan self update
 lake update
 lake build
-lake build TestExport
-```
-
-## Import
-
-Single import surface:
-
-```lean
-import SETheoryTransformation
+lake build TestAll
 ```
 
 ## Tooling
@@ -324,12 +139,14 @@ Python and other tooling may be used for:
 - documentation generation
 - formatting and linting
 - repository automation
+- registry validation
+- generated artifact checks
 
 They must not:
 
 - define correctness
-- validate theory semantics
-- replace Lean proofs
+- validate theory semantics independently of Lean
+- replace Lean definitions or proofs
 
 ## Command Reference
 
@@ -354,28 +171,26 @@ uv self update
 uv python pin 3.15
 uv sync --extra dev --extra docs --upgrade
 
+# install git hooks once per clone
 uvx pre-commit install
 
+# build Lean (source of truth)
+lake build
+lake build TestAll
+
+# generate/check registry artifacts
+uv run se-validate
+uv run se-ref-validate
+uv run se-ref-export
+uv run se-ref-export --check
+uv run se-validate --strict
+
+# autofix and manual fix issues
 git add -A
 uvx pre-commit run --all-files
 # repeat if changes were made
 git add -A
 uvx pre-commit run --all-files
-
-# OPTIONAL:
-# Scaffold reference/ artifacts from Lean 4 source.
-# Adds stubs for new symbols.
-# Preserves existing descriptions, names, and cite_ids.
-uv run se-ref-scaffold --dry-run
-uv run se-ref-scaffold
-
-# OPTIONAL OVERWRITE:
-# Use carefully. Re-derives scaffolded fields and may overwrite
-# existing descriptions, names, and cite_ids.
-uv run se-ref-scaffold --overwrite
-
-# IMPORTANT: Run checks
-uv run se-validate --strict
 
 # do chores
 uv run python -m pyright
