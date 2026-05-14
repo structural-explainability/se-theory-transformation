@@ -18,14 +18,22 @@ It does not decide what persists through a transformation. Persistence,
 identity-regime behavior, domain-specific survival criteria, and operational
 policy belong downstream.
 
-## Core principle
+## Transformations
 
-```text
 Transformations are defined independently.
 Persistence is evaluated downstream.
-```
 
-## Scope
+This repository treats transformations as formal structural changes that can be
+named, grouped, related, composed, and exposed for downstream theory.
+
+## Dependencies
+
+This repository is a theory-layer repository for Structural Explainability.
+
+It is intended to be consumed downstream by repositories that evaluate identity,
+persistence, regime behavior, domain mappings, or operational policy.
+
+## Covers
 
 This repository covers:
 
@@ -41,7 +49,24 @@ This repository covers:
 - machine-readable transformation registries
 - public Lean import surface
 
-It does not own:
+## Owns
+
+This repository owns:
+
+- foundational transformation vocabulary
+- transformation operators
+- transformation families
+- transformation kinds
+- composition relations
+- orthogonality relations
+- transformation outcome vocabulary
+- Lean-side reference registries
+- generated transformation data artifacts
+- the public Lean import surface for transformation theory
+
+## Does not own
+
+This repository does not own:
 
 - neutral substrate primitives
 - identity regimes
@@ -54,7 +79,73 @@ It does not own:
 - domain mappings
 - runtime systems
 
-## Public Lean import
+## Design Constraints
+
+Lean source files are authoritative for formal definitions, mappings,
+relations, predicates, proof obligations, and reference rules.
+
+Python and generated data may mirror, validate, export, or document the Lean
+surface. They must not define theory semantics independently of Lean.
+
+Constructor-level vocabulary is intentionally not duplicated in this README.
+See the Lean source files and reference registries for current values.
+
+## Documentation Constraints
+
+Documentation is descriptive only.
+
+It may provide orientation, summaries, and navigation. It must not introduce
+formal semantics absent from Lean.
+
+## Contents
+
+Primary Lean locations:
+
+```text
+    SETheoryTransformation/Domain/
+    SETheoryTransformation/Relation/
+    SETheoryTransformation/Reference/
+    SETheoryTransformation/Outcome.lean
+    SETheoryTransformation/Registry.lean
+    SETheoryTransformation/Conformance.lean
+```
+
+Machine-readable artifacts mirror the Lean surface and reference registries:
+
+```text
+    reference/
+    data/transformation/
+```
+
+Schemas for generated data artifacts are in:
+
+```text
+    data/schema/
+```
+
+Central public vocabulary includes:
+
+```text
+    OperatorCode
+    TransformationFamily
+    TransformationKind
+    CompositionRelation
+    CompositionRule
+    OrthogonalityRelation
+    OrthogonalityRule
+    TransformationOutcome
+```
+
+## Build
+
+```shell
+elan self update
+lake update
+lake build
+lake build TestAll
+```
+
+## Import
 
 Downstream Lean projects should import the public surface:
 
@@ -67,69 +158,6 @@ The public import surface is curated in:
 ```text
 SETheoryTransformation.lean
 SETheoryTransformation/Surface.lean
-```
-
-## Key Lean types
-
-The central public vocabulary includes:
-
-```text
-OperatorCode
-TransformationFamily
-TransformationKind
-CompositionRelation
-CompositionRule
-OrthogonalityRelation
-OrthogonalityRule
-TransformationOutcome
-```
-
-Constructor-level vocabulary is intentionally not duplicated here. See the Lean
-source files and reference registries for current values.
-
-## Authority
-
-Lean source files are authoritative for formal definitions, mappings,
-relations, predicates, proof obligations, and reference rules.
-
-Primary Lean locations:
-
-```text
-SETheoryTransformation/Domain/
-SETheoryTransformation/Relation/
-SETheoryTransformation/Reference/
-SETheoryTransformation/Outcome.lean
-SETheoryTransformation/Registry.lean
-SETheoryTransformation/Conformance.lean
-```
-
-Machine-readable artifacts mirror the Lean surface and reference registries:
-
-```text
-reference/
-data/transformation/
-```
-
-Schemas for generated data artifacts are in:
-
-```text
-data/schema/
-```
-
-## Documentation rule
-
-Documentation is descriptive only.
-
-It may provide orientation, summaries, and navigation. It must not introduce
-formal semantics absent from Lean.
-
-## Build
-
-```shell
-elan self update
-lake update
-lake build
-lake build TestAll
 ```
 
 ## Tooling
@@ -147,8 +175,6 @@ They must not:
 - define correctness
 - validate theory semantics independently of Lean
 - replace Lean definitions or proofs
-
-## Command Reference
 
 <details>
 <summary>Show command reference</summary>
