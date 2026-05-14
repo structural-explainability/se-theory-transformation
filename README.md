@@ -53,16 +53,13 @@ This repository covers:
 
 This repository owns:
 
-- foundational transformation vocabulary
-- transformation operators
-- transformation families
-- transformation kinds
-- composition relations
-- orthogonality relations
-- transformation outcome vocabulary
-- Lean-side reference registries
-- generated transformation data artifacts
-- the public Lean import surface for transformation theory
+- Lean definitions under `SETheoryTransformation/`
+- the public import surface `SETheoryTransformation.lean`
+- curated exports in `SETheoryTransformation/Surface.lean`
+- reference artifacts under `reference/`
+- generated transformation artifacts under `data/transformation/`
+- transformation schemas under `data/schema/`
+- validation and export tooling for transformation artifacts
 
 ## Does not own
 
