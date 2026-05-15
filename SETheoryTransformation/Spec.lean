@@ -1,45 +1,81 @@
-import SETheoryTransformation.Domain.Operator.Semantics
-import SETheoryTransformation.Domain.TransformationFamily
-import SETheoryTransformation.Domain.TransformationKind
+/-
+# SE Theory Transformation Spec
 
-/-!
-# Specification
-
-SETheoryTransformation.Spec
-
-Formal requirement identifiers for the transformation taxonomy.
-
-Each Req_TR_* definition names a design invariant the taxonomy must
-satisfy. Conformance.lean maps each identifier to its formal predicate
-and provides evidence of satisfaction.
+Stable citation identifiers for transformation theory.
 -/
 
 namespace SETheoryTransformation.Spec
 
-open SETheoryTransformation
+-- ============================================================
+-- TYPES
+-- ============================================================
 
-/-- Each operator code maps to exactly one transformation family. -/
-def Req_TR_TAXONOMY_OPERATOR_FAMILY_UNIQUE (op : OperatorCode) : Prop :=
-  ∃ f : TransformationFamily, operatorFamily op = f ∧ ∀ f' : TransformationFamily, operatorFamily op = f' → f' = f
+def TR_TYPE_OPERATOR_CODE : String :=
+  "TR.TYPE.OPERATOR_CODE"
 
-/-- Each transformation family maps to exactly one transformation kind. -/
-def Req_TR_TAXONOMY_FAMILY_KIND_UNIQUE (f : TransformationFamily) : Prop :=
-  ∃ k : TransformationKind, familyKind f = k ∧ ∀ k' : TransformationKind, familyKind f = k' → k' = k
+def TR_TYPE_TRANSFORMATION_FAMILY : String :=
+  "TR.TYPE.TRANSFORMATION_FAMILY"
 
-/-- operatorKind is the composition of operatorFamily and familyKind. -/
-def Req_TR_TAXONOMY_KIND_DERIVED (op : OperatorCode) : Prop :=
-  operatorKind op = familyKind (operatorFamily op)
+def TR_TYPE_TRANSFORMATION_KIND : String :=
+  "TR.TYPE.TRANSFORMATION_KIND"
 
-/-- Operators sharing a family always share a kind. -/
-def Req_TR_TAXONOMY_SAME_FAMILY_SAME_KIND (op1 op2 : OperatorCode) : Prop :=
-  operatorFamily op1 = operatorFamily op2 → operatorKind op1 = operatorKind op2
+def TR_TYPE_TRANSFORMATION_OUTCOME : String :=
+  "TR.TYPE.TRANSFORMATION_OUTCOME"
 
-/-- Every transformation kind has at least one operator. -/
-def Req_TR_TAXONOMY_ALL_KINDS_INHABITED (k : TransformationKind) : Prop :=
-  ∃ op : OperatorCode, operatorKind op = k
+def TR_TYPE_COMPOSITION_RELATION : String :=
+  "TR.TYPE.COMPOSITION_RELATION"
 
-/-- Every transformation kind has at least one family. -/
-def Req_TR_TAXONOMY_ALL_KINDS_HAVE_FAMILY (k : TransformationKind) : Prop :=
-  ∃ f : TransformationFamily, familyKind f = k
+def TR_TYPE_COMPOSITION_RULE : String :=
+  "TR.TYPE.COMPOSITION_RULE"
+
+def TR_TYPE_ORTHOGONALITY_RELATION : String :=
+  "TR.TYPE.ORTHOGONALITY_RELATION"
+
+def TR_TYPE_ORTHOGONALITY_RULE : String :=
+  "TR.TYPE.ORTHOGONALITY_RULE"
+
+-- ============================================================
+-- DEFINITIONS
+-- ============================================================
+
+def TR_DEF_OPERATOR_CODE_LABEL : String :=
+  "TR.DEF.OPERATOR_CODE_LABEL"
+
+def TR_DEF_OPERATOR_FAMILY : String :=
+  "TR.DEF.OPERATOR_FAMILY"
+
+def TR_DEF_FAMILY_KIND : String :=
+  "TR.DEF.FAMILY_KIND"
+
+def TR_DEF_OPERATOR_KIND : String :=
+  "TR.DEF.OPERATOR_KIND"
+
+def TR_DEF_OPERATOR_IN_FAMILY : String :=
+  "TR.DEF.OPERATOR_IN_FAMILY"
+
+def TR_DEF_OPERATOR_IN_KIND : String :=
+  "TR.DEF.OPERATOR_IN_KIND"
+
+-- ============================================================
+-- REFERENCE RULES
+-- ============================================================
+
+def TR_RULE_AUTHORIZE_THEN_ATTEST : String :=
+  "TR.RULE.AUTHORIZE_THEN_ATTEST"
+
+def TR_RULE_BIND_THEN_UNBIND : String :=
+  "TR.RULE.BIND_THEN_UNBIND"
+
+def TR_RULE_SPLIT_THEN_MERGE : String :=
+  "TR.RULE.SPLIT_THEN_MERGE"
+
+def TR_RULE_AUTHORIZE_AND_ATTEST : String :=
+  "TR.RULE.AUTHORIZE_AND_ATTEST"
+
+def TR_RULE_PROJECT_AND_COLLAPSE : String :=
+  "TR.RULE.PROJECT_AND_COLLAPSE"
+
+def TR_RULE_SPLIT_AND_MERGE : String :=
+  "TR.RULE.SPLIT_AND_MERGE"
 
 end SETheoryTransformation.Spec

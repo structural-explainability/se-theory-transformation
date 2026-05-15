@@ -20,6 +20,18 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.2.1] - 2026-05-15
+
+### Changed
+
+- Updated index.md to use the standard theory-repository documentation sections.
+- Updated `ci-python-zensical.yml` required documentation sections to match
+  the standard theory-repository structure.
+- Updated README.md
+- refactored to use ref_utils.py
+
+---
+
 ## [0.2.0] - 2026-05-14
 
 ### Added
@@ -175,6 +187,7 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.2.1
 [0.2.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.2.0
 [0.1.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.1.0

@@ -104,38 +104,30 @@ jobs:
         #      repos that may not yet have docs configured.
 
       # ============================================================
-      # E) THEORY SURFACE: Enforcement
+      # E) THEORY Execution checks
       # ============================================================
-
-      - name: E1) Enforce README section alignment
-        # WHY: Ensures critical documentation sections
-        # are present in the README for theory repositories.
+      - name: E1) Enforce docs section alignment
         run: |
           IFS=',' read -ra REQUIRED <<< "$DOC_SECTIONS"
           for section in "${REQUIRED[@]}"; do
-            grep -q "## $section" README.md || {
-              echo "Missing README section: $section"
+            grep -q "## $section" docs/en/index.md || {
+              echo "Missing section: $section"
               exit 1
             }
           done
 
-      - name: E2) Prevent formal redefinition in docs
-        # WHY: Ensures documentation does not contain formal definitions or Lean syntax,
-        # which should be reserved for the codebase and not appear in user-facing docs.
+      - name: E2) Prevent Lean code fences in docs overview
         run: |
-          if [ -f "docs/en/index.md" ]; then
-            if grep -Ei "(^definition|^theorem|^lemma|:=)" docs/en/index.md; then
-              echo "Docs must not contain formal definitions or Lean syntax"
-              exit 1
-            fi
+          if grep -Ei '^```lean' docs/en/index.md; then
+            echo "docs/en/index.md should orient readers, not contain Lean code blocks."
+            exit 1
           fi
+        # WHY: The docs overview should point to Lean source as authority.
+        # OBS: This allows ordinary prose words like theorem, definition, and lemma.
 
       - name: E3) Enforce module naming consistency
-        # WHY: Ensures the README references the canonical module path,
-        # which is critical for discoverability and consistency
-        # across documentation and code.
         run: |
-          grep -q "$MODULE_PREFIX" README.md || {
-            echo "README must reference canonical module path: $MODULE_PREFIX"
+          grep -q "$MODULE_PREFIX" docs/en/index.md || {
+            echo "Docs must reference canonical module path: $MODULE_PREFIX"
             exit 1
           }

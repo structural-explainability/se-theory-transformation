@@ -9,8 +9,8 @@ cff-version: "1.2.0"
 type: software
 
 title: "SE Theory: Transformation"
-version: "0.2.0"
-date-released: "2026-05-14"
+version: "0.2.1"
+date-released: "2026-05-15"
 
 authors:
   - family-names: Case
