@@ -12,8 +12,8 @@
 
 schema = "se-type-registry-1"
 repo = "se-theory-transformation"
-surface_module = "SETheoryTransformation.Surface"
-namespace = "SETheoryTransformation"
+surface_module = "SE.Transformation.Surface"
+namespace = "SE.Transformation"
 
 [type.CompositionRelation]
 order = 1
@@ -21,7 +21,7 @@ id = "CompositionRelation"
 cite_id = "TR.TYPE.COMPOSITION_RELATION"
 name = "Composition relation"
 lean_symbol = "CompositionRelation"
-source_module = "SETheoryTransformation.Relation.Composition"
+source_module = "SE.Transformation.Relation.Composition"
 description = "Classification of the sequencing relationship between two transformation operators."
 constructors = [
   "absorbing",
@@ -39,7 +39,7 @@ id = "CompositionRule"
 cite_id = "TR.TYPE.COMPOSITION_RULE"
 name = "Composition rule"
 lean_symbol = "CompositionRule"
-source_module = "SETheoryTransformation.Relation.Composition"
+source_module = "SE.Transformation.Relation.Composition"
 description = "A rule assigning a composition relation to an ordered pair of transformation operators."
 
 [type.OperatorCode]
@@ -48,7 +48,7 @@ id = "OperatorCode"
 cite_id = "TR.TYPE.OPERATOR_CODE"
 name = "Operator code"
 lean_symbol = "OperatorCode"
-source_module = "SETheoryTransformation.Domain.Operator.Codes"
+source_module = "SE.Transformation.Domain.Operator.Codes"
 description = "Canonical two-letter code identifying a transformation operator."
 
 [type.OrthogonalityRelation]
@@ -57,7 +57,7 @@ id = "OrthogonalityRelation"
 cite_id = "TR.TYPE.ORTHOGONALITY_RELATION"
 name = "Orthogonality relation"
 lean_symbol = "OrthogonalityRelation"
-source_module = "SETheoryTransformation.Relation.Orthogonality"
+source_module = "SE.Transformation.Relation.Orthogonality"
 description = "Classification of the structural independence relationship between two transformation operators."
 constructors = [
   "conflicting",
@@ -74,7 +74,7 @@ id = "OrthogonalityRule"
 cite_id = "TR.TYPE.ORTHOGONALITY_RULE"
 name = "Orthogonality rule"
 lean_symbol = "OrthogonalityRule"
-source_module = "SETheoryTransformation.Relation.Orthogonality"
+source_module = "SE.Transformation.Relation.Orthogonality"
 description = "A rule assigning an orthogonality relation to an unordered pair of transformation operators."
 
 [type.TransformationFamily]
@@ -83,7 +83,7 @@ id = "TransformationFamily"
 cite_id = "TR.TYPE.TRANSFORMATION_FAMILY"
 name = "Transformation family"
 lean_symbol = "TransformationFamily"
-source_module = "SETheoryTransformation.Domain.TransformationFamily"
+source_module = "SE.Transformation.Domain.TransformationFamily"
 description = "Mid-level behavioral category grouping transformation operators by shared structural behavior."
 constructors = [
   "aggregation",
@@ -108,7 +108,7 @@ id = "TransformationKind"
 cite_id = "TR.TYPE.TRANSFORMATION_KIND"
 name = "Transformation kind"
 lean_symbol = "TransformationKind"
-source_module = "SETheoryTransformation.Domain.TransformationKind"
+source_module = "SE.Transformation.Domain.TransformationKind"
 description = "Broad behavioral category of transformation. Each family belongs to exactly one transformation kind."
 constructors = [
   "contextual",
@@ -126,7 +126,7 @@ id = "TransformationOutcome"
 cite_id = "TR.TYPE.TRANSFORMATION_OUTCOME"
 name = "Transformation outcome"
 lean_symbol = "TransformationOutcome"
-source_module = "SETheoryTransformation.Outcome"
+source_module = "SE.Transformation.Outcome"
 description = "Outcome vocabulary for transformation analysis. This registry does not assign regime-specific persistence behavior."
 constructors = [
   "BRK",

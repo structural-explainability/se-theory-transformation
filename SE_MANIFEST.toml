@@ -1,36 +1,42 @@
 # ============================================================
 # SE_MANIFEST.toml (Repository Declaration)
-# se-theory-transformation
 # ============================================================
 
 schema = "se-manifest-schema"
-schema_url = "https://github.com/structural-explainability/se-manifest-schema/blob/main/manifest-schema.toml"
+schema_version = "0.5.0"
+schema_url = "https://raw.githubusercontent.com/structural-explainability/se-manifest-schema/main/manifest-schema.toml"
 
-# === Identity ===
+# === Framework Context ===
 
 [meta]
-purpose = "Declares the transformation theory repository for the Structural Explainability ecosystem."
+framework = "Structural Explainability"
+framework_url = "https://github.com/structural-explainability"
+purpose = "Declares this repository's role in the Structural Explainability ecosystem."
 
-[repo]
+# === Repository Identity ===
+
+[repository]
+organization = "structural-explainability"
 name = "se-theory-transformation"
-org = "structural-explainability"
 class = "theory"
 kind = "foundation"
 status = "active"
 since = "2026"
 summary = "Lean 4 formalization of foundational transformation operators, families, kinds, composition, and orthogonality."
 
+# === Layer Position ===
+
 [layer]
 space = "formal-theory"
 role = "foundational-transformation-theory"
 
-# === Dependencies ===
+# === Dependency Declarations ===
 
 [depends]
 required = []
 optional = []
 
-# === Provided artifacts ===
+# === Provided Artifacts ===
 
 [provides]
 # Logical artifacts exposed by this repository.
@@ -73,7 +79,7 @@ excludes = [
   "regime classification matrices",
   "regime profile derivations",
   "accountable entities",
-  "exchange protocols",
+  "evolution protocols",
   "mapping semantics",
   "operational validation logic",
   "repository governance rules",

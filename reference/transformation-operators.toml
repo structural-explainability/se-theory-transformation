@@ -5,9 +5,9 @@
 # Canonical operator definitions: code, label, family, kind,
 # and description.
 #
-# Order matches SETheoryTransformation.Registry.referenceOperators.
-# Labels match SETheoryTransformation.Domain.Operator.Labels.
-# Families match SETheoryTransformation.Domain.Operator.Semantics.operatorFamily.
+# Order matches SE.Transformation.Registry.referenceOperators.
+# Labels match SE.Transformation.Domain.Operator.Labels.
+# Families match SE.Transformation.Domain.Operator.Semantics.operatorFamily.
 # Kinds are derived transitively by familyKind.
 #
 # STATUS: draft

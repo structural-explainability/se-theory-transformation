@@ -12,7 +12,7 @@
 #   overlapping  - partial shared effect domain
 #
 # Seed rules are confirmed from:
-#   SETheoryTransformation.Reference.Orthogonality
+#   SE.Transformation.Reference.Orthogonality
 #
 # Additional rules to be added as the operator catalog grows.
 # The generated data/transformation/orthogonality-matrix.json is
@@ -30,13 +30,13 @@ status = "canonical"
 # These operators have no shared effect domain.
 # ---------------------------------------------------------------
 
-[rule.authorize_and_attest]
+[orthogonality.authorize_and_attest]
 id = "authorize_and_attest"
 left = "AZ"
 right = "AT"
 relation = "orthogonal"
 lean_def = "authorizeAndAttest"
-source_module = "SETheoryTransformation.Reference.Orthogonality"
+source_module = "SE.Transformation.Reference.Orthogonality"
 note = "Authorize and Attest operate on distinct normative effect domains."
 
 # ---------------------------------------------------------------
@@ -44,13 +44,13 @@ note = "Authorize and Attest operate on distinct normative effect domains."
 # These operators stand in a symmetric inverse relationship.
 # ---------------------------------------------------------------
 
-[rule.split_and_merge]
+[orthogonality.split_and_merge]
 id = "split_and_merge"
 left = "SP"
 right = "MG"
 relation = "inverseLike"
 lean_def = "splitAndMerge"
-source_module = "SETheoryTransformation.Reference.Orthogonality"
+source_module = "SE.Transformation.Reference.Orthogonality"
 note = "Split and Merge are structural inverses in the Decomposition/Aggregation family pair."
 
 # ---------------------------------------------------------------
@@ -58,13 +58,13 @@ note = "Split and Merge are structural inverses in the Decomposition/Aggregation
 # These operators share a partial effect domain.
 # ---------------------------------------------------------------
 
-[rule.project_and_collapse]
+[orthogonality.project_and_collapse]
 id = "project_and_collapse"
 left = "PR"
 right = "CL"
 relation = "overlapping"
 lean_def = "projectAndCollapse"
-source_module = "SETheoryTransformation.Reference.Orthogonality"
+source_module = "SE.Transformation.Reference.Orthogonality"
 note = "Project and Collapse share a partial structural effect domain (both reduce structure)."
 
 # ---------------------------------------------------------------

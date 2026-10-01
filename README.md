@@ -7,66 +7,79 @@
 
 [![CI-Lean](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/ci-lean.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/ci-lean.yml)
 [![CI](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/ci-python-zensical.yml)
-[![Docs](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/deploy-zensical.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/deploy-zensical.yml)
+[![Docs](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/deploy-zensical-lean.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/deploy-zensical-lean.yml)
 [![Links](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-theory-transformation/actions/workflows/links.yml)
+[![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/structural-explainability/se-theory-transformation/security)
 
-> Lean 4 formalization of foundational transformation theory for Structural Explainability.
+> Lean 4 formalization of foundational transformation theory for
+> Structural Explainability.
 
 This repository defines structural transformation vocabulary and relations.
 
-It does not decide what persists through a transformation. Persistence,
-identity-regime behavior, domain-specific survival criteria, and operational
-policy belong downstream.
-
-For the full documentation, see [`docs/en/index.md`](./docs/en/index.md).
+It does not decide what persists through a transformation.
+Persistence, identity-regime behavior, domain-specific survival criteria,
+and operational policy belong downstream.
 
 ## Authority
 
 Lean source files are authoritative for formal definitions, predicates, axioms,
 theorems, proof obligations, and reference rules.
 
-Reference artifacts under `reference/` and generated artifacts under
-`data/transformation/` mirror the Lean public surface.
-They do not define theory semantics independently of Lean.
+Reference artifacts under `reference/` declare the repository-owned
+classification, traceability, and export intent for the Lean public surface.
+
+Generated artifacts under `data/` are outputs.
+They do not define theory semantics independently of Lean or the reference artifacts.
+
+The reusable `se-theory-reference-kit` owns the generic validation,
+cataloging, inspection, and export machinery.
+This repository owns its Lean source, reference declarations, and
+generated neutral-substrate artifacts.
 
 ## Import
 
 Downstream Lean projects should import the public surface:
 
 ```text
-import SETheoryTransformation
+import SE.Transformation
 ```
 
-The public import surface is curated in:
+## Lean Module Convention
+
+Production Lean code uses the `SE.*` namespace.
+
+- `SE.lean` is the repository production entry point.
+- `SE/<Project>.lean` is the project public import surface.
+- Production modules live under `SE/<Project>/`.
+
+Test Lean code uses the `SETest.*` namespace.
+
+- `SETest.lean` is the repository test entry point.
+- `SETest/<Project>.lean` is the project test surface.
+- Test modules live under `SETest/<Project>/`.
+
+`Spec.lean` is used when the project defines a specification module.
+
+## Reference Configuration
+
+The theory-reference workflow is configured by:
 
 ```text
-SETheoryTransformation.lean
-SETheoryTransformation/Surface.lean
+reference/theory-reference.toml
 ```
 
-## Build
+That file declares this repository's Lean public modules,
+reference artifact layout, export targets, and validation commands.
+Public symbols are declared in the reference artifacts.
 
-Use VS Code Menu:
-View / Command Palette / `Developer: Reload Window` to refresh.
+## Developer
 
-```shell
-elan self update
-lake update
-lake build
-lake build TestAll
-uv run se-ref-validate
-uv run se-ref-export --check
-uv run se-validate --strict
-```
+- Maintain `lakefile.toml` and `lean-toolchain`.
 
-## Command Reference
+### Clone and Open in VS Code
 
-<details>
-<summary>Show command reference</summary>
-
-### In a machine terminal
-
-Open a machine terminal where you want the project:
+Open a machine terminal where you want the project
+and open in VS Code:
 
 ```shell
 git clone https://github.com/structural-explainability/se-theory-transformation
@@ -75,55 +88,53 @@ cd se-theory-transformation
 code .
 ```
 
-### In a VS Code terminal
+### Manage Python and Lean
+
+Use VS Code Menu:
+View / Command Palette / `Developer: Reload Window` to refresh.
+
+```pwsh
+.\sit.ps1
+.\rel.ps1
+```
 
 ```shell
-uv self update
-uv python pin 3.15
-uv sync --extra dev --extra docs --upgrade
-
-# install git hooks once per clone
-uvx pre-commit install
-
-# build Lean (source of truth)
-lake build
-lake build TestAll
-
-# generate/check registry artifacts
-uv run se-validate
-uv run se-ref-validate
-uv run se-ref-export
-uv run se-ref-export --check
-uv run se-validate --strict
-
-# autofix and manual fix issues
-git add -A
-uvx pre-commit run --all-files
-# repeat if changes were made
-git add -A
-uvx pre-commit run --all-files
-
-# do chores
-uv run python -m pyright
-uv run python -m pytest
-uv run python -m zensical build
-
 # save progress
 git add -A
 git commit -m "update"
 git push -u origin main
 ```
 
-</details>
+### Inspect Theory-Reference Commands
+
+```shell
+uv run se-theory-reference --help
+uv run se-theory-reference inspect --help
+uv run se-theory-reference export --help
+uv run se-theory-reference catalog --help
+uv run se-theory-reference validate --help
+```
+
+## Authority Manifest
+
+[.accountability/surfaces.toml](./.accountability/surfaces.toml)
+
+## Changelog
+
+[CHANGELOG.md](./CHANGELOG.md)
 
 ## Citation
 
 [CITATION.cff](./CITATION.cff)
 
+## Documentation
+
+[Documentation](https://structural-explainability.github.io/se-theory-transformation/)
+
 ## License
 
 [MIT](./LICENSE)
 
-## Manifest
+## Repository Manifest
 
 [SE_MANIFEST.toml](./SE_MANIFEST.toml)

@@ -1,11 +1,11 @@
 {
-  "schema": "se-operator-registry-1",
+  "schema": "se-theory-transformation-operator-registry",
   "source": "se-theory-transformation",
   "namespace": "se.transformation",
   "artifact": "operator-registry",
   "reference_artifact": "transformation-operators",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-operators.toml",
-  "operators": [
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-operators.toml",
+  "operator": [
     {
       "order": 1,
       "code": "AT",

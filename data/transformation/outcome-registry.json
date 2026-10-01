@@ -1,17 +1,17 @@
 {
-  "schema": "se-outcome-registry-1",
+  "schema": "se-theory-transformation-outcome-registry",
   "source": "se-theory-transformation",
   "namespace": "se.transformation",
   "artifact": "outcome-registry",
   "reference_artifact": "transformation-outcomes",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-outcomes.toml",
-  "outcomes": [
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-outcomes.toml",
+  "outcome": [
     {
       "order": 1,
       "id": "BRK",
       "label": "Break",
       "lean_constructor": "BRK",
-      "source_module": "SETheoryTransformation.Outcome",
+      "source_module": "SE.Transformation.Outcome",
       "description": "The transformation breaks identity."
     },
     {
@@ -19,7 +19,7 @@
       "id": "IGN",
       "label": "Ignore",
       "lean_constructor": "IGN",
-      "source_module": "SETheoryTransformation.Outcome",
+      "source_module": "SE.Transformation.Outcome",
       "description": "The transformation has no effect on identity."
     },
     {
@@ -27,7 +27,7 @@
       "id": "INH",
       "label": "Inherited",
       "lean_constructor": "INH",
-      "source_module": "SETheoryTransformation.Outcome",
+      "source_module": "SE.Transformation.Outcome",
       "description": "The outcome is inherited from a prior or enclosing transformation."
     },
     {
@@ -35,7 +35,7 @@
       "id": "MIX",
       "label": "Mixed",
       "lean_constructor": "MIX",
-      "source_module": "SETheoryTransformation.Outcome",
+      "source_module": "SE.Transformation.Outcome",
       "description": "The outcome is mixed: identity is preserved in some components and broken in others."
     },
     {
@@ -43,7 +43,7 @@
       "id": "PRS",
       "label": "Preserve",
       "lean_constructor": "PRS",
-      "source_module": "SETheoryTransformation.Outcome",
+      "source_module": "SE.Transformation.Outcome",
       "description": "The transformation preserves identity."
     },
     {
@@ -51,7 +51,7 @@
       "id": "UNK",
       "label": "Unknown",
       "lean_constructor": "UNK",
-      "source_module": "SETheoryTransformation.Outcome",
+      "source_module": "SE.Transformation.Outcome",
       "description": "The outcome is unresolved or intentionally unspecified."
     }
   ]

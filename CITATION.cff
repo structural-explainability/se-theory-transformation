@@ -1,16 +1,18 @@
 # ============================================================
 # CITATION.cff (How to cite this project)
 # ============================================================
-
 # REQ.UNIVERSAL: Professional open projects SHOULD include this file.
 # USAGE: See https://citation-file-format.github.io/ for details.
+# check with:
+# uvx cffconvert --validate
 
 cff-version: "1.2.0"
+message: "If you use this work, please cite it using the metadata in CITATION.cff."
 type: software
 
 title: "SE Theory: Transformation"
-version: "0.2.1"
-date-released: "2026-05-15"
+version: "0.3.0"
+date-released: "2026-10-01"
 
 authors:
   - family-names: Case
@@ -18,7 +20,6 @@ authors:
     orcid: "https://orcid.org/0000-0001-6165-7389"
     affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
 
-year: 2026
 repository-code: "https://github.com/structural-explainability/se-theory-transformation"
 url: "https://github.com/structural-explainability/se-theory-transformation"
 
@@ -33,7 +34,7 @@ abstract: >
   enumerations, and machine-readable transformation registries.
   It does not define neutral substrate primitives, identity regimes,
   persistence behavior, regime persistence semantics, accountable
-  entities, exchange protocols, domain mappings, or runtime systems.
+  entities, evolution protocols, domain mappings, or runtime systems.
 
 keywords:
   - structural-explainability
@@ -49,5 +50,3 @@ keywords:
   - formal-verification
   - machine-readable-semantics
   - proof-carrying
-
-message: "If you use this work, please cite it using the metadata in this file."

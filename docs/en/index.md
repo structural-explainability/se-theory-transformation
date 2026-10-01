@@ -44,7 +44,6 @@ This repository owns:
 
 - Lean definitions under `SETheoryTransformation/`
 - the public import surface `SETheoryTransformation.lean`
-- curated exports in `SETheoryTransformation/Surface.lean`
 - reference artifacts under `reference/`
 - generated transformation artifacts under `data/transformation/`
 - transformation schemas under `data/schema/`
@@ -61,7 +60,7 @@ This repository does not own:
 - persistence behavior
 - regime persistence semantics
 - accountable entities
-- exchange protocols
+- evolution protocols
 - domain mappings
 - runtime systems
 
@@ -146,7 +145,6 @@ The public import surface is curated in:
 
 ```text
 SETheoryTransformation.lean
-SETheoryTransformation/Surface.lean
 ```
 
 ## Tooling

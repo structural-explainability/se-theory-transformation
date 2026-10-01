@@ -13,10 +13,82 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Planned
 
-- Additional transformation theorem structure
-- Expanded composition and orthogonality rule coverage
-- Stronger generated artifact validation
-- Lean surface coverage checks for exported reference artifacts
+- Additional transformation theorem structure.
+- Expanded composition and orthogonality rule coverage.
+- Expanded Lean surface coverage validation beyond the currently
+  registered public type surface.
+
+---
+
+## [0.3.0] - 2026-10-01
+
+### Added
+
+- Added the repository-level `SE` production import surface.
+- Added the `SE.Transformation` public theory import surface.
+- Added the `SETest` test import surface and `SETest.Transformation`
+  test aggregate.
+- Added repository-specific `reference/theory-reference.toml`
+  configuration for `se-theory-reference-kit`.
+- Added generated-artifact currency checks and strict reference
+  validation through the shared reference kit.
+- Added explicit Batteries lint configuration for the
+  `SE.Transformation` public module.
+- Added standard repository accountability, annotation, VS Code,
+  validation, and release-support files.
+- Added generated transformation-kind registry data.
+
+### Changed
+
+- Migrated the Lean source tree from the legacy
+  `SETheoryTransformation` namespace and module layout to
+  `SE.Transformation`.
+- Migrated Lean source files to the current Lean module system with
+  explicit module declarations, imports, namespaces, and public surfaces.
+- Reorganized transformation operators, families, kinds, relations,
+  reference rules, outcomes, registries, specifications, and conformance
+  declarations under the current `SE.Transformation` hierarchy.
+- Updated Lean tests to the current `SETest.Transformation` hierarchy.
+- Updated the package to Lean 4.32.1 and Mathlib v4.32.1.
+- Replaced repository-specific reference tooling with the shared
+  `se-theory-reference-kit`.
+- Updated transformation reference configuration to use the actual
+  operator, family, kind, outcome, composition, orthogonality, and type
+  artifacts rather than Neutral Substrate mappings.
+- Updated composition and orthogonality reference tables for generic
+  reference-kit export.
+- Regenerated transformation reference JSON artifacts and the generated
+  transformation catalog from the canonical TOML reference artifacts.
+- Updated Lean source-module references in transformation reference
+  artifacts to the `SE.Transformation` namespace.
+- Updated repository workflows, metadata, documentation, and development
+  configuration to current Structural Explainability repository standards.
+
+### Removed
+
+- Removed the legacy `SETheoryTransformation` Lean module tree.
+- Removed the legacy `SETheoryTransformation.Surface` intermediary
+  public surface.
+- Removed the legacy `test/` Lean test layout.
+- Removed the repository-specific `se_theory_transformation` Python
+  reference-loading, validation, export, and command implementation.
+- Removed the associated repository-specific Python tests.
+- Removed the legacy `reference/index.toml` artifact index in favor of
+  `reference/theory-reference.toml`.
+
+### Fixed
+
+- Fixed Lean module visibility and import-boundary issues introduced by
+  migration to the current module system.
+- Fixed transformation reference configuration that incorrectly pointed
+  to Neutral Substrate reference artifacts.
+- Fixed composition and orthogonality reference mappings so the shared
+  reference kit can resolve and export them independently.
+- Fixed generated-reference drift; export and catalog checks now report
+  all configured generated artifacts as current.
+- Fixed reference-surface validation; all eight declared public Lean type
+  symbols are registered.
+- Fixed repository manifest validation under the current strict schema.
 
 ---
 
@@ -119,42 +191,78 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 Follow these steps exactly when creating a new release.
 
+### One-Time Zenodo Authorization
+
+1. Sign in to Zenodo.
+2. Open your profile menu in the upper-right.
+3. Select GitHub.
+4. Click Sync now.
+5. Find structural-explainability/ this repo.
+6. Turn on the repository toggle/slider.
+7. Refresh the page and confirm it appears as enabled.
+8. Zenodo will ingest future GitHub Releases from this repo.
+
 ### Task 1. Update release metadata (manual edits)
 
 1.1. CITATION.cff: update version and date-released
 1.2. lakefile.toml: update version
 1.3. CHANGELOG.md: add section, move unreleased entries, update links
+1.4. pyproject.toml: update version (near top of the file)
 
-### Task 2. Sync and Validate
-
-Sync reads `CITATION.cff` version and `date-released`
-and updates `pyproject.toml` fallback-version.
+### Task 2. Set up and Validate
 
 ```shell
-uv run se-manifest-version-sync
-uv sync --extra dev --extra docs --upgrade
+# set up or update Python environment
+# Run repository checks.
+.\sit.ps1
 
+# Update GitHub Actions and pin all action references to immutable SHAs.
+uvx gha-tools autoupdate --pin=all --write .github/workflows
+
+# Update hooks.
+uvx prek update
+git add -A
+uvx prek run --all-files
+
+# Audit the resulting GitHub configuration for security findings.
+uvx zizmor@latest .github/
+
+# Validate.
+uvx cffconvert --validate
+uvx se-manifest-schema validate-manifest --strict
+
+# Format Markdown.
+npx markdownlint-cli2 --fix
+
+# update lean
+elan self update
+lake update
+
+# build Lean (source of truth)
+# lake clean
 lake build
-lake build TestAll
+lake test
+lake lint
 
-uv run se-ref-validate
-uv run se-ref-export
-uv run se-ref-export --check
-uv run se-validate --strict
+# Generate JSON artifacts and catalog from reference TOML.
+uv run se-theory-reference inspect
+uv run se-theory-reference export
+uv run se-theory-reference catalog
 
-git add -A
-uvx pre-commit run --all-files
-# repeat if changes were made
-git add -A
-uvx pre-commit run --all-files
+# Validate the reference artifacts against the Lean public surface.
+uv run se-theory-reference validate --strict
 
-uv run python -m pyright
-uv run python -m pytest
-uv run python -m zensical build
-uvx pre-commit run --all-files
+# Verify generated artifacts are current without rewriting them.
+uv run se-theory-reference export --check
+uv run se-theory-reference catalog --check
+
+.\rel.ps1
+.\sit.ps1
 ```
 
-### Task 3. Commit, tag, push
+Review all generated and modified files before committing.
+
+### Task 3. Commit and Push
 
 ```shell
 git add -A
@@ -162,21 +270,24 @@ git commit -m "Prep X.Y.Z"
 git push -u origin main
 ```
 
-Verify actions run on GitHub. After success:
+Verify that all required GitHub Actions complete successfully,
+including the combined Zensical and Lean API documentation deployment.
+
+### Task 4. Tag and Push the Release
+
+After the required GitHub Actions succeed:
 
 ```shell
 git tag vX.Y.Z -m "X.Y.Z"
 git push origin vX.Y.Z
 ```
 
-### Task 4. After tagging, verify tag consistency
+Create GitHub Release after pushing tag, for example
+with a command like this:
 
 ```shell
-uv run se-validate --require-tag
+gh release create v0.8.0 --verify-tag --title "0.8.0"  --generate-notes
 ```
-
-Confirms CITATION.cff version matches the pushed git tag.
-Run this after `git push origin vX.Y.Z`; it will fail before that point.
 
 ## Only As Needed (delete a tag)
 
@@ -187,7 +298,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.3.0
 [0.2.1]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.2.1
 [0.2.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.2.0
 [0.1.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.1.0

@@ -1,25 +1,30 @@
 # ============================================================
-# .github/workflows/ci-lean.yml (Continuous Integration)
+# .github/workflows/ci-lean.yml (ALL-LEAN)
 # ============================================================
-# Updated: 2026-04-28 THEORY VARIANT, ONLY BUILD
+# UPDATED: 2026-10-01
 
 name: CI Lean
 
 on:
   push:
-    branches: [main]
+    branches: [main] # WHY: Run when pushing to main branch.
   pull_request:
-    branches: [main]
-  workflow_dispatch:
+    branches: [main] # WHY: Run on pull requests targeting main branch.
+  workflow_dispatch: # WHY: Allow manual triggering from Actions tab.
 
-permissions:
+permissions: # WHY: Use least privileges required.
   contents: read
 
+env:
+  PYTHONUNBUFFERED: "1"     # WHY: Real-time logging.
+  PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
+
+
 jobs:
-  lean:
+  lean-ci:
     name: Build Lean and export contract
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
+    runs-on: ubuntu-latest # WHY: Linux environment matches most production deployments.
+    timeout-minutes: 10    # WHY: Prevent hanging jobs. If over time, likely stuck.
 
     steps:
       # ============================================================
@@ -27,10 +32,17 @@ jobs:
       # ============================================================
 
       - name: A1) Checkout repository code
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+        # WHY: Required so all subsequent steps can access repo files.
 
       - name: A2) Set up Lean toolchain
-        uses: leanprover/lean-action@v1
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596 # v1
+        with:
+          build: false
+          test: false
+          lint: false
 
       # ============================================================
       # B) BUILD: Compile Lean project
@@ -38,5 +50,8 @@ jobs:
 
       - name: B1) Build Lean project
         run: lake build
-        # WHY: Compiles the Lean formal contract surface.
-        # OBS: Uses the Lean version declared in lean-toolchain.
+        # WHY: Compiles the public Lean theory surface.
+
+      - name: B2) Build Lean test surface
+        run: lake test
+        # WHY: Confirms the declared Lean test imports and public surface compile.

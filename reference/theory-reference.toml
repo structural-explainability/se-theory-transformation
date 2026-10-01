@@ -1,0 +1,65 @@
+# ============================================================
+# reference/theory-reference.toml
+# ============================================================
+# Theory reference configuration for se-theory-reference-kit.
+#
+# WHY: The theory repository owns Lean source, reference TOML,
+# and exported JSON artifacts.
+# The reusable kit owns validation, export, catalog, scaffold,
+# and inspection machinery.
+
+schema = "se-theory-reference"
+schema_version = "0.1.0"
+
+# === Repository Identity ===
+
+[repository]
+organization = "structural-explainability"
+name = "se-theory-transformation"
+theory = "transformation"
+description = "Transformation theory repository for Structural Explainability."
+
+# === Lean Public Surface ===
+
+[lean]
+root_module = "SE"
+
+public_modules = [
+    "SE",
+    "SE.Transformation",
+    "SE.Transformation.Core",
+    "SE.Transformation.Spec",
+]
+
+test_modules = ["SETest"]
+
+# === Reference Artifacts ===
+
+[reference]
+root = "reference"
+
+# === Exported Machine Artifacts ===
+
+[export]
+root = "data/transformation"
+
+# === Reference-Kind Mapping ===
+
+[surface_kinds]
+type = "reference/transformation-types.toml"
+operator = "reference/transformation-operators.toml"
+family = "reference/transformation-families.toml"
+kind = "reference/transformation-kinds.toml"
+outcome = "reference/transformation-outcomes.toml"
+composition = "reference/composition-rules.toml"
+orthogonality = "reference/orthogonality-rules.toml"
+
+# === Export Mapping ===
+
+[export_map]
+catalog = "data/transformation/transformation-catalog.json"
+operator = "data/transformation/operator-registry.json"
+family = "data/transformation/transformation-family-registry.json"
+outcome = "data/transformation/outcome-registry.json"
+composition = "data/transformation/composition-registry.json"
+orthogonality = "data/transformation/orthogonality-matrix.json"

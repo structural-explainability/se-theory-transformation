@@ -51,4 +51,4 @@ data/transformation/
 This repository owns transformation vocabulary and structural relations.
 
 It does not own identity regimes, regime profiles, persistence behavior,
-accountable entities, exchange protocols, domain mappings, or runtime systems.
+accountable entities, evolution protocols, domain mappings, or runtime systems.
