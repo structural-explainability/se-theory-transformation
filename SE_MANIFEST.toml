@@ -78,11 +78,9 @@ excludes = [
 [validation]
 # Validates repository declaration, manifest schema conformance,
 # reference artifacts, generated artifacts, and Lean public surface coverage.
-entrypoint = "uv run se-validate"
-export_check_entrypoint = "uv run se-ref-export --check"
-reference_entrypoint = "uv run se-ref-validate"
-strict_entrypoint = "uv run se-ref-validate --strict"
-
+export_check_entrypoint = "uv run --locked se-theory-reference export --check"
+reference_entrypoint = "uv run --locked se-theory-reference validate"
+strict_entrypoint = "uv run --locked se-theory-reference validate --strict"
 
 # === Behavior / governance ===
 
@@ -99,4 +97,4 @@ cff = "CITATION.cff"
 preferred = "CITATION.cff"
 
 [traceability]
-identifier_map = "reference/index.toml"
+identifier_map = "reference/theory-reference.toml"

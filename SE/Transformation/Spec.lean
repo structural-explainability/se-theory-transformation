@@ -106,9 +106,6 @@ def TR_THM_OPERATOR_IN_KIND_OF_OPERATOR_IN_FAMILY : String :=
 -- ============================================================
 -- REFERENCE RULES
 -- ============================================================
--- ============================================================
--- REFERENCE RULES
--- ============================================================
 
 /-- Stable citation identifier for authorization followed by attestation. -/
 def TR_RULE_AUTHORIZE_THEN_ATTEST : String :=

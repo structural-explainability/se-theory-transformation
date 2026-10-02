@@ -13,10 +13,84 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Planned
 
-- Additional transformation theorem structure.
-- Expanded composition and orthogonality rule coverage.
-- Expanded Lean surface coverage validation beyond the currently
-  registered public type surface.
+- Expand composition and orthogonality rule coverage, including investigating
+  whether split and merge admit a justified orthogonality classification.
+- Investigate a coherence law between composition and orthogonality, including
+  whether absorbing, inverse-like, or redundant composition relations preclude
+  orthogonality.
+
+---
+
+## [0.4.0] - 2026-10-02
+
+### Added
+
+- Added `SE.Transformation.Invariants` with finite regression guards for
+  reference-list uniqueness and completeness, nonempty family and kind
+  coverage, and agreement between derived queries and authoritative taxonomy
+  mappings.
+- Added the proof-facing membership theorems `operatorInFamily_iff`,
+  `operatorInKind_iff`, and `operatorInKind_of_operatorInFamily`.
+- Added decidable instances for `OperatorInFamily` and `OperatorInKind`.
+- Added membership tests covering decidability, negative membership, and
+  family-to-kind reasoning.
+- Added reference registries for public vocabulary, predicates, and theorems.
+- Expanded the stable Research Registry citation surface to 24 identifiers
+  aligned one-to-one with `RR.DEFINES` declarations and `Spec.lean`.
+
+### Changed
+
+- Centralized operator classification in the authoritative `operatorFamily`
+  and `familyKind` mappings, with `operatorKind` derived transitively from
+  them.
+- Replaced independently maintained family and kind operator lists with
+  derived `operatorsInFamily`, `operatorsInKind`, and `familiesInKind`
+  queries.
+- Replaced the former conformance layer with explicit finite taxonomy
+  invariants.
+- Made composition explicitly partial and directional through `composition?`;
+  absence of a rule now means that the theory specifies no canonical relation
+  for that ordered pair.
+- Made orthogonality explicitly partial and symmetric through
+  `orthogonality?`, with symmetry enforced by the lookup and proved by
+  `orthogonality_symm`.
+- Clarified the distinction between composition and orthogonality as
+  independent structural relations.
+- Rebuilt the reference layer from the retained Lean public surface and
+  authoritative taxonomy mappings.
+- Updated documentation and tests to reflect the reduced theory boundary and
+  current module structure.
+- Clarified that persistence judgments and operational policy belong
+  downstream rather than in foundational Transformation theory.
+
+### Removed
+
+- Removed `TransformationOutcome` and the associated outcome reference
+  artifacts from Transformation theory.
+- Removed the vacuous `OperatorAdmissible` predicate, operator-specification
+  placeholder, admissibility documentation, and admissibility tests.
+- Removed redundant per-family and per-kind Lean modules.
+- Removed the `CompositionRule` and `OrthogonalityRule` wrapper structures.
+- Removed `unknown` as a composition and orthogonality relation constructor;
+  unspecified relations are represented by partial lookup failure instead.
+- Removed `inverseLike` from orthogonality because inverse direction is not a
+  degree of structural independence.
+- Removed the former split/merge orthogonality classification where the theory
+  did not justify an independence relation.
+
+### Fixed
+
+- Fixed production-module reachability so the retained theory is exercised by
+  the public build and lint surfaces rather than leaving substantial source
+  modules unreachable.
+- Fixed taxonomy regression checks so they assert properties that can actually
+  fail when the finite vocabulary changes.
+- Fixed orthogonality representation so reversing an operator pair cannot
+  produce a different canonical relation.
+- Fixed stale reference mappings and source-module references after collapsing
+  the family and kind module hierarchy.
+- Fixed reference coverage so current citable Lean declarations and stable
+  specification identifiers agree.
 
 ---
 
@@ -186,6 +260,8 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
   - **PATCH** - fixes, documentation, tooling
 - Versions are driven by git tags. Tag `vX.Y.Z` to release.
 - Docs are deployed per version tag and aliased to **latest**.
+- During `0.x` development, breaking formal-surface changes
+  may occur in a **MINOR** release.
 
 ## Release Procedure (Required)
 
@@ -225,6 +301,8 @@ git add -A
 uvx prek run --all-files
 
 # Audit the resulting GitHub configuration for security findings.
+# NO .github\workflows\deploy-zensical.yml
+# YES  .github\workflows\deploy-zensical-lean.yml
 uvx zizmor@latest .github/
 
 # Validate.
@@ -298,7 +376,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.4.0
 [0.3.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.3.0
 [0.2.1]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.2.1
 [0.2.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.2.0

@@ -2,6 +2,7 @@
 # CITATION.cff (How to cite this project)
 # ============================================================
 # REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# May reference upstream dependencies, but must not refer to downstream.
 # USAGE: See https://citation-file-format.github.io/ for details.
 # check with:
 # uvx cffconvert --validate
@@ -11,8 +12,8 @@ message: "If you use this work, please cite it using the metadata in CITATION.cf
 type: software
 
 title: "SE Theory: Transformation"
-version: "0.3.0"
-date-released: "2026-10-01"
+version: "0.4.0"
+date-released: "2026-10-02"
 
 authors:
   - family-names: Case
@@ -30,11 +31,10 @@ abstract: >
   Structural Explainability. This repository defines transformation
   operators, transformation families, transformation kinds,
   operator-family-kind mappings, composition and orthogonality
-  relation vocabularies, outcome vocabulary, Lean-side reference
-  enumerations, and machine-readable transformation registries.
-  It does not define neutral substrate primitives, identity regimes,
-  persistence behavior, regime persistence semantics, accountable
-  entities, evolution protocols, domain mappings, or runtime systems.
+  relation vocabularies, Lean-side reference enumerations,
+  finite invariants, and machine-readable transformation registries.
+  It does not define persistence semantics, operational policy,
+  domain-specific interpretation, or runtime behavior.
 
 keywords:
   - structural-explainability
