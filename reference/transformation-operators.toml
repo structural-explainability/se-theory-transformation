@@ -10,7 +10,7 @@
 # Families match SE.Transformation.Domain.Operator.Semantics.operatorFamily.
 # Kinds are derived transitively by familyKind.
 #
-# STATUS: draft
+# STATUS: canonical
 # Confirmed:
 #   code    - from Domain/Operator/Codes.lean
 #   label   - from Domain/Operator/Labels.lean
@@ -24,7 +24,7 @@ source = "se-theory-transformation"
 namespace = "se.transformation"
 artifact = "transformation-operators"
 version = "0.1.0"
-status = "draft"
+status = "canonical"
 
 [operator.AT]
 order = 1

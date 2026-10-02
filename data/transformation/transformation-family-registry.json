@@ -78,7 +78,7 @@
         "BD",
         "UB"
       ],
-      "note": "No separate Domain/Family/Contextual.lean file was shown; constructor and mappings are confirmed through TransformationFamily and Operator.Semantics."
+      "note": "This family is defined directly by TransformationFamily and operatorFamily; no separate family helper module is required."
     },
     {
       "order": 7,

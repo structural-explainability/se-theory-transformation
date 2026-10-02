@@ -5,7 +5,7 @@
 # Outcome vocabulary used when evaluating structural effects of a
 # transformation operator.
 #
-# STATUS: draft
+# STATUS: canonical
 # Outcome identities match SE.Transformation.Registry.referenceOutcomes.
 # Constructors match SE.Transformation.Outcome.TransformationOutcome.
 #
@@ -16,7 +16,7 @@ source = "se-theory-transformation"
 namespace = "se.transformation"
 artifact = "transformation-outcomes"
 version = "0.1.0"
-status = "draft"
+status = "canonical"
 
 [outcome.BRK]
 order = 1

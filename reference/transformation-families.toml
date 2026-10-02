@@ -6,7 +6,7 @@
 # Families are the mid-level classification between operator codes
 # and transformation kinds.
 #
-# STATUS: draft
+# STATUS: canonical
 # Family identities match SE.Transformation.Registry.referenceFamilies.
 # Operator mappings match Domain/Operator/Semantics.lean.
 # Kind mappings match familyKind in Domain/Operator/Semantics.lean.
@@ -18,7 +18,7 @@ source = "se-theory-transformation"
 namespace = "se.transformation"
 artifact = "transformation-families"
 version = "0.1.0"
-status = "draft"
+status = "canonical"
 
 [family.Aggregation]
 order = 1
@@ -79,7 +79,7 @@ kind = "contextual"
 source_module = "SE.Transformation.Domain.TransformationFamily"
 description = "Transformations that bind, unbind, or otherwise alter contextual placement or applicability."
 operator_codes = ["BD", "UB"]
-note = "No separate Domain/Family/Contextual.lean file was shown; constructor and mappings are confirmed through TransformationFamily and Operator.Semantics."
+note = "This family is defined directly by TransformationFamily and operatorFamily; no separate family helper module is required."
 
 [family.Decomposition]
 order = 7

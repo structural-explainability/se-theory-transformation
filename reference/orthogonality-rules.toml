@@ -7,9 +7,12 @@
 # unordered.
 #
 # OrthogonalityRelation values:
+#   conflicting  - operators cannot share a context without contradiction
+#   dependent    - one operator's applicability depends on the other
+#   inverseLike  - symmetric inverse structural relationship
 #   orthogonal   - no shared effect domain; operators do not interfere
-#   inverseLike  - symmetric inverse relationship
 #   overlapping  - partial shared effect domain
+#   unknown      - relation is unresolved or intentionally unspecified
 #
 # Seed rules are confirmed from:
 #   SE.Transformation.Reference.Orthogonality
@@ -31,13 +34,14 @@ status = "canonical"
 # ---------------------------------------------------------------
 
 [orthogonality.authorize_and_attest]
+order = 1
 id = "authorize_and_attest"
 left = "AZ"
 right = "AT"
 relation = "orthogonal"
 lean_def = "authorizeAndAttest"
 source_module = "SE.Transformation.Reference.Orthogonality"
-note = "Authorize and Attest operate on distinct normative effect domains."
+note = "Authorize and Attest operate on distinct effect domains: AZ affects normative status, while AT records a claim."
 
 # ---------------------------------------------------------------
 # inverseLike pairs
@@ -45,6 +49,7 @@ note = "Authorize and Attest operate on distinct normative effect domains."
 # ---------------------------------------------------------------
 
 [orthogonality.split_and_merge]
+order = 2
 id = "split_and_merge"
 left = "SP"
 right = "MG"
@@ -59,6 +64,7 @@ note = "Split and Merge are structural inverses in the Decomposition/Aggregation
 # ---------------------------------------------------------------
 
 [orthogonality.project_and_collapse]
+order = 3
 id = "project_and_collapse"
 left = "PR"
 right = "CL"

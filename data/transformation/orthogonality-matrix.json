@@ -7,24 +7,17 @@
   "reference_path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/orthogonality-rules.toml",
   "orthogonality": [
     {
+      "order": 1,
       "id": "authorize_and_attest",
       "left": "AZ",
       "right": "AT",
       "relation": "orthogonal",
       "lean_def": "authorizeAndAttest",
       "source_module": "SE.Transformation.Reference.Orthogonality",
-      "note": "Authorize and Attest operate on distinct normative effect domains."
+      "note": "Authorize and Attest operate on distinct effect domains: AZ affects normative status, while AT records a claim."
     },
     {
-      "id": "project_and_collapse",
-      "left": "PR",
-      "right": "CL",
-      "relation": "overlapping",
-      "lean_def": "projectAndCollapse",
-      "source_module": "SE.Transformation.Reference.Orthogonality",
-      "note": "Project and Collapse share a partial structural effect domain (both reduce structure)."
-    },
-    {
+      "order": 2,
       "id": "split_and_merge",
       "left": "SP",
       "right": "MG",
@@ -32,6 +25,16 @@
       "lean_def": "splitAndMerge",
       "source_module": "SE.Transformation.Reference.Orthogonality",
       "note": "Split and Merge are structural inverses in the Decomposition/Aggregation family pair."
+    },
+    {
+      "order": 3,
+      "id": "project_and_collapse",
+      "left": "PR",
+      "right": "CL",
+      "relation": "overlapping",
+      "lean_def": "projectAndCollapse",
+      "source_module": "SE.Transformation.Reference.Orthogonality",
+      "note": "Project and Collapse share a partial structural effect domain (both reduce structure)."
     }
   ]
 }
