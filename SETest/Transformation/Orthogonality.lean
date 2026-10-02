@@ -8,17 +8,35 @@ module
 public import SE.Transformation.Reference.Orthogonality
 
 /-!
-# Orthogonality checks
+# Orthogonality Checks
 
-SE.Transformation.Tests.Orthogonality
+Checks for the explicitly partial, symmetric canonical orthogonality lookup.
 -/
 
 namespace SE.Transformation
 
-example : authorizeAndAttest.relation = OrthogonalityRelation.orthogonal := rfl
+example :
+    orthogonality? OperatorCode.AZ OperatorCode.AT =
+      some OrthogonalityRelation.orthogonal :=
+  rfl
 
-example : splitAndMerge.left = OperatorCode.SP := rfl
+example :
+    orthogonality? OperatorCode.AT OperatorCode.AZ =
+      some OrthogonalityRelation.orthogonal :=
+  rfl
 
-example : projectAndCollapse.right = OperatorCode.CL := rfl
+example :
+    orthogonality? OperatorCode.PR OperatorCode.CL =
+      some OrthogonalityRelation.overlapping :=
+  rfl
+
+example :
+    orthogonality? OperatorCode.CL OperatorCode.PR =
+      some OrthogonalityRelation.overlapping :=
+  rfl
+
+example :
+    orthogonality? OperatorCode.SP OperatorCode.MG = none :=
+  rfl
 
 end SE.Transformation

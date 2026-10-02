@@ -3,52 +3,56 @@
 Transformation theory provides the structural vocabulary for describing
 change.
 
-It defines operators, families, kinds, outcomes, composition relations, and
-orthogonality relations. It does not decide what survives a transformation.
+It defines operators, families, kinds, derived taxonomy queries, composition
+relations, and orthogonality relations. It does not decide what survives a
+transformation.
 
-## Core rule
+## Core Rule
 
 ```text
-Transformations are defined independently.
+Transformations describe change.
 Persistence is evaluated downstream.
 ```
 
-## Authority
+## Public Surface
 
 The public Lean import is:
 
 ```lean
-import SETheoryTransformation
+import SE.Transformation
 ```
 
-The public surface is curated in:
+The public surface reaches every retained production module in this repository.
+
+## Taxonomy Authority
+
+The authoritative classification functions are:
 
 ```text
-SETheoryTransformation.lean
-SETheoryTransformation/Surface.lean
+operatorFamily
+familyKind
+operatorKind
 ```
 
-The main Lean source areas are:
+`operatorKind` is derived from `operatorFamily` and `familyKind`.
 
-```text
-SETheoryTransformation/Domain/
-SETheoryTransformation/Relation/
-SETheoryTransformation/Reference/
-SETheoryTransformation/Outcome.lean
-SETheoryTransformation/Registry.lean
-SETheoryTransformation/Conformance.lean
-```
+Per-family and per-kind operator lists are not maintained independently.
+`operatorsInFamily`, `operatorsInKind`, and `familiesInKind` are derived from
+the authoritative mappings and canonical finite registries.
 
-The reference registry mirrors are in:
+## Structural Relations
 
-```text
-reference/
-data/transformation/
-```
+Composition is an ordered, partial lookup.
+
+Orthogonality is a symmetric, partial lookup.
+
+Absence of a rule means that this theory has not specified a canonical
+relation for that pair.
 
 ## Boundary
 
 This repository owns transformation vocabulary and structural relations.
 
-It does not own identity regimes, regime profiles, persistence behavior,
-accountable entities, evolution protocols, domain mappings, or runtime systems.
+It does not own identity regimes, persistence verdicts, operational
+admissibility, accountable entities, evolution protocols, domain mappings,
+or runtime systems.

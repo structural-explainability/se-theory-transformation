@@ -9,16 +9,9 @@ public import SE.Transformation.Domain.Operator.Codes
 public import SE.Transformation.Domain.Operator.Labels
 public import SE.Transformation.Domain.Operator.Semantics
 
-
 /-!
-SE.Transformation.Domain.Operator.lean
+# Transformation Operators
 
+Aggregate import surface for the canonical transformation-operator vocabulary,
+labels, and semantic taxonomy.
 -/
-
-namespace SE.Transformation
-
-public section
-
-end
-
-end SE.Transformation

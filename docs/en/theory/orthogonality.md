@@ -3,41 +3,27 @@
 Orthogonality describes structural independence among transformation
 operators.
 
-An orthogonality rule describes whether two operators have distinct, shared,
-dependent, conflicting, inverse-like, or unresolved effect domains. It does not
-assert persistence.
+The canonical orthogonality lookup is explicitly partial and symmetric.
 
 ## Authority
 
-The authoritative Lean definitions are in:
+The authoritative Lean definitions are:
 
 ```text
-SETheoryTransformation/Relation/Orthogonality.lean
-SETheoryTransformation/Reference/Orthogonality.lean
+SE/Transformation/Relation/Orthogonality.lean
+SE/Transformation/Reference/Orthogonality.lean
 ```
 
-The reference registry mirror is in:
+`orthogonality? left right` returns:
 
-```text
-reference/orthogonality-rules.toml
-```
+- `some relation` when this theory specifies a canonical relation for the
+  unordered pair; or
+- `none` when no canonical orthogonality relation is specified here.
 
-Generated data artifacts are in:
+The Lean theorem `orthogonality_symm` guarantees that reversing a pair cannot
+change its orthogonality result.
 
-```text
-data/transformation/orthogonality-matrix.json
-```
+`inverseLike` is not an orthogonality value. Inverse direction is a sequencing
+or transformation relationship rather than a degree of independence.
 
-## Use
-
-Orthogonality helps keep the operator vocabulary distinguishable.
-
-It is a structural independence check, not a value judgment.
-
-## Rule
-
-```text
-Orthogonality describes independence.
-Composition describes sequencing.
 Persistence is evaluated downstream.
-```

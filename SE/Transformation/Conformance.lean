@@ -5,100 +5,123 @@ Authors: Denise M. Case
 -/
 module
 
-public import SE.Transformation.Core.Domain.Operator.Codes
-public import SE.Transformation.Core.Domain.Operator.Semantics
-public import SE.Transformation.Core.Domain.Kind.Observational
-public import SE.Transformation.Core.Domain.Kind.Organizational
+public import SE.Transformation.Registry
 
 /-!
 # Conformance
 
-Internal conformance results showing that the transformation taxonomy
-satisfies its structural invariants.
+Finite regression invariants for the Transformation taxonomy.
+
+These theorems verify properties that can drift when the vocabulary changes:
+reference-list uniqueness and completeness, nonempty family/kind coverage,
+and agreement between the derived registry queries and the authoritative
+taxonomy functions.
 -/
 
 namespace SE.Transformation.Conformance
 
+open SE.Transformation
+
 public section
 
-/-- Every operator has a unique family. -/
-theorem operator_family_unique_proof :
-    ∀ op : OperatorCode,
-      ∃ f : TransformationFamily,
-        operatorFamily op = f ∧
-        ∀ f', operatorFamily op = f' → f = f' := by
-  intro op
-  refine ⟨operatorFamily op, rfl, ?_⟩
-  intro f' h
-  exact h
+/-- The canonical operator registry contains no duplicate operator codes. -/
+theorem referenceOperators_nodup :
+    referenceOperators.Nodup := by
+  decide
 
-/-- Every family has a unique kind. -/
-theorem family_kind_unique_proof :
-    ∀ f : TransformationFamily,
-      ∃ k : TransformationKind,
-        familyKind f = k ∧
-        ∀ k', familyKind f = k' → k = k' :=
-  fun f =>
-    ⟨familyKind f, rfl, fun _ h => h⟩
+/-- The canonical family registry contains no duplicate families. -/
+theorem referenceFamilies_nodup :
+    referenceFamilies.Nodup := by
+  decide
 
-/-- `operatorKind` is definitionally derived from family membership. -/
-theorem kind_derived_proof :
-    ∀ op : OperatorCode,
-      operatorKind op = familyKind (operatorFamily op) :=
-  fun _ => rfl
+/-- The canonical kind registry contains no duplicate kinds. -/
+theorem referenceKinds_nodup :
+    referenceKinds.Nodup := by
+  decide
 
-/-- Operators in the same family have the same transformation kind. -/
-theorem same_family_same_kind_proof :
-    ∀ op1 op2 : OperatorCode,
-      operatorFamily op1 = operatorFamily op2 →
-      operatorKind op1 = operatorKind op2 :=
-  fun _ _ h => congrArg familyKind h
+/-- Every `OperatorCode` occurs in the canonical operator registry. -/
+theorem referenceOperators_complete
+    (op : OperatorCode) :
+    op ∈ referenceOperators := by
+  cases op <;> decide
 
-/--
-Every transformation kind is inhabited by at least one operator.
--/
-theorem all_kinds_inhabited_proof :
-    ∀ k : TransformationKind,
-      ∃ op : OperatorCode, operatorKind op = k := by
-  intro k
-  cases k with
-  | contextual =>
-      exact ⟨OperatorCode.BD, rfl⟩
-  | normative =>
-      exact ⟨OperatorCode.AZ, rfl⟩
-  | observational =>
-      exact ⟨OperatorCode.PR, rfl⟩
-  | organizational =>
-      exact ⟨OperatorCode.EM, rfl⟩
-  | relational =>
-      exact ⟨OperatorCode.LK, rfl⟩
-  | structural =>
-      exact ⟨OperatorCode.SP, rfl⟩
-  | temporal =>
-      exact ⟨OperatorCode.VS, rfl⟩
+/-- Every `TransformationFamily` occurs in the canonical family registry. -/
+theorem referenceFamilies_complete
+    (family : TransformationFamily) :
+    family ∈ referenceFamilies := by
+  cases family <;> decide
+
+/-- Every `TransformationKind` occurs in the canonical kind registry. -/
+theorem referenceKinds_complete
+    (kind : TransformationKind) :
+    kind ∈ referenceKinds := by
+  cases kind <;> decide
 
 /--
-Every transformation kind is represented by at least one family.
+Membership in `operatorsInFamily` is exactly canonical-registry membership
+together with the authoritative operator-to-family classification.
 -/
-theorem all_kinds_have_family_proof :
-    ∀ k : TransformationKind,
-      ∃ f : TransformationFamily, familyKind f = k := by
-  intro k
-  cases k with
-  | contextual =>
-      exact ⟨TransformationFamily.contextual, rfl⟩
-  | normative =>
-      exact ⟨TransformationFamily.normative, rfl⟩
-  | observational =>
-      exact ⟨TransformationFamily.attestation, rfl⟩
-  | organizational =>
-      exact ⟨TransformationFamily.containment, rfl⟩
-  | relational =>
-      exact ⟨TransformationFamily.association, rfl⟩
-  | structural =>
-      exact ⟨TransformationFamily.aggregation, rfl⟩
-  | temporal =>
-      exact ⟨TransformationFamily.branching, rfl⟩
+@[simp]
+theorem mem_operatorsInFamily_iff
+    (op : OperatorCode)
+    (family : TransformationFamily) :
+    op ∈ operatorsInFamily family ↔
+      op ∈ referenceOperators ∧
+        operatorFamily op = family := by
+  simp [operatorsInFamily]
+
+/--
+Membership in `operatorsInKind` is exactly canonical-registry membership
+together with the derived operator-to-kind classification.
+-/
+@[simp]
+theorem mem_operatorsInKind_iff
+    (op : OperatorCode)
+    (kind : TransformationKind) :
+    op ∈ operatorsInKind kind ↔
+      op ∈ referenceOperators ∧
+        operatorKind op = kind := by
+  simp [operatorsInKind]
+
+/--
+Membership in `familiesInKind` is exactly canonical-registry membership
+together with the authoritative family-to-kind classification.
+-/
+@[simp]
+theorem mem_familiesInKind_iff
+    (family : TransformationFamily)
+    (kind : TransformationKind) :
+    family ∈ familiesInKind kind ↔
+      family ∈ referenceFamilies ∧
+        familyKind family = kind := by
+  simp [familiesInKind]
+
+/-- Every transformation family has at least one canonical operator. -/
+theorem operatorsInFamily_nonempty
+    (family : TransformationFamily) :
+    ∃ op, op ∈ operatorsInFamily family := by
+  cases family <;>
+    simp [operatorsInFamily, referenceOperators, operatorFamily]
+
+/-- Every transformation kind has at least one canonical family. -/
+theorem familiesInKind_nonempty
+    (kind : TransformationKind) :
+    ∃ family, family ∈ familiesInKind kind := by
+  cases kind <;>
+    simp [familiesInKind, referenceFamilies, familyKind]
+
+/-- Every transformation kind has at least one canonical operator. -/
+theorem operatorsInKind_nonempty
+    (kind : TransformationKind) :
+    ∃ op, op ∈ operatorsInKind kind := by
+  cases kind <;>
+    simp [
+      operatorsInKind,
+      referenceOperators,
+      operatorKind,
+      operatorFamily,
+      familyKind
+    ]
 
 end
 

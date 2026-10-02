@@ -12,18 +12,19 @@ public import SE.Transformation.Domain.TransformationKind
 /-!
 # Registry
 
-Reference vocabulary objects for the Transformation theory.
+Canonical finite enumerations and derived queries for the Transformation theory.
 
-These lists provide Lean-side reference enumerations for operators,
-families, and kinds. They do not replace the machine-readable
-registries under `reference/`.
+The lists enumerate the finite vocabulary.
+Family and kind membership are derived from the authoritative mappings in
+`SE.Transformation.Domain.Operator.Semantics`; no per-family or per-kind
+operator lists are maintained independently.
 -/
 
 namespace SE.Transformation
 
-public section
+@[expose] public section
 
-/-- All operator codes in alphabetical order. -/
+/-- All operator codes in canonical reference order. -/
 def referenceOperators : List OperatorCode :=
   [
     OperatorCode.AT,
@@ -45,7 +46,7 @@ def referenceOperators : List OperatorCode :=
     OperatorCode.VS
   ]
 
-/-- All transformation families in alphabetical order. -/
+/-- All transformation families in canonical reference order. -/
 def referenceFamilies : List TransformationFamily :=
   [
     TransformationFamily.aggregation,
@@ -64,7 +65,7 @@ def referenceFamilies : List TransformationFamily :=
     TransformationFamily.versioning
   ]
 
-/-- All transformation kinds in alphabetical order. -/
+/-- All transformation kinds in canonical reference order. -/
 def referenceKinds : List TransformationKind :=
   [
     TransformationKind.contextual,
@@ -75,6 +76,37 @@ def referenceKinds : List TransformationKind :=
     TransformationKind.structural,
     TransformationKind.temporal
   ]
+
+-- RR.DEFINES: TR.DEF.OPERATORS_IN_FAMILY
+/--
+Return the canonical operators whose authoritative family is `family`.
+-/
+def operatorsInFamily
+    (family : TransformationFamily) :
+    List OperatorCode :=
+  referenceOperators.filter fun op =>
+    decide (operatorFamily op = family)
+
+-- RR.DEFINES: TR.DEF.OPERATORS_IN_KIND
+/--
+Return the canonical operators whose derived transformation kind is `kind`.
+-/
+def operatorsInKind
+    (kind : TransformationKind) :
+    List OperatorCode :=
+  referenceOperators.filter fun op =>
+    decide (operatorKind op = kind)
+
+-- RR.DEFINES: TR.DEF.FAMILIES_IN_KIND
+/--
+Return the canonical families whose authoritative transformation kind is
+`kind`.
+-/
+def familiesInKind
+    (kind : TransformationKind) :
+    List TransformationFamily :=
+  referenceFamilies.filter fun family =>
+    decide (familyKind family = kind)
 
 end
 

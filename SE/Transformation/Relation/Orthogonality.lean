@@ -12,10 +12,14 @@ public import SE.Transformation.Domain.Operator.Codes
 
 SE.Transformation.Relation.Orthogonality
 
-Orthogonality relations for transformation operators.
+Vocabulary for structural-independence relationships among transformation
+operators.
 
-This module describes structural independence among operators.
-It does not assert persistence.
+This module defines the possible relation values only.
+The canonical known pairs are supplied by the explicitly partial, symmetric
+lookup in `SE.Transformation.Reference.Orthogonality`.
+
+Orthogonality describes independence and does not assert persistence.
 -/
 
 namespace SE.Transformation
@@ -24,13 +28,14 @@ public section
 
 -- RR.DEFINES: TR.TYPE.ORTHOGONALITY_RELATION
 /--
-Relationship describing the degree of structural independence between
-two transformation operators.
+Relationship describing the degree of structural independence between two
+transformation operators.
 
-Orthogonality is symmetric: the relation for {left, right} is the same
-as for {right, left}. It is about independence only. It does not decide
-whether identity, meaning, obligation, evidence, context, or persistence
-survives either operation.
+`inverseLike` is intentionally not an orthogonality value: inverse direction is
+a sequencing or transformation relationship, not a degree of independence.
+
+Absence of a canonical rule is represented by `none` in the downstream lookup,
+not by a relation constructor.
 -/
 inductive OrthogonalityRelation where
   /-- The operators cannot be applied in the same context without contradiction. -/
@@ -39,33 +44,12 @@ inductive OrthogonalityRelation where
   /-- One operator's applicability depends on the other. -/
   | dependent
 
-  /-- The operators stand in a symmetric inverse structural relationship. -/
-  | inverseLike
-
   /-- The operators have no shared effect domain and do not interfere. -/
   | orthogonal
 
   /-- The operators share a partial effect domain. -/
   | overlapping
-
-  /-- The orthogonality relation is unresolved or intentionally unspecified. -/
-  | unknown
-
 deriving DecidableEq, Repr
-
--- RR.DEFINES: TR.TYPE.ORTHOGONALITY_RULE
-/--
-A rule assigning an orthogonality relation to a pair of transformation
-operators.
--/
-structure OrthogonalityRule where
-  /-- First operator in the orthogonality pair. -/
-  left : OperatorCode
-  /-- Second operator in the orthogonality pair. -/
-  right : OperatorCode
-  /-- Orthogonality relation assigned to the operator pair. -/
-  relation : OrthogonalityRelation
-deriving Repr
 
 end
 

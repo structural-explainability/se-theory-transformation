@@ -3,163 +3,80 @@
 > Lean 4 formalization of foundational transformation theory for
 > Structural Explainability (SE).
 
-For normative definitions, stability guarantees, and theorem statements,
-see `SETransformation.lean` (the authoritative source).
-This document provides a brief orientation only.
-
-## Transformations
-
 Transformations are defined independently.
 Persistence is evaluated downstream.
-
-This repository treats transformations as formal structural changes that can be
-named, grouped, related, composed, and exposed for downstream theory.
-
-## Dependencies
-
-This repository is a theory-layer repository for Structural Explainability.
-
-It is intended to be consumed downstream by repositories that evaluate identity,
-persistence, regime behavior, domain mappings, or operational policy.
 
 ## Covers
 
 This repository covers:
 
-- transformation operator vocabulary
-- transformation family vocabulary
-- transformation kind vocabulary
-- operator-to-family mappings
-- family-to-kind mappings
-- composition relation vocabulary
-- orthogonality relation vocabulary
-- transformation outcome vocabulary
-- Lean-side reference enumerations
-- machine-readable transformation registries
-- public Lean import surface
+- transformation operator vocabulary;
+- transformation family vocabulary;
+- transformation kind vocabulary;
+- the authoritative operator-to-family mapping;
+- the authoritative family-to-kind mapping;
+- derived family and kind registry queries;
+- composition relation vocabulary and a partial ordered-pair lookup;
+- orthogonality relation vocabulary and a partial symmetric lookup;
+- finite conformance invariants;
+- machine-readable transformation registries; and
+- a public Lean import surface.
 
-## Owns
-
-This repository owns:
-
-- Lean definitions under `SETheoryTransformation/`
-- the public import surface `SETheoryTransformation.lean`
-- reference artifacts under `reference/`
-- generated transformation artifacts under `data/transformation/`
-- transformation schemas under `data/schema/`
-- validation and export tooling for transformation artifacts
-
-## Does not own
+## Does Not Own
 
 This repository does not own:
 
-- neutral substrate primitives
-- identity regimes
-- regime profiles
-- regime classification matrices
-- persistence behavior
-- regime persistence semantics
-- accountable entities
-- evolution protocols
-- domain mappings
-- runtime systems
+- neutral substrate primitives;
+- identity regimes;
+- regime profiles;
+- persistence verdicts;
+- regime persistence semantics;
+- operational admissibility policy;
+- accountable entities;
+- evolution protocols;
+- domain mappings; or
+- runtime systems.
 
-## Design Constraints
+## Authority
 
-Lean source files are authoritative for formal definitions, mappings,
-relations, predicates, proof obligations, and reference rules.
+Lean source is authoritative for taxonomy semantics and structural relations.
 
-Python and generated data may mirror, validate, export, or document the Lean
-surface. They must not define theory semantics independently of Lean.
-
-Constructor-level vocabulary is intentionally not duplicated in this README.
-See the Lean source files and reference registries for current values.
-
-## Documentation Constraints
-
-Documentation is descriptive only.
-
-It may provide orientation, summaries, and navigation. It must not introduce
-formal semantics absent from Lean.
-
-## Contents
-
-Primary Lean locations:
+The semantic classification path is:
 
 ```text
-    SETheoryTransformation/Domain/
-    SETheoryTransformation/Relation/
-    SETheoryTransformation/Reference/
-    SETheoryTransformation/Outcome.lean
-    SETheoryTransformation/Registry.lean
-    SETheoryTransformation/Conformance.lean
+OperatorCode -> TransformationFamily -> TransformationKind
 ```
 
-Machine-readable artifacts mirror the Lean surface and reference registries:
+`operatorFamily` and `familyKind` are the sole authoritative mappings.
+Derived lists and reference artifacts mirror those functions; they are not
+independent sources of classification semantics.
+
+Composition and orthogonality are explicitly partial. Absence of a rule means
+that this theory has not specified a canonical relation for that pair.
+
+## Primary Lean Locations
 
 ```text
-    reference/
-    data/transformation/
-```
-
-Schemas for generated data artifacts are in:
-
-```text
-    data/schema/
-```
-
-Central public vocabulary includes:
-
-```text
-    OperatorCode
-    TransformationFamily
-    TransformationKind
-    CompositionRelation
-    CompositionRule
-    OrthogonalityRelation
-    OrthogonalityRule
-    TransformationOutcome
+SE/Transformation/Domain/
+SE/Transformation/Relation/
+SE/Transformation/Reference/
+SE/Transformation/Registry.lean
+SE/Transformation/Conformance.lean
+SE/Transformation/Spec.lean
 ```
 
 ## Build
 
 ```shell
-elan self update
-lake update
 lake build
-lake build TestAll
-uv run se-ref-validate
-uv run se-ref-export --check
-uv run se-validate --strict
+lake test
+lake lint
 ```
 
 ## Import
 
-Downstream Lean projects should import the public surface:
+Downstream Lean projects should import:
 
-```text
-import SETheoryTransformation
+```lean
+import SE.Transformation
 ```
-
-The public import surface is curated in:
-
-```text
-SETheoryTransformation.lean
-```
-
-## Tooling
-
-Python and other tooling may be used for:
-
-- documentation generation
-- formatting and linting
-- repository automation
-- reference artifact validation
-- generated contract export checks
-
-They must not:
-
-- define correctness
-- validate theory semantics independently of Lean
-- replace Lean definitions or proofs
-- introduce downstream theory dependencies

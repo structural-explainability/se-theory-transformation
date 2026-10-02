@@ -35,17 +35,9 @@ def TR_TYPE_TRANSFORMATION_KIND : String :=
 def TR_TYPE_COMPOSITION_RELATION : String :=
   "TR.TYPE.COMPOSITION_RELATION"
 
-/-- Stable citation identifier for the `CompositionRule` type. -/
-def TR_TYPE_COMPOSITION_RULE : String :=
-  "TR.TYPE.COMPOSITION_RULE"
-
 /-- Stable citation identifier for the `OrthogonalityRelation` type. -/
 def TR_TYPE_ORTHOGONALITY_RELATION : String :=
   "TR.TYPE.ORTHOGONALITY_RELATION"
-
-/-- Stable citation identifier for the `OrthogonalityRule` type. -/
-def TR_TYPE_ORTHOGONALITY_RULE : String :=
-  "TR.TYPE.ORTHOGONALITY_RULE"
 
 -- ============================================================
 -- DEFINITIONS
@@ -75,33 +67,49 @@ def TR_DEF_OPERATOR_IN_FAMILY : String :=
 def TR_DEF_OPERATOR_IN_KIND : String :=
   "TR.DEF.OPERATOR_IN_KIND"
 
+/-- Stable citation identifier for `operatorsInFamily`. -/
+def TR_DEF_OPERATORS_IN_FAMILY : String :=
+  "TR.DEF.OPERATORS_IN_FAMILY"
+
+/-- Stable citation identifier for `operatorsInKind`. -/
+def TR_DEF_OPERATORS_IN_KIND : String :=
+  "TR.DEF.OPERATORS_IN_KIND"
+
+/-- Stable citation identifier for `familiesInKind`. -/
+def TR_DEF_FAMILIES_IN_KIND : String :=
+  "TR.DEF.FAMILIES_IN_KIND"
+
+/-- Stable citation identifier for the partial composition lookup. -/
+def TR_DEF_COMPOSITION_LOOKUP : String :=
+  "TR.DEF.COMPOSITION_LOOKUP"
+
+/-- Stable citation identifier for the partial symmetric orthogonality lookup. -/
+def TR_DEF_ORTHOGONALITY_LOOKUP : String :=
+  "TR.DEF.ORTHOGONALITY_LOOKUP"
+
 -- ============================================================
 -- REFERENCE RULES
 -- ============================================================
 
-/-- Stable citation identifier for the authorize-then-attest composition rule. -/
+/-- Stable citation identifier for authorization followed by attestation. -/
 def TR_RULE_AUTHORIZE_THEN_ATTEST : String :=
   "TR.RULE.AUTHORIZE_THEN_ATTEST"
 
-/-- Stable citation identifier for the bind-then-unbind composition rule. -/
+/-- Stable citation identifier for binding followed by unbinding. -/
 def TR_RULE_BIND_THEN_UNBIND : String :=
   "TR.RULE.BIND_THEN_UNBIND"
 
-/-- Stable citation identifier for the split-then-merge composition rule. -/
+/-- Stable citation identifier for splitting followed by merging. -/
 def TR_RULE_SPLIT_THEN_MERGE : String :=
   "TR.RULE.SPLIT_THEN_MERGE"
 
-/-- Stable citation identifier for the authorize-and-attest orthogonality rule. -/
+/-- Stable citation identifier for authorization and attestation orthogonality. -/
 def TR_RULE_AUTHORIZE_AND_ATTEST : String :=
   "TR.RULE.AUTHORIZE_AND_ATTEST"
 
-/-- Stable citation identifier for the project-and-collapse orthogonality rule. -/
+/-- Stable citation identifier for projection and collapse orthogonality. -/
 def TR_RULE_PROJECT_AND_COLLAPSE : String :=
   "TR.RULE.PROJECT_AND_COLLAPSE"
-
-/-- Stable citation identifier for the split-and-merge orthogonality rule. -/
-def TR_RULE_SPLIT_AND_MERGE : String :=
-  "TR.RULE.SPLIT_AND_MERGE"
 
 end
 

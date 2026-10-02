@@ -7,10 +7,13 @@ public import SE.Transformation.Domain.Operator.Codes
 
 SE.Transformation.Relation.Composition
 
-Composition relations for transformation operators.
+Vocabulary for sequencing relationships among transformation operators.
 
-This module describes sequencing among operators.
-It does not assert persistence.
+This module defines the possible relation values only.
+The canonical known pairs are supplied by the explicitly partial lookup in
+`SE.Transformation.Reference.Composition`.
+
+Composition describes sequencing and does not assert persistence.
 -/
 
 namespace SE.Transformation
@@ -22,8 +25,8 @@ public section
 Relationship describing whether one transformation operator may meaningfully
 follow another.
 
-Composition is about sequencing only. It does not decide whether identity,
-meaning, obligation, evidence, context, or persistence survives the sequence.
+Absence of a canonical rule is represented by `none` in the downstream lookup,
+not by a relation constructor.
 -/
 inductive CompositionRelation where
   /-- The second operator dominates, erases, or absorbs the first. -/
@@ -43,24 +46,7 @@ inductive CompositionRelation where
 
   /-- The second operator adds no relevant structural change. -/
   | redundant
-
-  /-- The composition relation is unresolved or intentionally unspecified. -/
-  | unknown
 deriving DecidableEq, Repr
-
--- RR.DEFINES: TR.TYPE.COMPOSITION_RULE
-/--
-A rule assigning a composition relation to an ordered pair of
-transformation operators.
--/
-structure CompositionRule where
-  /-- First operator in the ordered composition pair. -/
-  left : OperatorCode
-  /-- Second operator in the ordered composition pair. -/
-  right : OperatorCode
-  /-- Composition relation assigned to the ordered operator pair. -/
-  relation : CompositionRelation
-deriving Repr
 
 end
 

@@ -2,40 +2,27 @@
 
 Composition describes sequencing among transformation operators.
 
-A composition rule describes whether one operator may meaningfully follow
-another operator. It does not assert persistence.
+The canonical composition lookup is ordered and explicitly partial.
 
 ## Authority
 
-The authoritative Lean definitions are in:
+The authoritative Lean definitions are:
 
 ```text
-SETheoryTransformation/Relation/Composition.lean
-SETheoryTransformation/Reference/Composition.lean
+SE/Transformation/Relation/Composition.lean
+SE/Transformation/Reference/Composition.lean
 ```
 
-The reference registry mirror is in:
+`composition? left right` returns:
 
-```text
-reference/composition-rules.toml
-```
+- `some relation` when this theory specifies a canonical relation for the
+  ordered pair; or
+- `none` when no canonical composition relation is specified here.
 
-Generated data artifacts are in:
-
-```text
-data/transformation/composition-registry.json
-```
-
-## Rule
-
-```text
-Composition describes sequencing.
-Persistence describes survival.
-```
-
-## Notes
+`none` does not mean that the pair is invalid.
 
 Composition and orthogonality answer different questions.
+Composition describes sequencing; orthogonality describes effect-domain
+independence. A pair may have both relations.
 
-Two operators may be composable because they form a meaningful sequence while
-also being orthogonal because they affect distinct domains.
+Persistence is evaluated downstream.

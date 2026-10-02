@@ -4,50 +4,28 @@ Operators are named transformation primitives.
 
 They define kinds of change, not survival judgments.
 
-## Rule
-
-```text
-Transformation operators describe change.
-Persistence theory evaluates what survives change.
-```
-
 ## Authority
 
-The authoritative Lean definitions are in:
+The authoritative Lean definitions are:
 
 ```text
-SETheoryTransformation/Domain/Operator/Codes.lean
-SETheoryTransformation/Domain/Operator/Labels.lean
-SETheoryTransformation/Domain/Operator/Semantics.lean
+SE/Transformation/Domain/Operator/Codes.lean
+SE/Transformation/Domain/Operator/Labels.lean
+SE/Transformation/Domain/Operator/Semantics.lean
 ```
-
-Operator-to-family mappings are defined in:
-
-```text
-SETheoryTransformation/Domain/Operator/Semantics.lean
-```
-
-The reference registry mirror is in:
-
-```text
-reference/transformation-operators.toml
-```
-
-Generated data artifacts are in:
-
-```text
-data/transformation/operator-registry.json
-data/transformation/transformation-catalog.json
-```
-
-## Notes
-
-Operator labels are presentation labels only.
 
 The semantic classification path is:
 
 ```text
 OperatorCode -> TransformationFamily -> TransformationKind
 ```
+
+`operatorFamily` is the sole operator-to-family mapping.
+`familyKind` is the sole family-to-kind mapping.
+`operatorKind` is derived from those two mappings.
+
+The registry queries `operatorsInFamily`, `operatorsInKind`, and
+`familiesInKind` are derived from the authoritative mappings and canonical
+reference lists.
 
 Persistence-specific interpretation belongs downstream.

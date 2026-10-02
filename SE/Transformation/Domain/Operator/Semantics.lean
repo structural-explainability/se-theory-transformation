@@ -1,8 +1,3 @@
-/-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
-Authors: Denise M. Case
--/
 module
 
 public import SE.Transformation.Domain.Operator.Codes
@@ -14,22 +9,40 @@ public import SE.Transformation.Domain.TransformationKind
 
 SE.Transformation.Domain.Operator.Semantics
 
-Semantic classification for transformation operators.
+Authoritative semantic classification for transformation operators.
 
-This module assigns each operator to its transformation family
-and derives its transformation kind transitively through familyKind.
-It does not define persistence behavior.
+`operatorFamily` is the sole operator-to-family mapping.
+`familyKind` is the sole family-to-kind mapping.
+`operatorKind` is derived from those two functions.
+
+Reference artifacts and derived operator lists must mirror these mappings;
+they are not independent sources of taxonomy semantics.
+
+The kind classification groups families by the principal structural dimension
+of change represented in this theory:
+
+- contextual: contextual binding or unbinding;
+- normative: authorization or other normative standing;
+- observational: attestation, replication, or projection;
+- organizational: containment or reorganization;
+- relational: association or migration;
+- structural: aggregation, decomposition, or scaling; and
+- temporal: branching or versioning.
+
+These classifications describe transformation structure only.
+They do not determine persistence.
 -/
 
 namespace SE.Transformation
 
-public section
+@[expose] public section
 
 -- RR.DEFINES: TR.DEF.OPERATOR_FAMILY
 /--
 The transformation family for each operator code.
 
 Each operator belongs to exactly one family.
+This definition is the authoritative operator-to-family mapping.
 -/
 def operatorFamily : OperatorCode → TransformationFamily
   | OperatorCode.AT => TransformationFamily.attestation
@@ -55,6 +68,7 @@ def operatorFamily : OperatorCode → TransformationFamily
 The transformation kind for each family.
 
 Each family belongs to exactly one kind.
+This definition is the authoritative family-to-kind mapping.
 -/
 def familyKind : TransformationFamily → TransformationKind
   | TransformationFamily.aggregation    => TransformationKind.structural
@@ -74,29 +88,29 @@ def familyKind : TransformationFamily → TransformationKind
 
 -- RR.DEFINES: TR.DEF.OPERATOR_KIND
 /--
-The transformation kind for each operator code.
+The transformation kind for an operator code.
 
-Derived transitively from `operatorFamily` and `familyKind`.
-Not independently asserted.
+The result is derived transitively through `operatorFamily` and `familyKind`;
+it is not an independent classification.
 -/
-def operatorKind : OperatorCode → TransformationKind :=
-  familyKind ∘ operatorFamily
+def operatorKind (op : OperatorCode) : TransformationKind :=
+  familyKind (operatorFamily op)
 
 -- RR.DEFINES: TR.DEF.OPERATOR_IN_FAMILY
-/--
-Predicate: operator `op` belongs to family `f`.
--/
-def OperatorInFamily (op : OperatorCode) (f : TransformationFamily) : Prop :=
-  operatorFamily op = f
+/-- Predicate asserting that operator `op` belongs to family `family`. -/
+def OperatorInFamily
+    (op : OperatorCode)
+    (family : TransformationFamily) :
+    Prop :=
+  operatorFamily op = family
 
 -- RR.DEFINES: TR.DEF.OPERATOR_IN_KIND
-/--
-Predicate: operator `op` belongs to kind `k`.
-
-Holds transitively: op → family → kind.
--/
-def OperatorInKind (op : OperatorCode) (k : TransformationKind) : Prop :=
-  operatorKind op = k
+/-- Predicate asserting that operator `op` belongs to kind `kind`. -/
+def OperatorInKind
+    (op : OperatorCode)
+    (kind : TransformationKind) :
+    Prop :=
+  operatorKind op = kind
 
 end
 

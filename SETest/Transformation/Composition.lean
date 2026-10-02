@@ -8,17 +8,30 @@ module
 public import SE.Transformation.Reference.Composition
 
 /-!
-# Composition checks
+# Composition Checks
 
-SE.Transformation.Tests.Composition
+Checks for the explicitly partial canonical composition lookup.
 -/
 
 namespace SE.Transformation
 
-example : splitThenMerge.relation = CompositionRelation.inverseLike := rfl
+example :
+    composition? OperatorCode.SP OperatorCode.MG =
+      some CompositionRelation.inverseLike :=
+  rfl
 
-example : bindThenUnbind.left = OperatorCode.BD := rfl
+example :
+    composition? OperatorCode.BD OperatorCode.UB =
+      some CompositionRelation.inverseLike :=
+  rfl
 
-example : authorizeThenAttest.right = OperatorCode.AT := rfl
+example :
+    composition? OperatorCode.AZ OperatorCode.AT =
+      some CompositionRelation.composable :=
+  rfl
+
+example :
+    composition? OperatorCode.AT OperatorCode.AZ = none :=
+  rfl
 
 end SE.Transformation
