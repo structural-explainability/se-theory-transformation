@@ -9,7 +9,7 @@ public import SE.Transformation.Core
 public import SE.Transformation.Registry
 public import SE.Transformation.Reference.Composition
 public import SE.Transformation.Reference.Orthogonality
-public import SE.Transformation.Conformance
+public import SE.Transformation.Invariants
 public import SE.Transformation.Spec
 
 /-!
