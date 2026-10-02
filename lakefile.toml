@@ -24,8 +24,7 @@ license = "MIT"
 
 defaultTargets = ["SE"]
 testDriver = "SETest"
-lintDriver = "batteries/runLinter"
-lintDriverArgs = ["SE.Transformation"]
+lintDriver = "SELint"
 
 # ============================================================
 # LEAN OPTIONS
@@ -35,7 +34,7 @@ lintDriverArgs = ["SE.Transformation"]
 weak.linter.mathlibStandardSet = true
 weak.linter.flexible = true
 weak.linter.style.header = false
-weak.linter.style.longline = false
+weak.linter.style.longLine = false
 
 # These linters are included in Mathlib's standard set but do
 # not currently operate correctly in downstream projects.
@@ -67,7 +66,7 @@ rev = "v4.32.1"
 name = "SE.Transformation"
 roots = ["SE.Transformation"]
 globs = ["SE", "SE.Transformation.*"]
-# Lake supports .+ for submodules only and .* for the named module plus all its submodules.
+# Lake supports .* for the named module plus all its submodules.
 
 
 # ============================================================
@@ -80,3 +79,12 @@ name = "SETest"
 roots = ["SETest.Transformation"]
 globs = ["SETest", "SETest.Transformation.*"]
 leanOptions = { weak.linter.style.header = false }
+
+# ============================================================
+# LINT DRIVER
+# ============================================================
+
+[[lean_exe]]
+name = "SELint"
+root = "SELint"
+leanOptions = { Elab.inServer = true }
