@@ -67,23 +67,10 @@ includes = [
 ]
 
 excludes = [
-  "neutral substrate primitives",
-  "substrate well-formedness",
-  "substrate separation constraints",
-  "identity regimes",
-  "regime profiles",
-  "identity persistence behavior",
-  "regime persistence semantics",
-  "regime classification matrices",
-  "regime profile derivations",
-  "accountable entities",
-  "evolution protocols",
-  "mapping semantics",
-  "operational validation logic",
-  "repository governance rules",
-  "schema definitions for other repositories",
-  "domain-specific mappings or data",
-  "runtime systems",
+  "persistence semantics",
+  "operational policy",
+  "domain-specific interpretation",
+  "runtime behavior",
 ]
 
 # === Validation ===
@@ -92,9 +79,10 @@ excludes = [
 # Validates repository declaration, manifest schema conformance,
 # reference artifacts, generated artifacts, and Lean public surface coverage.
 entrypoint = "uv run se-validate"
-strict_entrypoint = "uv run se-validate --strict"
-reference_entrypoint = "uv run se-ref-validate"
 export_check_entrypoint = "uv run se-ref-export --check"
+reference_entrypoint = "uv run se-ref-validate"
+strict_entrypoint = "uv run se-ref-validate --strict"
+
 
 # === Behavior / governance ===
 
