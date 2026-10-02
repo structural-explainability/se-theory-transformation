@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Denise M. Case.
+Released under MIT license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
 module
 
 public import SE.Transformation.Domain.Operator.Codes
@@ -17,6 +22,7 @@ namespace SE.Transformation
 
 public section
 
+-- RR.DEFINES: TR.TYPE.ORTHOGONALITY_RELATION
 /--
 Relationship describing the degree of structural independence between
 two transformation operators.
@@ -47,6 +53,7 @@ inductive OrthogonalityRelation where
 
 deriving DecidableEq, Repr
 
+-- RR.DEFINES: TR.TYPE.ORTHOGONALITY_RULE
 /--
 A rule assigning an orthogonality relation to a pair of transformation
 operators.

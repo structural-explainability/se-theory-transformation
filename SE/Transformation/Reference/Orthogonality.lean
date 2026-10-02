@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Denise M. Case.
+Released under MIT license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
 module
 
 public import SE.Transformation.Relation.Orthogonality
@@ -18,6 +23,7 @@ namespace SE.Transformation
 
 @[expose] public section
 
+-- RR.DEFINES: TR.RULE.AUTHORIZE_AND_ATTEST
 /-- Authorization and attestation: distinct effect domains, no structural interference.
     Note: AZ and AT also appear as composable in Reference.Composition.
     Orthogonal (distinct domains) and composable (meaningful sequence)
@@ -28,7 +34,7 @@ def authorizeAndAttest : OrthogonalityRule :=
     right    := OperatorCode.AT
     relation := OrthogonalityRelation.orthogonal
   }
-
+-- RR.DEFINES: TR.RULE.PROJECT_AND_COLLAPSE
 /-- Project and collapse: both reduce structural complexity, partial shared domain. -/
 def projectAndCollapse : OrthogonalityRule :=
   {
@@ -37,6 +43,7 @@ def projectAndCollapse : OrthogonalityRule :=
     relation := OrthogonalityRelation.overlapping
   }
 
+-- RR.DEFINES: TR.RULE.SPLIT_AND_MERGE
 /-- Split and merge: structural inverses with symmetric opposing directions. -/
 def splitAndMerge : OrthogonalityRule :=
   {

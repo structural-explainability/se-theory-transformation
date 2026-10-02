@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Denise M. Case.
+Released under MIT license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
 module
 
 public import SE.Transformation.Domain.Operator.Admissibility

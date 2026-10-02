@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Denise M. Case.
+Released under MIT license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
 module
 
 public import SE.Transformation.Domain.Operator.Codes
@@ -20,6 +25,7 @@ namespace SE.Transformation
 
 public section
 
+-- RR.DEFINES: TR.DEF.OPERATOR_FAMILY
 /--
 The transformation family for each operator code.
 
@@ -44,6 +50,7 @@ def operatorFamily : OperatorCode → TransformationFamily
   | OperatorCode.UB => TransformationFamily.contextual
   | OperatorCode.VS => TransformationFamily.versioning
 
+-- RR.DEFINES: TR.DEF.FAMILY_KIND
 /--
 The transformation kind for each family.
 
@@ -65,6 +72,7 @@ def familyKind : TransformationFamily → TransformationKind
   | TransformationFamily.scaling        => TransformationKind.structural
   | TransformationFamily.versioning     => TransformationKind.temporal
 
+-- RR.DEFINES: TR.DEF.OPERATOR_KIND
 /--
 The transformation kind for each operator code.
 
@@ -74,12 +82,14 @@ Not independently asserted.
 def operatorKind : OperatorCode → TransformationKind :=
   familyKind ∘ operatorFamily
 
+-- RR.DEFINES: TR.DEF.OPERATOR_IN_FAMILY
 /--
 Predicate: operator `op` belongs to family `f`.
 -/
 def OperatorInFamily (op : OperatorCode) (f : TransformationFamily) : Prop :=
   operatorFamily op = f
 
+-- RR.DEFINES: TR.DEF.OPERATOR_IN_KIND
 /--
 Predicate: operator `op` belongs to kind `k`.
 

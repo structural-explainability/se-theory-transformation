@@ -20,6 +20,7 @@ namespace SE.Transformation
 
 public section
 
+-- RR.DEFINES: TR.TYPE.OPERATOR_CODE
 /--
 Canonical two-letter code identifying a transformation operator.
 -/

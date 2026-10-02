@@ -17,6 +17,7 @@ namespace SE.Transformation
 
 public section
 
+-- RR.DEFINES: TR.TYPE.COMPOSITION_RELATION
 /--
 Relationship describing whether one transformation operator may meaningfully
 follow another.
@@ -47,6 +48,7 @@ inductive CompositionRelation where
   | unknown
 deriving DecidableEq, Repr
 
+-- RR.DEFINES: TR.TYPE.COMPOSITION_RULE
 /--
 A rule assigning a composition relation to an ordered pair of
 transformation operators.

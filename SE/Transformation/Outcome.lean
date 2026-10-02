@@ -18,6 +18,7 @@ namespace SE.Transformation
 
 public section
 
+-- RR.DEFINES: TR.TYPE.TRANSFORMATION_OUTCOME
 /--
 Possible structural outcome of applying a transformation operator.
 

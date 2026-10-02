@@ -17,6 +17,7 @@ namespace SE.Transformation
 
 public section
 
+-- RR.DEFINES: TR.DEF.OPERATOR_CODE_LABEL
 /-- Official short label for each transformation operator. -/
 def operatorCodeLabel : OperatorCode → String
   | OperatorCode.AT => "attest"

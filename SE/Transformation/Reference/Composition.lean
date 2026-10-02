@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Denise M. Case.
+Released under MIT license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
 module
 
 public import SE.Transformation.Relation.Composition
@@ -17,6 +22,9 @@ namespace SE.Transformation
 
 @[expose] public section
 
+-- RR.DEFINES: TR.RULE.AUTHORIZE_THEN_ATTEST
+
+
 /-- Authorization followed by attestation: applies a normative condition
     then records a verified claim about it. -/
 def authorizeThenAttest : CompositionRule :=
@@ -29,6 +37,7 @@ def authorizeThenAttest : CompositionRule :=
     relation := CompositionRelation.composable
   }
 
+-- RR.DEFINES: TR.RULE.BIND_THEN_UNBIND
 /-- Bind followed by unbind: establishes then removes a bearer association. -/
 def bindThenUnbind : CompositionRule :=
   {
@@ -37,6 +46,7 @@ def bindThenUnbind : CompositionRule :=
     relation := CompositionRelation.inverseLike
   }
 
+-- RR.DEFINES: TR.RULE.SPLIT_THEN_MERGE
 /-- Split followed by merge: divides then recombines a structure. -/
 def splitThenMerge : CompositionRule :=
   {
