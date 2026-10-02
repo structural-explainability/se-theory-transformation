@@ -5,11 +5,9 @@ Authors: Denise M. Case
 -/
 module
 
-public import SE.Transformation.Domain.Operator.Admissibility
 public import SE.Transformation.Domain.Operator.Codes
 public import SE.Transformation.Domain.Operator.Labels
 public import SE.Transformation.Domain.Operator.Semantics
-public import SE.Transformation.Domain.Operator.Spec
 
 
 /-!

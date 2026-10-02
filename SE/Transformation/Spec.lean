@@ -31,10 +31,6 @@ def TR_TYPE_TRANSFORMATION_FAMILY : String :=
 def TR_TYPE_TRANSFORMATION_KIND : String :=
   "TR.TYPE.TRANSFORMATION_KIND"
 
-/-- Stable citation identifier for the `TransformationOutcome` type. -/
-def TR_TYPE_TRANSFORMATION_OUTCOME : String :=
-  "TR.TYPE.TRANSFORMATION_OUTCOME"
-
 /-- Stable citation identifier for the `CompositionRelation` type. -/
 def TR_TYPE_COMPOSITION_RELATION : String :=
   "TR.TYPE.COMPOSITION_RELATION"

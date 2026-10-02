@@ -10,8 +10,6 @@ public import SE.Transformation.Domain.Operator.Semantics
 public import SE.Transformation.Domain.TransformationFamily
 public import SE.Transformation.Domain.TransformationKind
 
-public import SE.Transformation.Outcome
-
 public import SE.Transformation.Relation.Composition
 public import SE.Transformation.Relation.Orthogonality
 

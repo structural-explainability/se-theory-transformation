@@ -8,7 +8,6 @@ module
 public import SE.Transformation.Domain.Operator.Semantics
 public import SE.Transformation.Domain.TransformationFamily
 public import SE.Transformation.Domain.TransformationKind
-public import SE.Transformation.Outcome
 
 /-!
 # Registry
@@ -16,7 +15,7 @@ public import SE.Transformation.Outcome
 Reference vocabulary objects for the Transformation theory.
 
 These lists provide Lean-side reference enumerations for operators,
-families, kinds, and outcomes. They do not replace the machine-readable
+families, and kinds. They do not replace the machine-readable
 registries under `reference/`.
 -/
 
@@ -77,16 +76,6 @@ def referenceKinds : List TransformationKind :=
     TransformationKind.temporal
   ]
 
-/-- All transformation outcomes in alphabetical order. -/
-def referenceOutcomes : List TransformationOutcome :=
-  [
-    TransformationOutcome.BRK,
-    TransformationOutcome.IGN,
-    TransformationOutcome.INH,
-    TransformationOutcome.MIX,
-    TransformationOutcome.PRS,
-    TransformationOutcome.UNK
-  ]
 end
 
 end SE.Transformation

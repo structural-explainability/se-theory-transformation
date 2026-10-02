@@ -5,7 +5,6 @@ Authors: Denise M. Case
 -/
 module -- shake: keep-all
 
-import SETest.Transformation.Admissibility
 import SETest.Transformation.Composition
 import SETest.Transformation.Orthogonality
 
