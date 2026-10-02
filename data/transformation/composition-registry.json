@@ -14,8 +14,8 @@
       "relation": "composable",
       "lean_def": "authorizeThenAttest",
       "source_module": "SE.Transformation.Reference.Composition",
-      "description": "Authorization followed by attestation applies a normative condition and then records a verified claim about it.",
-      "note": "AZ and AT are also classified as orthogonal in Reference.Orthogonality. Composable and orthogonal are not contradictory: AZ affects normative status; AT records a claim."
+      "description": "Authorization followed by attestation is a canonical composable ordered pair.",
+      "note": "AZ and AT are also classified as orthogonal. Composition and orthogonality are independent axes."
     },
     {
       "order": 2,
@@ -25,8 +25,8 @@
       "relation": "inverseLike",
       "lean_def": "bindThenUnbind",
       "source_module": "SE.Transformation.Reference.Composition",
-      "description": "Bind followed by unbind establishes and then removes a bearer, context, or applicability association.",
-      "note": "Composition relation only; does not assert persistence restoration."
+      "description": "Binding followed by unbinding is a canonical inverse-like ordered pair.",
+      "note": "Composition relation only; no persistence restoration is asserted."
     },
     {
       "order": 3,
@@ -36,8 +36,8 @@
       "relation": "inverseLike",
       "lean_def": "splitThenMerge",
       "source_module": "SE.Transformation.Reference.Composition",
-      "description": "Split followed by merge divides and then recombines a structure.",
-      "note": "Composition relation only; does not assert identity restoration."
+      "description": "Splitting followed by merging is a canonical inverse-like ordered pair.",
+      "note": "Composition relation only; no identity restoration is asserted."
     }
   ]
 }

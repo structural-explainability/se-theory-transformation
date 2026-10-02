@@ -12,7 +12,7 @@
       "label": "Aggregation",
       "lean_constructor": "aggregation",
       "kind": "structural",
-      "source_module": "SE.Transformation.Domain.Family.Aggregation",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that combine multiple referents or structural components into a unified whole.",
       "operator_codes": [
         "MG"
@@ -24,7 +24,7 @@
       "label": "Association",
       "lean_constructor": "association",
       "kind": "relational",
-      "source_module": "SE.Transformation.Domain.Family.Association",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that establish, alter, or represent relations among referents without implying containment.",
       "operator_codes": [
         "LK"
@@ -36,7 +36,7 @@
       "label": "Attestation",
       "lean_constructor": "attestation",
       "kind": "observational",
-      "source_module": "SE.Transformation.Domain.Family.Attestation",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that record evidence, verification, or claims about a referent.",
       "operator_codes": [
         "AT"
@@ -48,7 +48,7 @@
       "label": "Branching",
       "lean_constructor": "branching",
       "kind": "temporal",
-      "source_module": "SE.Transformation.Domain.Family.Branching",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that produce divergent continuations from a referent.",
       "operator_codes": [
         "BR"
@@ -60,7 +60,7 @@
       "label": "Containment",
       "lean_constructor": "containment",
       "kind": "organizational",
-      "source_module": "SE.Transformation.Domain.Family.Containment",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that place a referent within a containing structure or organizational enclosure.",
       "operator_codes": [
         "EM"
@@ -77,8 +77,7 @@
       "operator_codes": [
         "BD",
         "UB"
-      ],
-      "note": "This family is defined directly by TransformationFamily and operatorFamily; no separate family helper module is required."
+      ]
     },
     {
       "order": 7,
@@ -86,7 +85,7 @@
       "label": "Decomposition",
       "lean_constructor": "decomposition",
       "kind": "structural",
-      "source_module": "SE.Transformation.Domain.Family.Decomposition",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that divide a referent into constituent components, parts, branches, or sub-referents.",
       "operator_codes": [
         "SP"
@@ -98,7 +97,7 @@
       "label": "Migration",
       "lean_constructor": "migration",
       "kind": "relational",
-      "source_module": "SE.Transformation.Domain.Family.Migration",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that relocate a referent across a relation, bearer, context, or structural position while maintaining linkage.",
       "operator_codes": [
         "SH"
@@ -110,7 +109,7 @@
       "label": "Normative",
       "lean_constructor": "normative",
       "kind": "normative",
-      "source_module": "SE.Transformation.Domain.Family.Normative",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that apply, alter, or record normative authority, permission, or standing.",
       "operator_codes": [
         "AZ"
@@ -122,7 +121,7 @@
       "label": "Projection",
       "lean_constructor": "projection",
       "kind": "observational",
-      "source_module": "SE.Transformation.Domain.Family.Projection",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that derive a partial view, selected representation, or projection of a referent.",
       "operator_codes": [
         "PR"
@@ -134,7 +133,7 @@
       "label": "Replication",
       "lean_constructor": "replication",
       "kind": "observational",
-      "source_module": "SE.Transformation.Domain.Family.Replication",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that produce a duplicate, replica, copy, or copied representation of a referent.",
       "operator_codes": [
         "CP"
@@ -146,7 +145,7 @@
       "label": "Reorganization",
       "lean_constructor": "reorganization",
       "kind": "organizational",
-      "source_module": "SE.Transformation.Domain.Family.Reorganization",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that alter arrangement, ordering, or organizational placement without necessarily changing membership.",
       "operator_codes": [
         "RO"
@@ -158,7 +157,7 @@
       "label": "Scaling",
       "lean_constructor": "scaling",
       "kind": "structural",
-      "source_module": "SE.Transformation.Domain.Family.Scaling",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that increase or decrease structural scale, detail, complexity, or elaboration.",
       "operator_codes": [
         "CL",
@@ -171,7 +170,7 @@
       "label": "Versioning",
       "lean_constructor": "versioning",
       "kind": "temporal",
-      "source_module": "SE.Transformation.Domain.Family.Versioning",
+      "source_module": "SE.Transformation.Domain.TransformationFamily",
       "description": "Transformations that produce, identify, restore, or relate temporally ordered versions of a referent.",
       "operator_codes": [
         "RV",

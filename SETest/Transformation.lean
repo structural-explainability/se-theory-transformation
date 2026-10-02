@@ -6,6 +6,7 @@ Authors: Denise M. Case
 module -- shake: keep-all
 
 import SETest.Transformation.Composition
+import SETest.Transformation.Membership
 import SETest.Transformation.Orthogonality
 
 /-!

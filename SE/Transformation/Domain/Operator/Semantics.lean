@@ -31,6 +31,13 @@ of change represented in this theory:
 
 These classifications describe transformation structure only.
 They do not determine persistence.
+
+`OperatorInFamily` and `OperatorInKind` are the Prop-valued membership
+predicates for downstream proofs, for example statements of the form
+"every operator in family `f` satisfies `P`". They are definitionally the
+equations `operatorFamily op = family` and `operatorKind op = kind`, and are
+decidable. `operatorsInFamily`, `operatorsInKind` and `familiesInKind` in
+`SE.Transformation.Registry` are the computational counterparts.
 -/
 
 namespace SE.Transformation
@@ -97,7 +104,18 @@ def operatorKind (op : OperatorCode) : TransformationKind :=
   familyKind (operatorFamily op)
 
 -- RR.DEFINES: TR.DEF.OPERATOR_IN_FAMILY
-/-- Predicate asserting that operator `op` belongs to family `family`. -/
+/--
+Predicate asserting that operator `op` belongs to family `family`.
+
+This is the Prop-valued form of the authoritative mapping `operatorFamily`:
+it holds exactly when `operatorFamily op = family`
+(`operatorInFamily_iff`).
+Downstream proofs should state "for every operator
+in family `family`" with this predicate,
+so the statement does not depend on
+how the mapping is represented.
+It is decidable (see the instance below).
+-/
 def OperatorInFamily
     (op : OperatorCode)
     (family : TransformationFamily) :
@@ -105,13 +123,61 @@ def OperatorInFamily
   operatorFamily op = family
 
 -- RR.DEFINES: TR.DEF.OPERATOR_IN_KIND
-/-- Predicate asserting that operator `op` belongs to kind `kind`. -/
+/--
+Predicate asserting that operator `op` belongs to kind `kind`.
+
+This is the Prop-valued form of the derived mapping `operatorKind`: it holds
+exactly when `operatorKind op = kind` (`operatorInKind_iff`).
+Membership in a kind follows from membership in a family of that kind
+(`operatorInKind_of_operatorInFamily`).
+It is decidable (see the instance below).
+-/
 def OperatorInKind
     (op : OperatorCode)
     (kind : TransformationKind) :
     Prop :=
   operatorKind op = kind
 
+-- RR.DEFINES: TR.THM.OPERATOR_IN_FAMILY_IFF
+/-- `OperatorInFamily op family` unfolds to `operatorFamily op = family`. -/
+theorem operatorInFamily_iff {op : OperatorCode} {f : TransformationFamily} :
+    OperatorInFamily op f ↔ operatorFamily op = f := Iff.rfl
+
+-- RR.DEFINES: TR.THM.OPERATOR_IN_KIND_IFF
+/-- `OperatorInKind op kind` unfolds to `operatorKind op = kind`. -/
+theorem operatorInKind_iff {op : OperatorCode} {k : TransformationKind} :
+    OperatorInKind op k ↔ operatorKind op = k := Iff.rfl
+
+-- RR.DEFINES: TR.THM.OPERATOR_IN_KIND_OF_OPERATOR_IN_FAMILY
+/--
+An operator in a family is in the kind of that family.
+
+This is the operator, family and kind layering stated as a lemma: if `op` is
+in `family` and `familyKind family = kind`, then `op` is in `kind`.
+-/
+theorem operatorInKind_of_operatorInFamily {op : OperatorCode}
+    {f : TransformationFamily} {k : TransformationKind}
+    (hf : OperatorInFamily op f) (hk : familyKind f = k) :
+    OperatorInKind op k := by
+  unfold OperatorInFamily at hf
+  unfold OperatorInKind operatorKind
+  rw [hf]; exact hk
+
+/--
+Family membership is decidable, so finite statements about operators in a
+family can be checked with `decide`.
+-/
+instance (op : OperatorCode) (f : TransformationFamily) :
+    Decidable (OperatorInFamily op f) :=
+  inferInstanceAs (Decidable (operatorFamily op = f))
+
+/--
+Kind membership is decidable, so finite statements about operators in a kind
+can be checked with `decide`.
+-/
+instance (op : OperatorCode) (k : TransformationKind) :
+    Decidable (OperatorInKind op k) :=
+  inferInstanceAs (Decidable (operatorKind op = k))
 end
 
 end SE.Transformation

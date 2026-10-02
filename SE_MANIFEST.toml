@@ -46,7 +46,6 @@ artifacts = [
   "operator-registry",
   "transformation-catalog",
   "transformation-family-registry",
-  "outcome-registry",
   "composition-registry",
   "orthogonality-matrix",
   "transformation-schemas",
@@ -63,7 +62,6 @@ includes = [
   "family-to-kind mappings",
   "operator composition relations",
   "operator orthogonality relations",
-  "transformation outcome vocabulary",
   "machine-readable transformation registries",
   "Lean formalization of transformation vocabulary",
 ]

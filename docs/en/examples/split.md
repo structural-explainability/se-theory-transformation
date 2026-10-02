@@ -20,15 +20,9 @@ sub-referents.
 The authoritative operator definition is in:
 
 ```text
-SETheoryTransformation/Domain/Operator/Codes.lean
-SETheoryTransformation/Domain/Operator/Labels.lean
-SETheoryTransformation/Domain/Operator/Semantics.lean
-```
-
-The reference mirror is in:
-
-```text
-reference/transformation-operators.toml
+SE/Transformation/Domain/Operator/Codes.lean
+SE/Transformation/Domain/Operator/Labels.lean
+SE/Transformation/Domain/Operator/Semantics.lean
 ```
 
 ## Boundary

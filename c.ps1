@@ -204,11 +204,11 @@ foreach ($file in $leanFiles) {
     # 2. Catch stale pre-migration namespace/import references.
     # --------------------------------------------------------
 
-    if ($content -match '\bSETheoryTransformation\b') {
+    if ($content -match '\bSE/Transformation/\b') {
         Add-Issue `
             -Severity "ERROR" `
             -File $relative `
-            -Message "Contains stale SETheoryTransformation reference."
+            -Message "Contains stale SE/Transformation/ reference."
     }
 
     # --------------------------------------------------------

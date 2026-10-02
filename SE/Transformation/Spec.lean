@@ -88,6 +88,25 @@ def TR_DEF_ORTHOGONALITY_LOOKUP : String :=
   "TR.DEF.ORTHOGONALITY_LOOKUP"
 
 -- ============================================================
+-- THEOREMS
+-- ============================================================
+
+/-- Stable citation identifier for `operatorInFamily_iff`. -/
+def TR_THM_OPERATOR_IN_FAMILY_IFF : String :=
+  "TR.THM.OPERATOR_IN_FAMILY_IFF"
+
+/-- Stable citation identifier for `operatorInKind_iff`. -/
+def TR_THM_OPERATOR_IN_KIND_IFF : String :=
+  "TR.THM.OPERATOR_IN_KIND_IFF"
+
+/-- Stable citation identifier for `operatorInKind_of_operatorInFamily`. -/
+def TR_THM_OPERATOR_IN_KIND_OF_OPERATOR_IN_FAMILY : String :=
+  "TR.THM.OPERATOR_IN_KIND_OF_OPERATOR_IN_FAMILY"
+
+-- ============================================================
+-- REFERENCE RULES
+-- ============================================================
+-- ============================================================
 -- REFERENCE RULES
 -- ============================================================
 

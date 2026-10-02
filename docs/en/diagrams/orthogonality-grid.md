@@ -12,20 +12,8 @@ The pair is unordered: orthogonality is symmetric.
 The authoritative Lean definitions are in:
 
 ```text
-SETheoryTransformation/Relation/Orthogonality.lean
-SETheoryTransformation/Reference/Orthogonality.lean
-```
-
-The reference registry mirror is in:
-
-```text
-reference/orthogonality-rules.toml
-```
-
-Generated data is in:
-
-```text
-data/transformation/orthogonality-matrix.json
+SE/Transformation/Relation/Orthogonality.lean
+SE/Transformation/Reference/Orthogonality.lean
 ```
 
 ## Rule

@@ -2,21 +2,18 @@
 # Transformation Kinds
 # se-theory-transformation
 # ============================================================
-# Seven broad kinds providing the highest-level classification
-# of transformation behavior. Kinds organize families.
+# Seven canonical kinds.
 #
-# STATUS: canonical
-# Kind identities match SE.Transformation.Domain.TransformationKind.
-# Family memberships are the inverse of familyKind in
-# SE.Transformation.Domain.Operator.Semantics.
+# Kind constructors are defined in TransformationKind.
+# Family membership is the inverse of the authoritative familyKind mapping.
 #
-# This file does not define persistence behavior.
+# Any helper modules are not reference authorities.
 
 [meta]
 source = "se-theory-transformation"
 namespace = "se.transformation"
 artifact = "transformation-kinds"
-version = "0.1.0"
+version = "0.2.0"
 status = "canonical"
 
 [kind.Contextual]
@@ -24,8 +21,8 @@ order = 1
 id = "Contextual"
 label = "Contextual"
 lean_constructor = "contextual"
-source_module = "SE.Transformation.Domain.Kind.Contextual"
-description = "Transformations that attach or remove bearer contexts, conditions, or dependencies."
+source_module = "SE.Transformation.Domain.TransformationKind"
+description = "Broad kind whose current family membership is Contextual."
 family_ids = ["Contextual"]
 
 [kind.Normative]
@@ -33,8 +30,8 @@ order = 2
 id = "Normative"
 label = "Normative"
 lean_constructor = "normative"
-source_module = "SE.Transformation.Domain.Kind.Normative"
-description = "Transformations that apply permissions or authorizations to a referent and record the application as a fact."
+source_module = "SE.Transformation.Domain.TransformationKind"
+description = "Broad kind whose current family membership is Normative."
 family_ids = ["Normative"]
 
 [kind.Observational]
@@ -42,8 +39,8 @@ order = 3
 id = "Observational"
 label = "Observational"
 lean_constructor = "observational"
-source_module = "SE.Transformation.Domain.Kind.Observational"
-description = "Transformations that produce views, copies, or verified records of a referent without altering the referent itself."
+source_module = "SE.Transformation.Domain.TransformationKind"
+description = "Broad kind whose current family memberships are Attestation, Projection, and Replication."
 family_ids = ["Attestation", "Projection", "Replication"]
 
 [kind.Organizational]
@@ -51,8 +48,8 @@ order = 4
 id = "Organizational"
 label = "Organizational"
 lean_constructor = "organizational"
-source_module = "SE.Transformation.Domain.Kind.Organizational"
-description = "Transformations that change structural arrangement or placement without altering referent content."
+source_module = "SE.Transformation.Domain.TransformationKind"
+description = "Broad kind whose current family memberships are Containment and Reorganization."
 family_ids = ["Containment", "Reorganization"]
 
 [kind.Relational]
@@ -60,8 +57,8 @@ order = 5
 id = "Relational"
 label = "Relational"
 lean_constructor = "relational"
-source_module = "SE.Transformation.Domain.Kind.Relational"
-description = "Transformations that establish relationships between referents or relocate a referent while preserving referential linkage."
+source_module = "SE.Transformation.Domain.TransformationKind"
+description = "Broad kind whose current family memberships are Association and Migration."
 family_ids = ["Association", "Migration"]
 
 [kind.Structural]
@@ -69,8 +66,8 @@ order = 6
 id = "Structural"
 label = "Structural"
 lean_constructor = "structural"
-source_module = "SE.Transformation.Domain.Kind.Structural"
-description = "Transformations that combine, divide, or scale the structural complexity of a referent."
+source_module = "SE.Transformation.Domain.TransformationKind"
+description = "Broad kind whose current family memberships are Aggregation, Decomposition, and Scaling."
 family_ids = ["Aggregation", "Decomposition", "Scaling"]
 
 [kind.Temporal]
@@ -78,6 +75,6 @@ order = 7
 id = "Temporal"
 label = "Temporal"
 lean_constructor = "temporal"
-source_module = "SE.Transformation.Domain.Kind.Temporal"
-description = "Transformations that produce versioned successors, divergent continuations, or reversions to prior states."
+source_module = "SE.Transformation.Domain.TransformationKind"
+description = "Broad kind whose current family memberships are Branching and Versioning."
 family_ids = ["Branching", "Versioning"]

@@ -1,123 +1,94 @@
 {
-  "schema": "se-transformation-kind-registry-1",
+  "schema": "se-theory-transformation-kind-registry",
   "source": "se-theory-transformation",
   "namespace": "se.transformation",
   "artifact": "transformation-kind-registry",
   "reference_artifact": "transformation-kinds",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-transformation/reference/transformation-kinds.toml",
-  "kinds": [
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-kinds.toml",
+  "kind": [
     {
       "order": 1,
       "id": "Contextual",
       "label": "Contextual",
       "lean_constructor": "contextual",
-      "source_module": "SE.Transformation.Domain.Kind.Contextual",
-      "description": "Transformations that change the interpretive frame, applicability context, or situational placement of a referent without necessarily altering its internal structure.",
-      "family_ids": [],
-      "basis_elements": [
-        "RC"
-      ],
-      "note": "family_ids and basis_elements require Domain/Kind/Contextual.lean review."
+      "source_module": "SE.Transformation.Domain.TransformationKind",
+      "description": "Broad kind whose current family membership is Contextual.",
+      "family_ids": [
+        "Contextual"
+      ]
     },
     {
       "order": 2,
       "id": "Normative",
       "label": "Normative",
       "lean_constructor": "normative",
-      "source_module": "SE.Transformation.Domain.Kind.Normative",
-      "description": "Transformations that apply, alter, record, or reposition normative conditions associated with a referent. Normative transformations concern obligation, permission, authorization, attestation, or related normative structures without by themselves deciding persistence.",
-      "family_ids": [],
-      "basis_elements": [],
-      "note": "family_ids and basis_elements require Domain/Kind/Normative.lean review."
+      "source_module": "SE.Transformation.Domain.TransformationKind",
+      "description": "Broad kind whose current family membership is Normative.",
+      "family_ids": [
+        "Normative"
+      ]
     },
     {
       "order": 3,
       "id": "Observational",
       "label": "Observational",
       "lean_constructor": "observational",
-      "source_module": "SE.Transformation.Domain.Kind.Observational",
-      "description": "Transformations that produce a view, record, measurement, projection, or observation of a referent without necessarily changing the referent itself.",
+      "source_module": "SE.Transformation.Domain.TransformationKind",
+      "description": "Broad kind whose current family memberships are Attestation, Projection, and Replication.",
       "family_ids": [
-        "Projection"
-      ],
-      "basis_elements": [
-        "AN",
-        "PV"
-      ],
-      "note": "family_ids and basis_elements require Domain/Kind/Observational.lean review."
+        "Attestation",
+        "Projection",
+        "Replication"
+      ]
     },
     {
       "order": 4,
       "id": "Organizational",
       "label": "Organizational",
       "lean_constructor": "organizational",
-      "source_module": "SE.Transformation.Domain.Kind.Organizational",
-      "description": "Transformations that change organizational arrangement, grouping, administrative placement, or structural ordering of referents within a larger configuration.",
+      "source_module": "SE.Transformation.Domain.TransformationKind",
+      "description": "Broad kind whose current family memberships are Containment and Reorganization.",
       "family_ids": [
-        "Aggregation",
-        "Decomposition",
+        "Containment",
         "Reorganization"
-      ],
-      "basis_elements": [
-        "AD",
-        "BF",
-        "RF",
-        "SE"
-      ],
-      "note": "family_ids and basis_elements require Domain/Kind/Organizational.lean review."
+      ]
     },
     {
       "order": 5,
       "id": "Relational",
       "label": "Relational",
       "lean_constructor": "relational",
-      "source_module": "SE.Transformation.Domain.Kind.Relational",
-      "description": "Transformations that change relations among referents, including association, containment, linkage, dependency, or referential connection.",
-      "family_ids": [],
-      "basis_elements": [
-        "RA",
-        "RC"
-      ],
-      "note": "family_ids and basis_elements require Domain/Kind/Relational.lean review."
+      "source_module": "SE.Transformation.Domain.TransformationKind",
+      "description": "Broad kind whose current family memberships are Association and Migration.",
+      "family_ids": [
+        "Association",
+        "Migration"
+      ]
     },
     {
       "order": 6,
       "id": "Structural",
       "label": "Structural",
       "lean_constructor": "structural",
-      "source_module": "SE.Transformation.Domain.Kind.Structural",
-      "description": "Transformations that alter the structural composition, arrangement, partitioning, or combination of a referent. Structural transformations include combining, dividing, and rearranging structural components.",
+      "source_module": "SE.Transformation.Domain.TransformationKind",
+      "description": "Broad kind whose current family memberships are Aggregation, Decomposition, and Scaling.",
       "family_ids": [
         "Aggregation",
         "Decomposition",
-        "Reorganization"
-      ],
-      "basis_elements": [
-        "AD",
-        "BF",
-        "RF",
-        "SE"
-      ],
-      "note": "family_ids and basis_elements require Domain/Kind/Structural.lean review."
+        "Scaling"
+      ]
     },
     {
       "order": 7,
       "id": "Temporal",
       "label": "Temporal",
       "lean_constructor": "temporal",
-      "source_module": "SE.Transformation.Domain.Kind.Temporal",
-      "description": "Transformations that relate a referent to temporal predecessors, successors, versions, continuations, or migrations across time-indexed states.",
+      "source_module": "SE.Transformation.Domain.TransformationKind",
+      "description": "Broad kind whose current family memberships are Branching and Versioning.",
       "family_ids": [
         "Branching",
-        "Migration",
         "Versioning"
-      ],
-      "basis_elements": [
-        "BF",
-        "RA",
-        "RF"
-      ],
-      "note": "family_ids and basis_elements require Domain/Kind/Temporal.lean review."
+      ]
     }
   ]
 }

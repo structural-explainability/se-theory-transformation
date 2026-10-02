@@ -31,9 +31,6 @@ This repository does not own:
 - regime profiles;
 - persistence verdicts;
 - regime persistence semantics;
-- operational admissibility policy;
-- accountable entities;
-- evolution protocols;
 - domain mappings; or
 - runtime systems.
 
@@ -53,17 +50,6 @@ independent sources of classification semantics.
 
 Composition and orthogonality are explicitly partial. Absence of a rule means
 that this theory has not specified a canonical relation for that pair.
-
-## Primary Lean Locations
-
-```text
-SE/Transformation/Domain/
-SE/Transformation/Relation/
-SE/Transformation/Reference/
-SE/Transformation/Registry.lean
-SE/Transformation/Conformance.lean
-SE/Transformation/Spec.lean
-```
 
 ## Build
 

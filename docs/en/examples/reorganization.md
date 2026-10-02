@@ -20,15 +20,8 @@ without necessarily changing membership.
 The authoritative family and operator mappings are in:
 
 ```text
-SETheoryTransformation/Domain/TransformationFamily.lean
-SETheoryTransformation/Domain/Operator/Semantics.lean
-```
-
-The reference mirrors are in:
-
-```text
-reference/transformation-families.toml
-reference/transformation-operators.toml
+SE/Transformation/Domain/TransformationFamily.lean
+SE/Transformation/Domain/Operator/Semantics.lean
 ```
 
 ## Boundary

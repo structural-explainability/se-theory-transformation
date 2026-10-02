@@ -20,24 +20,22 @@ whether identity persists through the version relation.
 
 ## Formal authority
 
-The authoritative operator definition is in:
+The authoritative operator definitions are in:
 
 ```text
-SETheoryTransformation/Domain/Operator/Codes.lean
-SETheoryTransformation/Domain/Operator/Labels.lean
-SETheoryTransformation/Domain/Operator/Semantics.lean
+SE/Transformation/Domain/Operator/
 ```
 
 The authoritative family vocabulary is in:
 
 ```text
-SETheoryTransformation/Domain/TransformationFamily.lean
+SE/Transformation/Domain/TransformationFamily.lean
 ```
 
 The operator-to-family mapping is in:
 
 ```text
-SETheoryTransformation/Domain/Operator/Semantics.lean
+SE/Transformation/Domain/Operator/Semantics.lean
 ```
 
 The reference mirrors are in:

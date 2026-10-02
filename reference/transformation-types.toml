@@ -2,137 +2,122 @@
 # Transformation Types
 # se-theory-transformation
 # ============================================================
-# Public Lean type and structure registry for the transformation
-# theory surface.
+# Public Lean type registry for the Transformation theory.
 #
-# STATUS: draft
-# This file indexes actual Lean vocabulary exposed by the theory layer.
-# It does not define persistence behavior, regime behavior, identity
-# outcomes, or operational validation policy.
+# The entries mirror retained public Lean types. Persistence outcomes,
+# composition-rule structures, and orthogonality-rule structures are
+# intentionally absent because those concepts are not in the current theory.
 
 schema = "se-type-registry-1"
+kind = "type"
 repo = "se-theory-transformation"
-surface_module = "SE"
+surface_module = "SE.Transformation"
 namespace = "SE.Transformation"
 
-[type.CompositionRelation]
-order = 1
-id = "CompositionRelation"
-cite_id = "TR.TYPE.COMPOSITION_RELATION"
-name = "Composition relation"
-lean_symbol = "SE.Transformation.CompositionRelation"
-source_module = "SE.Transformation.Relation.Composition"
-description = "Classification of the sequencing relationship between two transformation operators."
-constructors = [
-  "absorbing",
-  "composable",
-  "conditionallyComposable",
-  "inverseLike",
-  "nonComposable",
-  "redundant",
-  "unknown",
-]
-
-[type.CompositionRule]
-order = 2
-id = "CompositionRule"
-cite_id = "TR.TYPE.COMPOSITION_RULE"
-name = "Composition rule"
-lean_symbol = "SE.Transformation.CompositionRule"
-source_module = "SE.Transformation.Relation.Composition"
-description = "A rule assigning a composition relation to an ordered pair of transformation operators."
-
 [type.OperatorCode]
-order = 3
+order = 1
 id = "OperatorCode"
 cite_id = "TR.TYPE.OPERATOR_CODE"
 name = "Operator code"
 lean_symbol = "SE.Transformation.OperatorCode"
+lean_kind = "inductive"
 source_module = "SE.Transformation.Domain.Operator.Codes"
 description = "Canonical two-letter code identifying a transformation operator."
-
-[type.OrthogonalityRelation]
-order = 4
-id = "OrthogonalityRelation"
-cite_id = "TR.TYPE.ORTHOGONALITY_RELATION"
-name = "Orthogonality relation"
-lean_symbol = "SE.Transformation.OrthogonalityRelation"
-source_module = "SE.Transformation.Relation.Orthogonality"
-description = "Classification of the structural independence relationship between two transformation operators."
 constructors = [
-  "conflicting",
-  "dependent",
-  "inverseLike",
-  "orthogonal",
-  "overlapping",
-  "unknown",
+    "AT",
+    "AZ",
+    "BD",
+    "BR",
+    "CL",
+    "CP",
+    "EM",
+    "EX",
+    "LK",
+    "MG",
+    "PR",
+    "RO",
+    "RV",
+    "SH",
+    "SP",
+    "UB",
+    "VS",
 ]
 
-[type.OrthogonalityRule]
-order = 5
-id = "OrthogonalityRule"
-cite_id = "TR.TYPE.ORTHOGONALITY_RULE"
-name = "Orthogonality rule"
-lean_symbol = "SE.Transformation.OrthogonalityRule"
-source_module = "SE.Transformation.Relation.Orthogonality"
-description = "A rule assigning an orthogonality relation to an unordered pair of transformation operators."
-
 [type.TransformationFamily]
-order = 6
+order = 2
 id = "TransformationFamily"
 cite_id = "TR.TYPE.TRANSFORMATION_FAMILY"
 name = "Transformation family"
 lean_symbol = "SE.Transformation.TransformationFamily"
+lean_kind = "inductive"
 source_module = "SE.Transformation.Domain.TransformationFamily"
 description = "Mid-level behavioral category grouping transformation operators by shared structural behavior."
 constructors = [
-  "aggregation",
-  "association",
-  "attestation",
-  "branching",
-  "containment",
-  "contextual",
-  "decomposition",
-  "migration",
-  "normative",
-  "projection",
-  "replication",
-  "reorganization",
-  "scaling",
-  "versioning",
+    "aggregation",
+    "association",
+    "attestation",
+    "branching",
+    "containment",
+    "contextual",
+    "decomposition",
+    "migration",
+    "normative",
+    "projection",
+    "replication",
+    "reorganization",
+    "scaling",
+    "versioning",
 ]
 
 [type.TransformationKind]
-order = 7
+order = 3
 id = "TransformationKind"
 cite_id = "TR.TYPE.TRANSFORMATION_KIND"
 name = "Transformation kind"
 lean_symbol = "SE.Transformation.TransformationKind"
+lean_kind = "inductive"
 source_module = "SE.Transformation.Domain.TransformationKind"
-description = "Broad behavioral category of transformation. Each family belongs to exactly one transformation kind."
+description = "Broad behavioral category of transformation. Each transformation family belongs to exactly one transformation kind."
 constructors = [
-  "contextual",
-  "normative",
-  "observational",
-  "organizational",
-  "relational",
-  "structural",
-  "temporal",
+    "contextual",
+    "normative",
+    "observational",
+    "organizational",
+    "relational",
+    "structural",
+    "temporal",
 ]
 
-[type.TransformationOutcome]
-order = 8
-id = "TransformationOutcome"
-cite_id = "TR.TYPE.TRANSFORMATION_OUTCOME"
-name = "Transformation outcome"
-lean_symbol = "SE.Transformation.TransformationOutcome"
-source_module = "SE.Transformation.Outcome"
-description = "Outcome vocabulary for transformation analysis. This registry does not assign regime-specific persistence behavior."
+[type.CompositionRelation]
+order = 4
+id = "CompositionRelation"
+cite_id = "TR.TYPE.COMPOSITION_RELATION"
+name = "Composition relation"
+lean_symbol = "SE.Transformation.CompositionRelation"
+lean_kind = "inductive"
+source_module = "SE.Transformation.Relation.Composition"
+description = "Classification of a specified sequencing relationship between two transformation operators."
 constructors = [
-  "BRK",
-  "IGN",
-  "INH",
-  "MIX",
-  "PRS",
-  "UNK",
+    "absorbing",
+    "composable",
+    "conditionallyComposable",
+    "inverseLike",
+    "nonComposable",
+    "redundant",
+]
+
+[type.OrthogonalityRelation]
+order = 5
+id = "OrthogonalityRelation"
+cite_id = "TR.TYPE.ORTHOGONALITY_RELATION"
+name = "Orthogonality relation"
+lean_symbol = "SE.Transformation.OrthogonalityRelation"
+lean_kind = "inductive"
+source_module = "SE.Transformation.Relation.Orthogonality"
+description = "Classification of a specified structural-independence relationship between two transformation operators."
+constructors = [
+    "conflicting",
+    "dependent",
+    "orthogonal",
+    "overlapping",
 ]

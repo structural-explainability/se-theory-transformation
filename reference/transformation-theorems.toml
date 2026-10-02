@@ -1,0 +1,137 @@
+# ============================================================
+# Transformation Theorems
+# se-theory-transformation
+# ============================================================
+# Public semantic theorems for the transformation taxonomy and
+# the currently declared partial composition and orthogonality relations.
+#
+# The membership theorems expose the relationship between the Prop-valued
+# membership predicates and the authoritative taxonomy mappings.
+#
+# Internal finite taxonomy regression guards in
+# SE.Transformation.Invariants are intentionally not registered here.
+
+schema = "se-theorem-registry-1"
+kind = "theorem"
+repo = "se-theory-transformation"
+surface_module = "SE.Transformation"
+namespace = "SE.Transformation"
+
+# ============================================================
+# TAXONOMY MEMBERSHIP
+# ============================================================
+
+[theorem.OperatorInFamilyIff]
+order = 1
+id = "OperatorInFamilyIff"
+cite_id = "TR.THM.OPERATOR_IN_FAMILY_IFF"
+name = "Operator in family iff"
+lean_symbol = "SE.Transformation.operatorInFamily_iff"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Domain.Operator.Semantics"
+description = "OperatorInFamily op family holds exactly when operatorFamily op equals family."
+
+[theorem.OperatorInKindIff]
+order = 2
+id = "OperatorInKindIff"
+cite_id = "TR.THM.OPERATOR_IN_KIND_IFF"
+name = "Operator in kind iff"
+lean_symbol = "SE.Transformation.operatorInKind_iff"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Domain.Operator.Semantics"
+description = "OperatorInKind op kind holds exactly when operatorKind op equals kind."
+
+[theorem.OperatorInKindOfOperatorInFamily]
+order = 3
+id = "OperatorInKindOfOperatorInFamily"
+cite_id = "TR.THM.OPERATOR_IN_KIND_OF_OPERATOR_IN_FAMILY"
+name = "Operator in kind from operator in family"
+lean_symbol = "SE.Transformation.operatorInKind_of_operatorInFamily"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Domain.Operator.Semantics"
+description = "An operator in a family is in any transformation kind assigned to that family."
+
+# ============================================================
+# COMPOSITION
+# ============================================================
+
+[theorem.AuthorizeThenAttest]
+order = 4
+id = "AuthorizeThenAttest"
+cite_id = "TR.RULE.AUTHORIZE_THEN_ATTEST"
+name = "Authorize then attest"
+lean_symbol = "SE.Transformation.authorizeThenAttest"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Reference.Composition"
+description = "Authorization followed by attestation is one of the canonical ordered composition pairs and is composable."
+
+[theorem.BindThenUnbind]
+order = 5
+id = "BindThenUnbind"
+cite_id = "TR.RULE.BIND_THEN_UNBIND"
+name = "Bind then unbind"
+lean_symbol = "SE.Transformation.bindThenUnbind"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Reference.Composition"
+description = "Binding followed by unbinding is one of the canonical ordered composition pairs and is inverse-like."
+
+[theorem.SplitThenMerge]
+order = 6
+id = "SplitThenMerge"
+cite_id = "TR.RULE.SPLIT_THEN_MERGE"
+name = "Split then merge"
+lean_symbol = "SE.Transformation.splitThenMerge"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Reference.Composition"
+description = "Splitting followed by merging is one of the canonical ordered composition pairs and is inverse-like."
+
+[theorem.CompositionDefinedIff]
+order = 7
+id = "CompositionDefinedIff"
+name = "Composition defined exactly for declared pairs"
+lean_symbol = "SE.Transformation.composition_defined_iff"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Reference.Composition"
+description = "Characterizes exactly the three ordered operator pairs for which the canonical composition lookup is defined."
+
+# ============================================================
+# ORTHOGONALITY
+# ============================================================
+
+[theorem.AuthorizeAndAttest]
+order = 8
+id = "AuthorizeAndAttest"
+cite_id = "TR.RULE.AUTHORIZE_AND_ATTEST"
+name = "Authorize and attest"
+lean_symbol = "SE.Transformation.authorizeAndAttest"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Reference.Orthogonality"
+description = "Authorization and attestation are one of the canonical orthogonality pairs and are classified as orthogonal."
+
+[theorem.ProjectAndCollapse]
+order = 9
+id = "ProjectAndCollapse"
+cite_id = "TR.RULE.PROJECT_AND_COLLAPSE"
+name = "Project and collapse"
+lean_symbol = "SE.Transformation.projectAndCollapse"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Reference.Orthogonality"
+description = "Projection and collapse are one of the canonical orthogonality pairs and are classified as overlapping."
+
+[theorem.OrthogonalitySymm]
+order = 10
+id = "OrthogonalitySymm"
+name = "Orthogonality lookup symmetry"
+lean_symbol = "SE.Transformation.orthogonality_symm"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Reference.Orthogonality"
+description = "Reversing an operator pair cannot change the result of the canonical orthogonality lookup."
+
+[theorem.OrthogonalityDefinedIff]
+order = 11
+id = "OrthogonalityDefinedIff"
+name = "Orthogonality defined exactly for declared pairs"
+lean_symbol = "SE.Transformation.orthogonality_defined_iff"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Reference.Orthogonality"
+description = "Characterizes exactly the two unordered operator pairs for which the canonical orthogonality lookup is defined."

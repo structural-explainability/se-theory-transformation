@@ -5,10 +5,12 @@
   "artifact": "transformation-catalog",
   "reference_paths": [
     "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-types.toml",
+    "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-vocabulary.toml",
+    "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-predicates.toml",
+    "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-theorems.toml",
     "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-operators.toml",
     "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-families.toml",
     "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-kinds.toml",
-    "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-outcomes.toml",
     "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/composition-rules.toml",
     "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/orthogonality-rules.toml"
   ],
@@ -17,6 +19,21 @@
       "id": "type",
       "kind": "type",
       "path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-types.toml"
+    },
+    {
+      "id": "vocabulary",
+      "kind": "vocabulary",
+      "path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-vocabulary.toml"
+    },
+    {
+      "id": "predicate",
+      "kind": "predicate",
+      "path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-predicates.toml"
+    },
+    {
+      "id": "theorem",
+      "kind": "theorem",
+      "path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-theorems.toml"
     },
     {
       "id": "operator",
@@ -32,11 +49,6 @@
       "id": "kind",
       "kind": "kind",
       "path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-kinds.toml"
-    },
-    {
-      "id": "outcome",
-      "kind": "outcome",
-      "path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-outcomes.toml"
     },
     {
       "id": "composition",

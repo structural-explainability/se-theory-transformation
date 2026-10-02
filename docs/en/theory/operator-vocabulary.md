@@ -6,12 +6,10 @@ They define kinds of change, not survival judgments.
 
 ## Authority
 
-The authoritative Lean definitions are:
+The authoritative Lean definitions are in:
 
 ```text
-SE/Transformation/Domain/Operator/Codes.lean
-SE/Transformation/Domain/Operator/Labels.lean
-SE/Transformation/Domain/Operator/Semantics.lean
+SE/Transformation/Domain/Operator/
 ```
 
 The semantic classification path is:

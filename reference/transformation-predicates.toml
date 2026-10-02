@@ -1,0 +1,31 @@
+# ============================================================
+# Transformation Predicates
+# se-theory-transformation
+# ============================================================
+# Public predicates derived from the authoritative taxonomy mappings.
+
+schema = "se-predicate-registry-1"
+kind = "predicate"
+repo = "se-theory-transformation"
+surface_module = "SE.Transformation"
+namespace = "SE.Transformation"
+
+[predicate.OperatorInFamily]
+order = 1
+id = "OperatorInFamily"
+cite_id = "TR.DEF.OPERATOR_IN_FAMILY"
+name = "Operator in family"
+lean_symbol = "SE.Transformation.OperatorInFamily"
+lean_kind = "def"
+source_module = "SE.Transformation.Domain.Operator.Semantics"
+description = "Predicate asserting that an operator's authoritative family equals the supplied transformation family."
+
+[predicate.OperatorInKind]
+order = 2
+id = "OperatorInKind"
+cite_id = "TR.DEF.OPERATOR_IN_KIND"
+name = "Operator in kind"
+lean_symbol = "SE.Transformation.OperatorInKind"
+lean_kind = "def"
+source_module = "SE.Transformation.Domain.Operator.Semantics"
+description = "Predicate asserting that an operator's derived transformation kind equals the supplied kind."

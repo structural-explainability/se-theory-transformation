@@ -9,8 +9,8 @@ left operator -> right operator -> composition relation
 The authoritative Lean definitions are in:
 
 ```text
-SETheoryTransformation/Relation/Composition.lean
-SETheoryTransformation/Reference/Composition.lean
+SE/Transformation/Relation/Composition.lean
+SE/Transformation/Reference/Composition.lean
 ```
 
 The reference registry mirror is in:

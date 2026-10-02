@@ -14,27 +14,17 @@
       "relation": "orthogonal",
       "lean_def": "authorizeAndAttest",
       "source_module": "SE.Transformation.Reference.Orthogonality",
-      "note": "Authorize and Attest operate on distinct effect domains: AZ affects normative status, while AT records a claim."
+      "note": "Authorization and attestation have canonically orthogonal effect domains."
     },
     {
       "order": 2,
-      "id": "split_and_merge",
-      "left": "SP",
-      "right": "MG",
-      "relation": "inverseLike",
-      "lean_def": "splitAndMerge",
-      "source_module": "SE.Transformation.Reference.Orthogonality",
-      "note": "Split and Merge are structural inverses in the Decomposition/Aggregation family pair."
-    },
-    {
-      "order": 3,
       "id": "project_and_collapse",
       "left": "PR",
       "right": "CL",
       "relation": "overlapping",
       "lean_def": "projectAndCollapse",
       "source_module": "SE.Transformation.Reference.Orthogonality",
-      "note": "Project and Collapse share a partial structural effect domain (both reduce structure)."
+      "note": "Projection and collapse have a canonical overlapping orthogonality relation."
     }
   ]
 }

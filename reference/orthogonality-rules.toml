@@ -2,36 +2,32 @@
 # Orthogonality Rules
 # se-theory-transformation
 # ============================================================
-# Canonical seed rules specifying the orthogonality relation for
-# operator pairs. Orthogonality is symmetric: {left, right} is
-# unordered.
+# Canonical currently declared orthogonality pairs.
+#
+# Orthogonality is explicitly partial and symmetric. Each unordered
+# pair is represented once in this table. The Lean lookup itself
+# contains both orientations and orthogonality_symm proves symmetry.
+#
+# Absence from this table means the theory currently specifies no
+# canonical orthogonality relation for that pair.
 #
 # OrthogonalityRelation values:
 #   conflicting  - operators cannot share a context without contradiction
 #   dependent    - one operator's applicability depends on the other
-#   inverseLike  - symmetric inverse structural relationship
 #   orthogonal   - no shared effect domain; operators do not interfere
 #   overlapping  - partial shared effect domain
-#   unknown      - relation is unresolved or intentionally unspecified
 #
-# Seed rules are confirmed from:
+# `inverseLike` is intentionally not an orthogonality value.
+#
+# Authority:
 #   SE.Transformation.Reference.Orthogonality
-#
-# Additional rules to be added as the operator catalog grows.
-# The generated data/transformation/orthogonality-matrix.json is
-# derived from this file.
 
 [meta]
 source = "se-theory-transformation"
 namespace = "se.transformation"
 artifact = "orthogonality-rules"
-version = "0.1.0"
+version = "0.2.0"
 status = "canonical"
-
-# ---------------------------------------------------------------
-# orthogonal pairs
-# These operators have no shared effect domain.
-# ---------------------------------------------------------------
 
 [orthogonality.authorize_and_attest]
 order = 1
@@ -41,38 +37,14 @@ right = "AT"
 relation = "orthogonal"
 lean_def = "authorizeAndAttest"
 source_module = "SE.Transformation.Reference.Orthogonality"
-note = "Authorize and Attest operate on distinct effect domains: AZ affects normative status, while AT records a claim."
-
-# ---------------------------------------------------------------
-# inverseLike pairs
-# These operators stand in a symmetric inverse relationship.
-# ---------------------------------------------------------------
-
-[orthogonality.split_and_merge]
-order = 2
-id = "split_and_merge"
-left = "SP"
-right = "MG"
-relation = "inverseLike"
-lean_def = "splitAndMerge"
-source_module = "SE.Transformation.Reference.Orthogonality"
-note = "Split and Merge are structural inverses in the Decomposition/Aggregation family pair."
-
-# ---------------------------------------------------------------
-# overlapping pairs
-# These operators share a partial effect domain.
-# ---------------------------------------------------------------
+note = "Authorization and attestation have canonically orthogonal effect domains."
 
 [orthogonality.project_and_collapse]
-order = 3
+order = 2
 id = "project_and_collapse"
 left = "PR"
 right = "CL"
 relation = "overlapping"
 lean_def = "projectAndCollapse"
 source_module = "SE.Transformation.Reference.Orthogonality"
-note = "Project and Collapse share a partial structural effect domain (both reduce structure)."
-
-# ---------------------------------------------------------------
-# Additional rules: to be added as operator catalog grows
-# ---------------------------------------------------------------
+note = "Projection and collapse have a canonical overlapping orthogonality relation."

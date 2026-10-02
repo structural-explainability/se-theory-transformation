@@ -1,0 +1,132 @@
+# ============================================================
+# Transformation Vocabulary
+# se-theory-transformation
+# ============================================================
+# Public Lean definitions that define labels, taxonomy mappings,
+# canonical finite registries, derived queries, and partial relation lookups.
+#
+# `operatorFamily` and `familyKind` are the authoritative taxonomy mappings.
+# Derived lists and reference artifacts mirror those functions.
+
+schema = "se-vocabulary-registry-1"
+kind = "vocabulary"
+repo = "se-theory-transformation"
+surface_module = "SE.Transformation"
+namespace = "SE.Transformation"
+
+[vocabulary.OperatorCodeLabel]
+order = 1
+id = "OperatorCodeLabel"
+cite_id = "TR.DEF.OPERATOR_CODE_LABEL"
+name = "Operator code label"
+lean_symbol = "SE.Transformation.operatorCodeLabel"
+lean_kind = "def"
+source_module = "SE.Transformation.Domain.Operator.Labels"
+description = "Official short string label for each transformation operator code."
+
+[vocabulary.OperatorFamily]
+order = 2
+id = "OperatorFamily"
+cite_id = "TR.DEF.OPERATOR_FAMILY"
+name = "Operator family mapping"
+lean_symbol = "SE.Transformation.operatorFamily"
+lean_kind = "def"
+source_module = "SE.Transformation.Domain.Operator.Semantics"
+description = "Authoritative mapping from each operator code to exactly one transformation family."
+
+[vocabulary.FamilyKind]
+order = 3
+id = "FamilyKind"
+cite_id = "TR.DEF.FAMILY_KIND"
+name = "Family kind mapping"
+lean_symbol = "SE.Transformation.familyKind"
+lean_kind = "def"
+source_module = "SE.Transformation.Domain.Operator.Semantics"
+description = "Authoritative mapping from each transformation family to exactly one transformation kind."
+
+[vocabulary.OperatorKind]
+order = 4
+id = "OperatorKind"
+cite_id = "TR.DEF.OPERATOR_KIND"
+name = "Operator kind mapping"
+lean_symbol = "SE.Transformation.operatorKind"
+lean_kind = "def"
+source_module = "SE.Transformation.Domain.Operator.Semantics"
+description = "Derived operator-to-kind mapping defined as familyKind composed with operatorFamily."
+
+[vocabulary.ReferenceOperators]
+order = 5
+id = "ReferenceOperators"
+name = "Reference operators"
+lean_symbol = "SE.Transformation.referenceOperators"
+lean_kind = "def"
+source_module = "SE.Transformation.Registry"
+description = "Canonical finite list containing every transformation operator code exactly once."
+
+[vocabulary.ReferenceFamilies]
+order = 6
+id = "ReferenceFamilies"
+name = "Reference families"
+lean_symbol = "SE.Transformation.referenceFamilies"
+lean_kind = "def"
+source_module = "SE.Transformation.Registry"
+description = "Canonical finite list containing every transformation family exactly once."
+
+[vocabulary.ReferenceKinds]
+order = 7
+id = "ReferenceKinds"
+name = "Reference kinds"
+lean_symbol = "SE.Transformation.referenceKinds"
+lean_kind = "def"
+source_module = "SE.Transformation.Registry"
+description = "Canonical finite list containing every transformation kind exactly once."
+
+[vocabulary.OperatorsInFamily]
+order = 8
+id = "OperatorsInFamily"
+cite_id = "TR.DEF.OPERATORS_IN_FAMILY"
+name = "Operators in family"
+lean_symbol = "SE.Transformation.operatorsInFamily"
+lean_kind = "def"
+source_module = "SE.Transformation.Registry"
+description = "Derived list of canonical operators whose authoritative family equals the supplied family."
+
+[vocabulary.OperatorsInKind]
+order = 9
+id = "OperatorsInKind"
+cite_id = "TR.DEF.OPERATORS_IN_KIND"
+name = "Operators in kind"
+lean_symbol = "SE.Transformation.operatorsInKind"
+lean_kind = "def"
+source_module = "SE.Transformation.Registry"
+description = "Derived list of canonical operators whose derived kind equals the supplied kind."
+
+[vocabulary.FamiliesInKind]
+order = 10
+id = "FamiliesInKind"
+cite_id = "TR.DEF.FAMILIES_IN_KIND"
+name = "Families in kind"
+lean_symbol = "SE.Transformation.familiesInKind"
+lean_kind = "def"
+source_module = "SE.Transformation.Registry"
+description = "Derived list of canonical families whose authoritative kind equals the supplied kind."
+
+[vocabulary.CompositionLookup]
+order = 11
+id = "CompositionLookup"
+cite_id = "TR.DEF.COMPOSITION_LOOKUP"
+name = "Composition lookup"
+lean_symbol = "SE.Transformation.composition?"
+lean_kind = "def"
+source_module = "SE.Transformation.Reference.Composition"
+description = "Partial ordered-pair lookup returning a canonical composition relation when this theory specifies one."
+
+[vocabulary.OrthogonalityLookup]
+order = 12
+id = "OrthogonalityLookup"
+cite_id = "TR.DEF.ORTHOGONALITY_LOOKUP"
+name = "Orthogonality lookup"
+lean_symbol = "SE.Transformation.orthogonality?"
+lean_kind = "def"
+source_module = "SE.Transformation.Reference.Orthogonality"
+description = "Partial symmetric lookup returning a canonical orthogonality relation when this theory specifies one."

@@ -22,7 +22,7 @@ license = "MIT"
 # ============================================================
 # defaultTargets must include the public Lean library root.
 
-defaultTargets = ["SE"]
+defaultTargets = ["SE.Transformation"]
 testDriver = "SETest"
 lintDriver = "SELint"
 

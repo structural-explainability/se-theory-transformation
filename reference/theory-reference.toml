@@ -3,10 +3,10 @@
 # ============================================================
 # Theory reference configuration for se-theory-reference-kit.
 #
-# WHY: The theory repository owns Lean source, reference TOML,
-# and exported JSON artifacts.
-# The reusable kit owns validation, export, catalog, scaffold,
-# and inspection machinery.
+# The theory repository owns Lean source, reference TOML, and
+# generated JSON artifacts. The reusable reference kit owns the
+# generic validation, export, catalog, scaffold, and inspection
+# machinery.
 
 schema = "se-theory-reference"
 schema_version = "0.1.0"
@@ -28,6 +28,18 @@ public_modules = [
     "SE",
     "SE.Transformation",
     "SE.Transformation.Core",
+    "SE.Transformation.Domain.Operator",
+    "SE.Transformation.Domain.Operator.Codes",
+    "SE.Transformation.Domain.Operator.Labels",
+    "SE.Transformation.Domain.Operator.Semantics",
+    "SE.Transformation.Domain.TransformationFamily",
+    "SE.Transformation.Domain.TransformationKind",
+    "SE.Transformation.Invariants",
+    "SE.Transformation.Reference.Composition",
+    "SE.Transformation.Reference.Orthogonality",
+    "SE.Transformation.Registry",
+    "SE.Transformation.Relation.Composition",
+    "SE.Transformation.Relation.Orthogonality",
     "SE.Transformation.Spec",
 ]
 
@@ -44,22 +56,32 @@ root = "reference"
 root = "data/transformation"
 
 # === Reference-Kind Mapping ===
+#
+# Generic Lean-surface kinds register public theory concepts.
+# Domain catalog kinds mirror the finite transformation taxonomy
+# and the currently declared partial relation tables.
 
 [surface_kinds]
 type = "reference/transformation-types.toml"
+vocabulary = "reference/transformation-vocabulary.toml"
+predicate = "reference/transformation-predicates.toml"
+theorem = "reference/transformation-theorems.toml"
 operator = "reference/transformation-operators.toml"
 family = "reference/transformation-families.toml"
 kind = "reference/transformation-kinds.toml"
-outcome = "reference/transformation-outcomes.toml"
 composition = "reference/composition-rules.toml"
 orthogonality = "reference/orthogonality-rules.toml"
 
 # === Export Mapping ===
+#
+# Domain catalogs are exported for downstream machine use.
+# Generic Lean-surface registries remain canonical TOML reference
+# artifacts and are included in the generated catalog.
 
 [export_map]
 catalog = "data/transformation/transformation-catalog.json"
 operator = "data/transformation/operator-registry.json"
 family = "data/transformation/transformation-family-registry.json"
-outcome = "data/transformation/outcome-registry.json"
+kind = "data/transformation/transformation-kind-registry.json"
 composition = "data/transformation/composition-registry.json"
 orthogonality = "data/transformation/orthogonality-matrix.json"
