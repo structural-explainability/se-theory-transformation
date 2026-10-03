@@ -1,7 +1,7 @@
 # ============================================================
-# .github/workflows/deploy-zensical-lean.yml (LEAN+ALL-PY-REPOS)
+# .github/workflows/deploy-zensical-lean.yml (CUSTOM LEAN+ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-10-02
+# Updated: 2026-10-03 CUSTOM
 #
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
@@ -122,7 +122,7 @@ jobs:
         #      configures a different output directory.
 
       # ============================================================
-      # BB) BUILD LEAN API DOCUMENTATION
+      # BB) BUILD LEAN API DOCUMENTATION (CUSTOM)
       # ============================================================
 
       - name: BB1) Prepare Lean API documentation build
@@ -152,11 +152,11 @@ jobs:
           echo "Lean toolchain: ${LEAN_TOOLCHAIN}"
           echo "doc-gen4 revision: ${LEAN_TAG}"
 
-      - name: BB2) Build Lean API documentation
+      - name: BB2) Build Lean API documentation for this module
         working-directory: docbuild
         run: |
           lake update
-          lake build SE:docs
+          lake build SE.Transformation:docs
 
       - name: BB3) Verify Lean API output
         run: |
@@ -183,6 +183,8 @@ jobs:
             >> "$GITHUB_STEP_SUMMARY"
           echo "- Lean API reference: site/lean/index.html" \
             >> "$GITHUB_STEP_SUMMARY"
+
+
 
       # ============================================================
       # D) DEPLOY

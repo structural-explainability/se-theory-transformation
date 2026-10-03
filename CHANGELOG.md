@@ -322,17 +322,22 @@ lake build
 lake test
 lake lint
 
+# check docs (may not work on windows/runs via gh action)
+# cd docbuild
+# lake build SE.Transformation:docs
+# cd ..
+
 # Generate JSON artifacts and catalog from reference TOML.
-uv run se-theory-reference inspect
-uv run se-theory-reference export
-uv run se-theory-reference catalog
+uvx se-theory-reference-kit@latest inspect
+uvx se-theory-reference-kit@latest export
+uvx se-theory-reference-kit@latest catalog
 
 # Validate the reference artifacts against the Lean public surface.
-uv run se-theory-reference validate --strict
+uvx se-theory-reference-kit@latest validate --strict
 
 # Verify generated artifacts are current without rewriting them.
-uv run se-theory-reference export --check
-uv run se-theory-reference catalog --check
+uvx se-theory-reference-kit@latest export --check
+uvx se-theory-reference-kit@latest catalog --check
 
 .\rel.ps1
 .\sit.ps1
@@ -348,8 +353,7 @@ git commit -m "Prep X.Y.Z"
 git push -u origin main
 ```
 
-Verify that all required GitHub Actions complete successfully,
-including the combined Zensical and Lean API documentation deployment.
+Verify that all required GitHub Actions complete successfully.
 
 ### Task 4. Tag and Push the Release
 
@@ -358,13 +362,6 @@ After the required GitHub Actions succeed:
 ```shell
 git tag vX.Y.Z -m "X.Y.Z"
 git push origin vX.Y.Z
-```
-
-Create GitHub Release after pushing tag, for example
-with a command like this:
-
-```shell
-gh release create v0.8.0 --verify-tag --title "0.8.0"  --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
