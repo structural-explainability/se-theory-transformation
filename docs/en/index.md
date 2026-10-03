@@ -6,6 +6,9 @@
 Transformations are defined independently.
 Persistence is evaluated downstream.
 
+- [Lean API Reference](https://structural-explainability.github.io/se-theory-transformation/lean/)
+- [GitHub Repository](https://github.com/structural-explainability/se-theory-transformation)
+
 ## Covers
 
 This repository covers:
