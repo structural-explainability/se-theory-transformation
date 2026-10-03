@@ -4,7 +4,7 @@
   "namespace": "se.transformation",
   "artifact": "transformation-kind-registry",
   "reference_artifact": "transformation-kinds",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-kinds.toml",
+  "reference_path": "reference/transformation-kinds.toml",
   "kind": [
     {
       "order": 1,

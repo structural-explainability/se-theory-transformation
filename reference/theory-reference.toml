@@ -55,7 +55,7 @@ root = "reference"
 [export]
 root = "data/transformation"
 
-# === Reference-Kind Mapping ===
+# === Surface-Kind Mapping ===
 #
 # Generic Lean-surface kinds register public theory concepts.
 # Domain catalog kinds mirror the finite transformation taxonomy

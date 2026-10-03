@@ -4,7 +4,7 @@
   "namespace": "se.transformation",
   "artifact": "composition-registry",
   "reference_artifact": "composition-rules",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/composition-rules.toml",
+  "reference_path": "reference/composition-rules.toml",
   "composition": [
     {
       "order": 1,

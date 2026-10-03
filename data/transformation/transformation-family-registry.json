@@ -4,7 +4,7 @@
   "namespace": "se.transformation",
   "artifact": "transformation-family-registry",
   "reference_artifact": "transformation-families",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/theory/se-theory-transformation/reference/transformation-families.toml",
+  "reference_path": "reference/transformation-families.toml",
   "family": [
     {
       "order": 1,
