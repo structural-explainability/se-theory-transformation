@@ -2,8 +2,6 @@
 
 This example illustrates a transformation family informally.
 
-It is not a formal definition.
-
 ## Family
 
 ```text
@@ -12,20 +10,15 @@ reorganization
 
 ## Intuition
 
-A reorganization changes arrangement, ordering, or organizational placement
-without necessarily changing membership.
+A reorganization changes the ordering or arrangement
+of a referent's components without changing which components it has.
 
 ## Formal authority
 
 The authoritative family and operator mappings are in:
+`SE/Transformation/Domain/TransformationFamily.lean` and
+`SE/Transformation/Domain/Operator/Semantics.lean`.
 
-```text
-SE/Transformation/Domain/TransformationFamily.lean
-SE/Transformation/Domain/Operator/Semantics.lean
-```
+## Rule
 
-## Boundary
-
-```text
 Reorganization describes arrangement change.
-```

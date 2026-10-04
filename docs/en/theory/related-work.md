@@ -95,7 +95,7 @@ rather than kinds of change performed by individual operations.
 
 ## Contribution
 
-In the sources reviewed,
+In the (limited search) sources reviewed,
 we did not find a vocabulary that
 
 - groups concrete transformation operations into families and kinds, and

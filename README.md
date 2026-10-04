@@ -45,7 +45,7 @@ generated neutral-substrate artifacts.
 
 Import the public surface:
 
-```text
+```lean
 import SE.Transformation
 ```
 
@@ -68,10 +68,7 @@ Test Lean code uses the `SETest.*` namespace.
 ## Reference Configuration
 
 The theory-reference workflow is configured by:
-
-```text
-reference/theory-reference.toml
-```
+`reference/theory-reference.toml`.
 
 That file declares this repository's Lean public modules,
 reference artifact layout, export targets, and validation commands.

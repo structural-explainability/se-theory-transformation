@@ -1,13 +1,13 @@
 # Orthogonality
 
-Orthogonality describes structural independence among transformation
-operators.
+Orthogonality is a declared relation among selected pairs
+of transformation operators.
 
 The canonical orthogonality lookup is explicitly partial and symmetric.
 
 ## Authority
 
-The authoritative Lean definitions are:
+The authoritative declared relations are:
 
 ```text
 SE/Transformation/Relation/Orthogonality.lean
@@ -20,8 +20,19 @@ SE/Transformation/Reference/Orthogonality.lean
   unordered pair; or
 - `none` when no canonical orthogonality relation is specified here.
 
-The Lean theorem `orthogonality_symm` guarantees that reversing a pair cannot
-change its orthogonality result.
+The Lean theorem `orthogonality_symm` guarantees that reversing a pair
+cannot change its orthogonality result.
 
-`inverseLike` is not an orthogonality value. Inverse direction is a sequencing
-or transformation relationship rather than a degree of independence.
+## Effect Relationships
+
+`EffectsDisjoint` and `EffectsOverlap`
+are derived from operator footprints.
+
+They are not definitions of the full orthogonality relation.
+
+The effect layer checks that currently declared
+orthogonal and overlapping entries are consistent
+with the corresponding footprint-derived predicates.
+
+`inverseLike` is a composition relation,
+not an orthogonality value.

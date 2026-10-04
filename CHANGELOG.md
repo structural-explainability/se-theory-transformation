@@ -11,6 +11,17 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+### Planned
+
+- Expand composition and orthogonality rule coverage, including investigating
+  whether split and merge admit a justified orthogonality classification.
+- Investigate a coherence law between composition and orthogonality, including
+  whether absorbing, inverse-like, or redundant composition relations preclude
+  orthogonality.
+- Define sequence-level effect semantics when needed, keeping the dimensions
+  touched somewhere in a sequence distinct from the dimensions that differ
+  between its initial and final configurations.
+
 ---
 
 ## [0.5.0] - 2026-10-04
@@ -60,17 +71,7 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
   descriptions and to describe the effect semantics.
 - Extended the repository manifest scope to include operator effect footprints
   and required-change conditions.
-
-### Planned
-
-- Expand composition and orthogonality rule coverage, including investigating
-  whether split and merge admit a justified orthogonality classification.
-- Investigate a coherence law between composition and orthogonality, including
-  whether absorbing, inverse-like, or redundant composition relations preclude
-  orthogonality.
-- Define sequence-level effect semantics when needed, keeping the dimensions
-  touched somewhere in a sequence distinct from the dimensions that differ
-  between its initial and final configurations.
+- Updated `docs/` accordingly.
 
 ### Fixed
 

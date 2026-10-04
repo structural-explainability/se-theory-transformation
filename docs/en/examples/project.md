@@ -2,8 +2,6 @@
 
 This example illustrates a transformation operator informally.
 
-It is not a formal definition.
-
 ## Operator
 
 ```text
@@ -12,8 +10,10 @@ PR  project
 
 ## Intuition
 
-A project transformation derives a selected view or representation from a
-referent.
+A project transformation derives a representation from a source referent
+without modifying the source.
+
+The representation may be partial or a selected form.
 
 ## Formal authority
 
@@ -26,13 +26,8 @@ SE/Transformation/Domain/Operator/Semantics.lean
 ```
 
 The reference mirror is in:
+`reference/transformation-operators.toml`.
 
-```text
-reference/transformation-operators.toml
-```
+## Rule
 
-## Boundary
-
-```text
 Project describes selected representation.
-```

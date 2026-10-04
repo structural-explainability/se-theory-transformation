@@ -2,8 +2,6 @@
 
 This example illustrates a transformation operator informally.
 
-It is not a formal definition.
-
 ## Operator
 
 ```text
@@ -12,18 +10,14 @@ BR  branch
 
 ## Intuition
 
-A branch creates a divergent continuation from a prior referent.
+A branch creates a divergent continuation path from a referent,
+along which later changes may proceed independently of the original path.
 
 ## Formal authority
 
 The authoritative operator definition is in:
+`SE/Transformation/Domain/Operator/`.
 
-```text
-SE/Transformation/Domain/Operator/
-```
+## Rule
 
-## Boundary
-
-```text
 Branch describes divergence.
-```

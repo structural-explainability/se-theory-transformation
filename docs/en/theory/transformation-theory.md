@@ -1,17 +1,18 @@
 # Transformation Theory
 
-Transformation theory provides the structural vocabulary for describing
-change.
+Transformation theory provides the structural vocabulary
+and formal effect constraints for describing atomic change.
 
-It defines operators, families, kinds, derived taxonomy queries, composition
-relations, and orthogonality relations. It does not decide what survives a
-transformation.
+It defines operators, families, kinds,
+derived taxonomy queries,
+effect dimensions,
+operator footprints and required-change conditions,
+composition relations,
+and orthogonality relations.
 
 ## Core Rule
 
-```text
-Transformations describe change.
-```
+Transformations describe atomic change.
 
 ## Public Surface
 
@@ -27,17 +28,26 @@ The public surface reaches every retained production module in this repository.
 
 The authoritative classification functions are:
 
-```text
-operatorFamily
-familyKind
-operatorKind
-```
+- operatorFamily
+- familyKind
+- operatorKind
 
 `operatorKind` is derived from `operatorFamily` and `familyKind`.
 
 Per-family and per-kind operator lists are not maintained independently.
-`operatorsInFamily`, `operatorsInKind`, and `familiesInKind` are derived from
-the authoritative mappings and canonical finite registries.
+`operatorsInFamily`, `operatorsInKind`, and `familiesInKind`
+are derived from the authoritative mappings and canonical finite registries.
+
+## Effect Semantics
+
+Atomic operator effects are constrained by:
+
+- footprint
+- requirements
+- characteristic
+- StateModel
+
+See [Effect Semantics](./effects.md) for the model and its generic results.
 
 ## Structural Relations
 
@@ -45,12 +55,9 @@ Composition is an ordered, partial lookup.
 
 Orthogonality is a symmetric, partial lookup.
 
-Absence of a rule means that this theory has not specified a canonical
-relation for that pair.
+Effect-derived predicates and necessary conditions
+provide additional consistency checks and constraints,
+but do not replace those declared relations.
 
-## Boundary
-
-This repository owns transformation vocabulary and structural relations.
-
-It does not own domain mappings
-or runtime systems.
+Absence of a declared rule means that this theory
+has not specified a canonical relation for that pair.

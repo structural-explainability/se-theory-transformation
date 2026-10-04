@@ -2,8 +2,6 @@
 
 This example illustrates a transformation operator informally.
 
-It is not a formal definition.
-
 ## Operator
 
 ```text
@@ -12,8 +10,8 @@ SP  split
 
 ## Intuition
 
-A split divides a referent into multiple components, parts, branches, or
-sub-referents.
+A split divides a referent into two or more constituent components,
+each of which may itself be a referent.
 
 ## Formal authority
 
@@ -25,8 +23,6 @@ SE/Transformation/Domain/Operator/Labels.lean
 SE/Transformation/Domain/Operator/Semantics.lean
 ```
 
-## Boundary
+## Rule
 
-```text
 Split describes division.
-```
