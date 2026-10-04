@@ -10,7 +10,6 @@ SE.Transformation.Domain.Operator.Labels
 Official ASCII-safe string labels for transformation operators.
 
 Labels are short human-readable names for operator codes.
-They do not define persistence semantics.
 -/
 
 namespace SE.Transformation

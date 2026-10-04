@@ -2,7 +2,7 @@
 # CITATION.cff (How to cite this project)
 # ============================================================
 # REQ.UNIVERSAL: Professional open projects SHOULD include this file.
-# May reference upstream dependencies, but must not refer to downstream.
+# May reference upstream dependencies.
 # USAGE: See https://citation-file-format.github.io/ for details.
 # check with:
 # uvx cffconvert --validate
@@ -33,8 +33,6 @@ abstract: >
   operator-family-kind mappings, composition and orthogonality
   relation vocabularies, Lean-side reference enumerations,
   finite invariants, and machine-readable transformation registries.
-  It does not define persistence semantics, operational policy,
-  domain-specific interpretation, or runtime behavior.
 
 keywords:
   - structural-explainability

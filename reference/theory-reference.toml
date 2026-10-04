@@ -74,7 +74,7 @@ orthogonality = "reference/orthogonality-rules.toml"
 
 # === Export Mapping ===
 #
-# Domain catalogs are exported for downstream machine use.
+# Domain catalogs are exported for machine use.
 # Generic Lean-surface registries remain canonical TOML reference
 # artifacts and are included in the generated catalog.
 

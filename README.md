@@ -17,8 +17,13 @@
 This repository defines structural transformation vocabulary and relations.
 
 It does not decide what persists through a transformation.
-Persistence, identity-regime behavior, domain-specific survival criteria,
-and operational policy belong downstream.
+
+## Scope
+
+Transformation theory defines transformation kinds, families, operations,
+composition relations, and orthogonality relations.
+
+Persistence judgments and operational policy are out of this scope.
 
 ## Authority
 
@@ -38,7 +43,7 @@ generated neutral-substrate artifacts.
 
 ## Import
 
-Downstream Lean projects should import the public surface:
+Import the public surface:
 
 ```text
 import SE.Transformation
@@ -81,6 +86,11 @@ Maintain:
 - `reference/theory-reference.toml` - hand-maintained configuration
 - `reference/*.toml` - hand-maintained/scaffolded reference source artifacts
 - Lean source + RR comments - hand-maintained theory source
+
+Documentation rule:
+
+- Describe concepts positively.
+- Define scope clearly in README.md, SE_MANIFEST.md, and docs/en/index.md.
 
 ### Clone and Open in VS Code
 

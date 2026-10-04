@@ -12,7 +12,7 @@
       "label": "attest",
       "family": "attestation",
       "kind": "observational",
-      "description": "Records a verified claim about a referent. Adds attestation metadata or evidence without defining persistence behavior.",
+      "description": "Records a verified claim about a referent. Adds attestation metadata or evidence. Does not define persistence behavior.",
       "id": "AT"
     },
     {
@@ -84,7 +84,7 @@
       "label": "link",
       "family": "association",
       "kind": "relational",
-      "description": "Establishes an association or relation between referents without by itself implying containment or persistence.",
+      "description": "Establishes an association or relation between referents without implying containment or persistence.",
       "id": "LK"
     },
     {

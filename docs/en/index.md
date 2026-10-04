@@ -4,38 +4,16 @@
 > Structural Explainability (SE).
 
 Transformations are defined independently.
-Persistence is evaluated downstream.
 
 - [Lean API Reference](https://structural-explainability.github.io/se-theory-transformation/lean/)
 - [GitHub Repository](https://github.com/structural-explainability/se-theory-transformation)
 
-## Covers
+## Scope
 
-This repository covers:
+Transformation theory defines transformation kinds, families, operations,
+composition relations, and orthogonality relations.
 
-- transformation operator vocabulary;
-- transformation family vocabulary;
-- transformation kind vocabulary;
-- the authoritative operator-to-family mapping;
-- the authoritative family-to-kind mapping;
-- derived family and kind registry queries;
-- composition relation vocabulary and a partial ordered-pair lookup;
-- orthogonality relation vocabulary and a partial symmetric lookup;
-- finite conformance invariants;
-- machine-readable transformation registries; and
-- a public Lean import surface.
-
-## Does Not Own
-
-This repository does not own:
-
-- neutral substrate primitives;
-- identity regimes;
-- regime profiles;
-- persistence verdicts;
-- regime persistence semantics;
-- domain mappings; or
-- runtime systems.
+Persistence judgments and operational policy are out of this scope.
 
 ## Authority
 
@@ -63,8 +41,6 @@ lake lint
 ```
 
 ## Import
-
-Downstream Lean projects should import:
 
 ```lean
 import SE.Transformation

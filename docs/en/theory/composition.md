@@ -24,5 +24,3 @@ SE/Transformation/Reference/Composition.lean
 Composition and orthogonality answer different questions.
 Composition describes sequencing; orthogonality describes effect-domain
 independence. A pair may have both relations.
-
-Persistence is evaluated downstream.

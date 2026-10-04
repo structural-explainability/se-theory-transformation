@@ -36,8 +36,7 @@ weak.linter.flexible = true
 weak.linter.style.header = false
 weak.linter.style.longLine = false
 
-# These linters are included in Mathlib's standard set but do
-# not currently operate correctly in downstream projects.
+# These linters are included in Mathlib's standard set.
 weak.linter.pythonStyle = false
 weak.linter.checkInitImports = false
 weak.linter.allScriptsDocumented = false
@@ -59,19 +58,19 @@ rev = "v4.32.1"
 # ============================================================
 # PUBLIC LIBRARY
 # ============================================================
-# The library downstream packages import. It must claim only the module
+# The library available for import. It must claim only the module
 # family owned by this package. Other packages own other SE.* families.
 #
-# Do not claim the shared top-level module "SE". Multiple theory packages
-# coexist in the same dependency graph, so each library must own only its
-# namespaced family (for example SE.Persistence or SE.Transformation).
+# Do not claim the shared top-level module "SE".
+# Multiple theory packages coexist in the same dependency graph,
+# so each library must own only its namespaced family.
 #
 # Glob forms:
 #   "A.B"    only module A.B
 #   "A.B.*"  A.B and all its submodules
 #   "A.B.+"  all submodules of A.B, but not A.B itself
 #
-# Use ".*" when the family has a root module such as SE/Persistence.lean.
+# Use ".*" when the family has a root module.
 # Use ".+" for a submodule directory that has no corresponding root .lean
 # file when that family is listed separately.
 
@@ -84,7 +83,7 @@ globs = ["SE.Transformation.*"]
 # ============================================================
 # TEST LIBRARY
 # ============================================================
-# Internal verification; not part of downstream public import surface.
+# Internal verification; not part of public import surface.
 
 [[lean_lib]]
 name = "SETest"

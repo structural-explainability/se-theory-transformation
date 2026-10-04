@@ -21,5 +21,4 @@ SE/Transformation/Reference/Orthogonality.lean
 ```text
 Orthogonality describes independence.
 Composition describes sequencing.
-Persistence is evaluated downstream.
 ```

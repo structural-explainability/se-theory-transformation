@@ -19,6 +19,4 @@ Public import surface for the Structural Explainability Transformation theory.
 
 The theory owns transformation vocabulary, the operator-to-family-to-kind
 taxonomy, and explicitly partial structural relations among operators.
-
-Persistence judgments belong downstream.
 -/

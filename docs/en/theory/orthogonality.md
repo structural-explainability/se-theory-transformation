@@ -25,5 +25,3 @@ change its orthogonality result.
 
 `inverseLike` is not an orthogonality value. Inverse direction is a sequencing
 or transformation relationship rather than a degree of independence.
-
-Persistence is evaluated downstream.

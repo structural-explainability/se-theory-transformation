@@ -19,7 +19,7 @@ This module defines the possible relation values only.
 The canonical known pairs are supplied by the explicitly partial, symmetric
 lookup in `SE.Transformation.Reference.Orthogonality`.
 
-Orthogonality describes independence and does not assert persistence.
+Orthogonality describes independence.
 -/
 
 namespace SE.Transformation
@@ -34,7 +34,7 @@ transformation operators.
 `inverseLike` is intentionally not an orthogonality value: inverse direction is
 a sequencing or transformation relationship, not a degree of independence.
 
-Absence of a canonical rule is represented by `none` in the downstream lookup,
+Absence of a canonical rule is represented by `none` in the lookup,
 not by a relation constructor.
 -/
 inductive OrthogonalityRelation where

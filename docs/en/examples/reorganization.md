@@ -2,7 +2,7 @@
 
 This example illustrates a transformation family informally.
 
-It is not a formal definition and does not decide persistence.
+It is not a formal definition.
 
 ## Family
 
@@ -28,5 +28,4 @@ SE/Transformation/Domain/Operator/Semantics.lean
 
 ```text
 Reorganization describes arrangement change.
-Persistence is evaluated downstream.
 ```

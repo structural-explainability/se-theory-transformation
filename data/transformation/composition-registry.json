@@ -25,8 +25,7 @@
       "relation": "inverseLike",
       "lean_def": "bindThenUnbind",
       "source_module": "SE.Transformation.Reference.Composition",
-      "description": "Binding followed by unbinding is a canonical inverse-like ordered pair.",
-      "note": "Composition relation only; no persistence restoration is asserted."
+      "description": "Binding followed by unbinding is a canonical inverse-like ordered pair."
     },
     {
       "order": 3,
@@ -36,8 +35,7 @@
       "relation": "inverseLike",
       "lean_def": "splitThenMerge",
       "source_module": "SE.Transformation.Reference.Composition",
-      "description": "Splitting followed by merging is a canonical inverse-like ordered pair.",
-      "note": "Composition relation only; no identity restoration is asserted."
+      "description": "Splitting followed by merging is a canonical inverse-like ordered pair."
     }
   ]
 }

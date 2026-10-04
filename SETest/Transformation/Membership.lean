@@ -10,7 +10,7 @@ public import SE.Transformation.Domain.Operator.Semantics
 /-!
 # Membership Checks
 
-Checks that the membership predicates are usable by downstream proofs:
+Checks that the membership predicates are usable by proofs:
 decidable, and connected to the family and kind layering.
 -/
 

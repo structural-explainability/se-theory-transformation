@@ -11,7 +11,6 @@ module
 ASCII-safe operator codes for Transformation theory.
 
 These codes name kinds of change.
-They do not determine persistence.
 -/
 
 set_option autoImplicit false

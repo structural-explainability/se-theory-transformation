@@ -13,7 +13,7 @@ This module defines the possible relation values only.
 The canonical known pairs are supplied by the explicitly partial lookup in
 `SE.Transformation.Reference.Composition`.
 
-Composition describes sequencing and does not assert persistence.
+Composition describes sequencing.
 -/
 
 namespace SE.Transformation
@@ -25,7 +25,7 @@ public section
 Relationship describing whether one transformation operator may meaningfully
 follow another.
 
-Absence of a canonical rule is represented by `none` in the downstream lookup,
+Absence of a canonical rule is represented by `none` in the lookup,
 not by a relation constructor.
 -/
 inductive CompositionRelation where

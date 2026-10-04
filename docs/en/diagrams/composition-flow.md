@@ -29,5 +29,4 @@ data/transformation/composition-registry.json
 
 ```text
 Composition describes sequencing.
-Persistence is evaluated downstream.
 ```

@@ -30,10 +30,9 @@ of change represented in this theory:
 - temporal: branching or versioning.
 
 These classifications describe transformation structure only.
-They do not determine persistence.
 
 `OperatorInFamily` and `OperatorInKind` are the Prop-valued membership
-predicates for downstream proofs, for example statements of the form
+predicates for proofs, for example statements of the form
 "every operator in family `f` satisfies `P`". They are definitionally the
 equations `operatorFamily op = family` and `operatorKind op = kind`, and are
 decidable. `operatorsInFamily`, `operatorsInKind` and `familiesInKind` in
@@ -110,7 +109,7 @@ Predicate asserting that operator `op` belongs to family `family`.
 This is the Prop-valued form of the authoritative mapping `operatorFamily`:
 it holds exactly when `operatorFamily op = family`
 (`operatorInFamily_iff`).
-Downstream proofs should state "for every operator
+Proofs should state "for every operator
 in family `family`" with this predicate,
 so the statement does not depend on
 how the mapping is represented.

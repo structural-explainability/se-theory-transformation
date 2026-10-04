@@ -17,8 +17,5 @@ public import SE.Transformation.Relation.Orthogonality
 Core aggregator for the Transformation theory.
 
 Imports the operator taxonomy and structural relation vocabularies required by
-downstream consumers.
-
-This module does not define persistence semantics, identity-regime behavior,
-or operational admissibility policy.
+consumers.
 -/

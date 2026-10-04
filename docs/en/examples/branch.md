@@ -2,7 +2,7 @@
 
 This example illustrates a transformation operator informally.
 
-It is not a formal definition and does not decide persistence.
+It is not a formal definition.
 
 ## Operator
 
@@ -26,5 +26,4 @@ SE/Transformation/Domain/Operator/
 
 ```text
 Branch describes divergence.
-Persistence is evaluated downstream.
 ```

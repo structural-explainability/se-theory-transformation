@@ -2,7 +2,7 @@
 
 This example illustrates a transformation operator informally.
 
-It is not a formal definition and does not decide persistence.
+It is not a formal definition.
 
 ## Operator
 
@@ -35,5 +35,4 @@ reference/transformation-operators.toml
 
 ```text
 Project describes selected representation.
-Persistence is evaluated downstream.
 ```

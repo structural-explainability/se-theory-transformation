@@ -42,35 +42,35 @@ optional = []
 # Logical artifacts exposed by this repository.
 # These are stable identifiers, not file paths.
 artifacts = [
-  "lean-library",
-  "operator-registry",
-  "transformation-catalog",
-  "transformation-family-registry",
-  "composition-registry",
-  "orthogonality-matrix",
-  "transformation-schemas",
+    "lean-library",
+    "operator-registry",
+    "transformation-catalog",
+    "transformation-family-registry",
+    "composition-registry",
+    "orthogonality-matrix",
+    "transformation-schemas",
 ]
 
 # === Scope ===
 
 [scope]
 includes = [
-  "foundational transformation operators",
-  "transformation family definitions",
-  "transformation kind definitions",
-  "operator-to-family mappings",
-  "family-to-kind mappings",
-  "operator composition relations",
-  "operator orthogonality relations",
-  "machine-readable transformation registries",
-  "Lean formalization of transformation vocabulary",
+    "foundational transformation operators",
+    "transformation family definitions",
+    "transformation kind definitions",
+    "operator-to-family mappings",
+    "family-to-kind mappings",
+    "operator composition relations",
+    "operator orthogonality relations",
+    "machine-readable transformation registries",
+    "Lean formalization of transformation vocabulary",
 ]
 
 excludes = [
-  "persistence semantics",
-  "operational policy",
-  "domain-specific interpretation",
-  "runtime behavior",
+    "persistence judgments",
+    "operational policy",
+    "domain-specific interpretation",
+    "runtime behavior",
 ]
 
 # === Validation ===

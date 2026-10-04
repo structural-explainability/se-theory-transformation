@@ -2,7 +2,7 @@
 
 This example illustrates a transformation operator informally.
 
-It is not a formal definition and does not decide persistence.
+It is not a formal definition.
 
 ## Operator
 
@@ -29,5 +29,4 @@ SE/Transformation/Domain/Operator/Semantics.lean
 
 ```text
 Split describes division.
-Persistence is evaluated downstream.
 ```

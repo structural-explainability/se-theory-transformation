@@ -11,7 +11,6 @@ transformation.
 
 ```text
 Transformations describe change.
-Persistence is evaluated downstream.
 ```
 
 ## Public Surface
@@ -53,6 +52,5 @@ relation for that pair.
 
 This repository owns transformation vocabulary and structural relations.
 
-It does not own identity regimes, persistence verdicts, operational
-admissibility, accountable entities, evolution protocols, domain mappings,
+It does not own domain mappings
 or runtime systems.

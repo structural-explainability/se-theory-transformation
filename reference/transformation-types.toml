@@ -4,9 +4,7 @@
 # ============================================================
 # Public Lean type registry for the Transformation theory.
 #
-# The entries mirror retained public Lean types. Persistence outcomes,
-# composition-rule structures, and orthogonality-rule structures are
-# intentionally absent because those concepts are not in the current theory.
+# The entries mirror retained public Lean types.
 
 schema = "se-type-registry-1"
 kind = "type"

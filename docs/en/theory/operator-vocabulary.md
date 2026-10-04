@@ -25,5 +25,3 @@ OperatorCode -> TransformationFamily -> TransformationKind
 The registry queries `operatorsInFamily`, `operatorsInKind`, and
 `familiesInKind` are derived from the authoritative mappings and canonical
 reference lists.
-
-Persistence-specific interpretation belongs downstream.

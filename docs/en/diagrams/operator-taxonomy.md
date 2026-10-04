@@ -19,5 +19,4 @@ SE/Transformation/Domain/
 Operators define changes.
 Families group operators.
 Kinds group families.
-Persistence is evaluated downstream.
 ```

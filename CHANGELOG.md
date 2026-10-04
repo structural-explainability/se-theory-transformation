@@ -19,6 +19,10 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
   whether absorbing, inverse-like, or redundant composition relations preclude
   orthogonality.
 
+### Fixed
+
+- Consolidated scope to README.md, SE_MANIFEST.md, and docs/en/index.md.
+
 ---
 
 ## [0.4.0] - 2026-10-02
@@ -60,8 +64,8 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
   authoritative taxonomy mappings.
 - Updated documentation and tests to reflect the reduced theory boundary and
   current module structure.
-- Clarified that persistence judgments and operational policy belong
-  downstream rather than in foundational Transformation theory.
+- Clarified that persistence judgments and operational policy are
+  outside the scope of Transformation theory.
 
 ### Removed
 
