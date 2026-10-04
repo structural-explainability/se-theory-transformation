@@ -39,7 +39,7 @@ They do not define theory semantics independently of Lean or the reference artif
 The reusable `se-theory-reference-kit` owns the generic validation,
 cataloging, inspection, and export machinery.
 This repository owns its Lean source, reference declarations, and
-generated neutral-substrate artifacts.
+generated artifacts.
 
 ## Import
 
