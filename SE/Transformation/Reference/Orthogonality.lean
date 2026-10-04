@@ -36,6 +36,8 @@ def orthogonality? : OperatorCode → OperatorCode → Option OrthogonalityRelat
   | OperatorCode.AT, OperatorCode.AZ => some OrthogonalityRelation.orthogonal
   | OperatorCode.PR, OperatorCode.CL => some OrthogonalityRelation.overlapping
   | OperatorCode.CL, OperatorCode.PR => some OrthogonalityRelation.overlapping
+  | OperatorCode.SP, OperatorCode.MG => some OrthogonalityRelation.overlapping
+  | OperatorCode.MG, OperatorCode.SP => some OrthogonalityRelation.overlapping
   | _, _ => none
 
 -- RR.DEFINES: TR.RULE.AUTHORIZE_AND_ATTEST
@@ -60,6 +62,13 @@ theorem orthogonality_symm
     orthogonality? left right = orthogonality? right left := by
   cases left <;> cases right <;> rfl
 
+/-- Split and merge have canonically overlapping effect domains. -/
+@[simp]
+theorem splitAndMerge :
+    orthogonality? OperatorCode.SP OperatorCode.MG =
+      some OrthogonalityRelation.overlapping :=
+  rfl
+
 /--
 An orthogonality relation is specified exactly for the two canonical unordered
 pairs currently declared by this theory.
@@ -70,7 +79,9 @@ theorem orthogonality_defined_iff
       (left = OperatorCode.AZ ∧ right = OperatorCode.AT) ∨
       (left = OperatorCode.AT ∧ right = OperatorCode.AZ) ∨
       (left = OperatorCode.PR ∧ right = OperatorCode.CL) ∨
-      (left = OperatorCode.CL ∧ right = OperatorCode.PR) := by
+      (left = OperatorCode.CL ∧ right = OperatorCode.PR) ∨
+      (left = OperatorCode.SP ∧ right = OperatorCode.MG) ∨
+      (left = OperatorCode.MG ∧ right = OperatorCode.SP) := by
   cases left <;> cases right <;> simp [orthogonality?]
 
 end

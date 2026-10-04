@@ -25,6 +25,16 @@
       "lean_def": "projectAndCollapse",
       "source_module": "SE.Transformation.Reference.Orthogonality",
       "note": "Projection and collapse have a canonical overlapping orthogonality relation."
+    },
+    {
+      "order": 3,
+      "id": "split_and_merge",
+      "left": "SP",
+      "right": "MG",
+      "relation": "overlapping",
+      "lean_def": "splitAndMerge",
+      "source_module": "SE.Transformation.Reference.Orthogonality",
+      "note": "Split and merge share structural effect dimensions and are also classified as an inverse-like ordered composition pair."
     }
   ]
 }

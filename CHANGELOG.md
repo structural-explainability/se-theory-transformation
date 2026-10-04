@@ -11,11 +11,9 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
-### Planned
+---
 
-- Review the declared composition and orthogonality entries against the effect
-  results, including whether split and merge warrant a declared
-  `OrthogonalityRelation`.
+## [0.5.0] - 2026-10-04
 
 ### Added
 
@@ -33,13 +31,10 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
   effects, sequences, and coherence.
 - Documented the interpretive principles, dimension scopes, and operator
   assumptions behind the effect footprints in `docs/en/theory/effects.md`.
-
----
-
-## [0.5.0] - 2026-10-04
-
-### Added
-
+- Reviewed the declared composition and orthogonality entries against the effect
+  results, including whether split and merge warrant a declared
+  `OrthogonalityRelation` and implemented SP, MG and MG, SP as
+  `some OrthogonalityRelation.overlapping`.
 - Added the effect semantics layer under `SE.Transformation.Effect`, with
   public modules `Dimension`, `Model`, `Orthogonality`, and `Composition`.
 - Added eleven effect dimensions: content, arrangement, composition,

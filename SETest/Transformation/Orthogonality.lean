@@ -36,7 +36,8 @@ example :
   rfl
 
 example :
-    orthogonality? OperatorCode.SP OperatorCode.MG = none :=
+    orthogonality? OperatorCode.SP OperatorCode.MG =
+      some OrthogonalityRelation.overlapping :=
   rfl
 
 end SE.Transformation
