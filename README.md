@@ -139,7 +139,7 @@ uvx se-theory-reference-kit@latest catalog --check
 uvx se-theory-reference-kit@latest inspect
 
 # validate SE manifest file
-uvx se-manifest-schema validate-manifest --path SE_MANIFEST.toml --strict
+uvx se-manifest-schema validate-manifest --strict
 
 # save progress
 git add -A
