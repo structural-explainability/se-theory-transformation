@@ -275,3 +275,54 @@ lean_symbol = "SE.Transformation.declared_inverseLike_footprint_necessary"
 lean_kind = "theorem"
 source_module = "SE.Transformation.Effect.Composition"
 description = "Necessary footprint condition for declared inverse-like pairs; it does not show restoration."
+
+
+[theorem.SequenceAgreeOfUntouched]
+order = 26
+id = "SequenceAgreeOfUntouched"
+cite_id = "TR.THM.SEQUENCE_AGREE_OF_UNTOUCHED"
+name = "Untouched dimension preserved by a sequence"
+lean_symbol = "SE.Transformation.StateModel.SequenceStep.agree_of_untouched"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Sequence"
+description = "A dimension outside the sequence footprint upper bound is preserved: the initial and final configurations agree on it."
+
+[theorem.SequencePreserves]
+order = 27
+id = "SequencePreserves"
+cite_id = "TR.THM.SEQUENCE_PRESERVES"
+name = "Frame-based preservation across a sequence"
+lean_symbol = "SE.Transformation.StateModel.SequenceStep.preserves"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Sequence"
+description = "If agreement on a set of dimensions suffices for a relation and the sequence footprint upper bound avoids them, a sequence of steps preserves the relation."
+
+[theorem.SequenceAgreeThroughOfUntouched]
+order = 28
+id = "SequenceAgreeThroughOfUntouched"
+cite_id = "TR.THM.SEQUENCE_AGREE_THROUGH_OF_UNTOUCHED"
+name = "Untouched dimension preserved throughout a history"
+lean_symbol = "SE.Transformation.StateModel.SequenceStep.agree_through_of_untouched"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Sequence"
+description = "A dimension outside the bound of a two-part sequence is preserved from the initial to the intermediate and from the intermediate to the final configuration."
+
+[theorem.SequenceFootprintNotNetChange]
+order = 29
+id = "SequenceFootprintNotNetChange"
+cite_id = "TR.THM.SEQUENCE_FOOTPRINT_NOT_NET_CHANGE"
+name = "Touched is not net change"
+lean_symbol = "SE.Transformation.sequenceFootprintUpperBound_not_net_change"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Sequence"
+description = "A dimension inside the sequence footprint upper bound may still agree between the initial and final configurations."
+
+[theorem.DeclaredInverseLikeEffectsOverlap]
+order = 30
+id = "DeclaredInverseLikeEffectsOverlap"
+cite_id = "TR.THM.DECLARED_INVERSE_LIKE_EFFECTS_OVERLAP"
+name = "Declared inverse-like pairs overlap"
+lean_symbol = "SE.Transformation.declared_inverseLike_effectsOverlap"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Coherence"
+description = "Every declared inverse-like pair has overlapping effects, so no declared inverse-like pair is effect-disjoint."

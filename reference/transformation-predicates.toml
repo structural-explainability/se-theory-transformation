@@ -79,3 +79,14 @@ lean_symbol = "SE.Transformation.RestoresOn"
 lean_kind = "def"
 source_module = "SE.Transformation.Effect.Composition"
 description = "Applying the second operator after the first returns every dimension in a set to its starting agreement."
+
+
+[predicate.SequenceStep]
+order = 8
+id = "SequenceStep"
+cite_id = "TR.DEF.SEQUENCE_STEP"
+name = "Sequence step"
+lean_symbol = "SE.Transformation.StateModel.SequenceStep"
+lean_kind = "inductive"
+source_module = "SE.Transformation.Effect.Sequence"
+description = "A configuration is reached from another by applying a list of operators in order, each as one atomic step."

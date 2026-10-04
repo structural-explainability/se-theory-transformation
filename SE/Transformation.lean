@@ -11,10 +11,7 @@ public import SE.Transformation.Reference.Composition
 public import SE.Transformation.Reference.Orthogonality
 public import SE.Transformation.Invariants
 public import SE.Transformation.Spec
-public import SE.Transformation.Effect.Dimension
-public import SE.Transformation.Effect.Model
-public import SE.Transformation.Effect.Orthogonality
-public import SE.Transformation.Effect.Composition
+public import SE.Transformation.Effect
 
 /-!
 # Transformation

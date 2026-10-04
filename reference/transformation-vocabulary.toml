@@ -180,3 +180,14 @@ lean_symbol = "SE.Transformation.maximalModel"
 lean_kind = "def"
 source_module = "SE.Transformation.Effect.Model"
 description = "The state model in which a step may change any dimensions within the footprint and must satisfy every required clause."
+
+
+[vocabulary.SequenceFootprintUpperBound]
+order = 18
+id = "SequenceFootprintUpperBound"
+cite_id = "TR.DEF.SEQUENCE_FOOTPRINT_UPPER_BOUND"
+name = "Sequence footprint upper bound"
+lean_symbol = "SE.Transformation.sequenceFootprintUpperBound"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Sequence"
+description = "The dimensions that may be touched somewhere in a sequence of operators: the union of their footprints. It is not the set of dimensions that differ between initial and final configurations."

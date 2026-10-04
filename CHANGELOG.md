@@ -13,14 +13,26 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Planned
 
-- Expand composition and orthogonality rule coverage, including investigating
-  whether split and merge admit a justified orthogonality classification.
-- Investigate a coherence law between composition and orthogonality, including
-  whether absorbing, inverse-like, or redundant composition relations preclude
-  orthogonality.
-- Define sequence-level effect semantics when needed, keeping the dimensions
-  touched somewhere in a sequence distinct from the dimensions that differ
-  between its initial and final configurations.
+- Review the declared composition and orthogonality entries against the effect
+  results, including whether split and merge warrant a declared
+  `OrthogonalityRelation`.
+
+### Added
+
+- Added sequences of atomic steps with `sequenceFootprintUpperBound`, the
+  dimensions that may be touched somewhere in a sequence.
+  A dimension outside the bound is preserved throughout the sequence,
+  and any difference between the initial and final configurations
+  lies inside the bound.
+  Touched dimensions are kept distinct from net change;
+  sequence-level net-effect and restoration semantics are not defined.
+- Added the coherence result that every declared inverse-like composition pair
+  has `EffectsOverlap`.
+- Added `SE.Transformation.Effect` as the public import surface, imported by
+  `SE.Transformation`, for the effect-semantics modules, including atomic
+  effects, sequences, and coherence.
+- Documented the interpretive principles, dimension scopes, and operator
+  assumptions behind the effect footprints in `docs/en/theory/effects.md`.
 
 ---
 
