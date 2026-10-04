@@ -135,3 +135,143 @@ lean_symbol = "SE.Transformation.orthogonality_defined_iff"
 lean_kind = "theorem"
 source_module = "SE.Transformation.Reference.Orthogonality"
 description = "Characterizes exactly the two unordered operator pairs for which the canonical orthogonality lookup is defined."
+
+[theorem.RequirementsNeNil]
+order = 12
+id = "RequirementsNeNil"
+cite_id = "TR.THM.REQUIREMENTS_NE_NIL"
+name = "Requirements nonempty"
+lean_symbol = "SE.Transformation.requirements_ne_nil"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Dimension"
+description = "Every operator has at least one required-change clause."
+
+[theorem.RequirementsClauseNeNil]
+order = 13
+id = "RequirementsClauseNeNil"
+cite_id = "TR.THM.REQUIREMENTS_CLAUSE_NE_NIL"
+name = "Required clauses nonempty"
+lean_symbol = "SE.Transformation.requirements_clause_ne_nil"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Dimension"
+description = "Every required-change clause is nonempty."
+
+[theorem.RequirementsSubsetFootprint]
+order = 14
+id = "RequirementsSubsetFootprint"
+cite_id = "TR.THM.REQUIREMENTS_SUBSET_FOOTPRINT"
+name = "Requirements within footprint"
+lean_symbol = "SE.Transformation.requirements_subset_footprint"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Dimension"
+description = "Every dimension in a required-change clause lies in the operator footprint."
+
+[theorem.CharacteristicEqSomeIff]
+order = 15
+id = "CharacteristicEqSomeIff"
+cite_id = "TR.THM.CHARACTERISTIC_EQ_SOME_IFF"
+name = "Characteristic iff singleton requirement"
+lean_symbol = "SE.Transformation.characteristic_eq_some_iff"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Dimension"
+description = "An operator has characteristic d exactly when its complete requirement is the single clause containing only d."
+
+[theorem.StepPreserves]
+order = 16
+id = "StepPreserves"
+cite_id = "TR.THM.STEP_PRESERVES"
+name = "Frame-based preservation"
+lean_symbol = "SE.Transformation.StateModel.step_preserves"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Model"
+description = "If agreement on a set of dimensions suffices for a relation and the operator footprint avoids them, a step preserves the relation."
+
+[theorem.StepBreaks]
+order = 17
+id = "StepBreaks"
+cite_id = "TR.THM.STEP_BREAKS"
+name = "Required-change breakage"
+lean_symbol = "SE.Transformation.StateModel.step_breaks"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Model"
+description = "If some required clause has every dimension required for a relation, every step of the operator breaks the relation."
+
+[theorem.MaximalModelStepExists]
+order = 18
+id = "MaximalModelStepExists"
+cite_id = "TR.THM.MAXIMAL_MODEL_STEP_EXISTS"
+name = "Maximal model satisfiability"
+lean_symbol = "SE.Transformation.maximalModel_step_exists"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Model"
+description = "Every operator has an admissible step in the maximal model."
+
+[theorem.MaximalModelBreaksIff]
+order = 19
+id = "MaximalModelBreaksIff"
+cite_id = "TR.THM.MAXIMAL_MODEL_BREAKS_IFF"
+name = "Maximal model breakage completeness"
+lean_symbol = "SE.Transformation.maximalModel_breaks_agreementOn_iff"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Model"
+description = "In the maximal model, every step of an operator breaks agreement on a set of dimensions exactly when the set contains a required clause."
+
+[theorem.EffectsDisjointIff]
+order = 20
+id = "EffectsDisjointIff"
+cite_id = "TR.THM.EFFECTS_DISJOINT_IFF"
+name = "Effects disjoint iff"
+lean_symbol = "SE.Transformation.effectsDisjoint_iff"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Orthogonality"
+description = "Two operators have disjoint effects exactly when no dimension lies in both footprints."
+
+[theorem.StepPreservesOfEffectsDisjoint]
+order = 21
+id = "StepPreservesOfEffectsDisjoint"
+cite_id = "TR.THM.STEP_PRESERVES_OF_EFFECTS_DISJOINT"
+name = "Disjoint effects preserve"
+lean_symbol = "SE.Transformation.StateModel.step_preserves_of_effectsDisjoint"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Orthogonality"
+description = "A step of one operator preserves every dimension that a disjoint-effect operator may change."
+
+[theorem.DeclaredOrthogonalEffectsDisjoint]
+order = 22
+id = "DeclaredOrthogonalEffectsDisjoint"
+cite_id = "TR.THM.DECLARED_ORTHOGONAL_EFFECTS_DISJOINT"
+name = "Declared orthogonal consistency"
+lean_symbol = "SE.Transformation.declared_orthogonal_effects_disjoint"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Orthogonality"
+description = "Consistency check: every declared orthogonal pair has disjoint effects."
+
+[theorem.DeclaredOverlappingEffectsOverlap]
+order = 23
+id = "DeclaredOverlappingEffectsOverlap"
+cite_id = "TR.THM.DECLARED_OVERLAPPING_EFFECTS_OVERLAP"
+name = "Declared overlapping consistency"
+lean_symbol = "SE.Transformation.declared_overlapping_effects_overlap"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Orthogonality"
+description = "Consistency check: every declared overlapping pair has overlapping effects."
+
+[theorem.RestorationNeedsFootprint]
+order = 24
+id = "RestorationNeedsFootprint"
+cite_id = "TR.THM.RESTORATION_NEEDS_FOOTPRINT"
+name = "Restoration needs footprint"
+lean_symbol = "SE.Transformation.restoration_needs_footprint"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Composition"
+description = "Necessary condition: restoring every dimension of a required clause needs the restoring operator to be able to change one of them."
+
+[theorem.DeclaredInverseLikeFootprintNecessary]
+order = 25
+id = "DeclaredInverseLikeFootprintNecessary"
+cite_id = "TR.THM.DECLARED_INVERSE_LIKE_FOOTPRINT_NECESSARY"
+name = "Declared inverse-like footprint condition"
+lean_symbol = "SE.Transformation.declared_inverseLike_footprint_necessary"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Effect.Composition"
+description = "Necessary footprint condition for declared inverse-like pairs; it does not show restoration."

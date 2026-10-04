@@ -29,3 +29,53 @@ lean_symbol = "SE.Transformation.OperatorInKind"
 lean_kind = "def"
 source_module = "SE.Transformation.Domain.Operator.Semantics"
 description = "Predicate asserting that an operator's derived transformation kind equals the supplied kind."
+
+[predicate.AgreementSuffices]
+order = 3
+id = "AgreementSuffices"
+cite_id = "TR.DEF.AGREEMENT_SUFFICES"
+name = "Agreement suffices"
+lean_symbol = "SE.Transformation.StateModel.AgreementSuffices"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Model"
+description = "Agreement on every dimension in a set suffices for a relation between configurations."
+
+[predicate.AgreementRequired]
+order = 4
+id = "AgreementRequired"
+cite_id = "TR.DEF.AGREEMENT_REQUIRED"
+name = "Agreement required"
+lean_symbol = "SE.Transformation.StateModel.AgreementRequired"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Model"
+description = "A relation between configurations requires agreement on a dimension: whenever it holds, the configurations agree on that dimension."
+
+[predicate.EffectsDisjoint]
+order = 5
+id = "EffectsDisjoint"
+cite_id = "TR.DEF.EFFECTS_DISJOINT"
+name = "Effects disjoint"
+lean_symbol = "SE.Transformation.EffectsDisjoint"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Orthogonality"
+description = "The footprints of two operators share no dimension."
+
+[predicate.EffectsOverlap]
+order = 6
+id = "EffectsOverlap"
+cite_id = "TR.DEF.EFFECTS_OVERLAP"
+name = "Effects overlap"
+lean_symbol = "SE.Transformation.EffectsOverlap"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Orthogonality"
+description = "The footprints of two operators share at least one dimension."
+
+[predicate.RestoresOn]
+order = 7
+id = "RestoresOn"
+cite_id = "TR.DEF.RESTORES_ON"
+name = "Restores on"
+lean_symbol = "SE.Transformation.RestoresOn"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Composition"
+description = "Applying the second operator after the first returns every dimension in a set to its starting agreement."

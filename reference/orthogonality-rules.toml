@@ -26,7 +26,6 @@
 source = "se-theory-transformation"
 namespace = "se.transformation"
 artifact = "orthogonality-rules"
-version = "0.2.0"
 status = "canonical"
 
 [orthogonality.authorize_and_attest]

@@ -130,3 +130,53 @@ lean_symbol = "SE.Transformation.orthogonality?"
 lean_kind = "def"
 source_module = "SE.Transformation.Reference.Orthogonality"
 description = "Partial symmetric lookup returning a canonical orthogonality relation when this theory specifies one."
+
+[vocabulary.ReferenceDimensions]
+order = 13
+id = "ReferenceDimensions"
+cite_id = "TR.DEF.REFERENCE_DIMENSIONS"
+name = "Reference dimensions"
+lean_symbol = "SE.Transformation.referenceDimensions"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Dimension"
+description = "All effect dimensions in canonical reference order."
+
+[vocabulary.Footprint]
+order = 14
+id = "Footprint"
+cite_id = "TR.DEF.FOOTPRINT"
+name = "Operator footprint"
+lean_symbol = "SE.Transformation.footprint"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Dimension"
+description = "Conservative upper bound on the dimensions that a step of an operator may change."
+
+[vocabulary.Requirements]
+order = 15
+id = "Requirements"
+cite_id = "TR.DEF.REQUIREMENTS"
+name = "Operator requirements"
+lean_symbol = "SE.Transformation.requirements"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Dimension"
+description = "Required-change condition of an operator as a collection of clauses: every clause must be satisfied and a clause is satisfied when at least one of its dimensions changes."
+
+[vocabulary.Characteristic]
+order = 16
+id = "Characteristic"
+cite_id = "TR.DEF.CHARACTERISTIC"
+name = "Operator characteristic"
+lean_symbol = "SE.Transformation.characteristic"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Dimension"
+description = "The single dimension an operator is defined by changing, when its complete required-change condition is exactly one singleton clause."
+
+[vocabulary.MaximalModel]
+order = 17
+id = "MaximalModel"
+cite_id = "TR.DEF.MAXIMAL_MODEL"
+name = "Maximal state model"
+lean_symbol = "SE.Transformation.maximalModel"
+lean_kind = "def"
+source_module = "SE.Transformation.Effect.Model"
+description = "The state model in which a step may change any dimensions within the footprint and must satisfy every required clause."

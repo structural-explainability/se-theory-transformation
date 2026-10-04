@@ -86,7 +86,7 @@
       "lean_constructor": "decomposition",
       "kind": "structural",
       "source_module": "SE.Transformation.Domain.TransformationFamily",
-      "description": "Transformations that divide a referent into constituent components, parts, branches, or sub-referents.",
+      "description": "Transformations that divide a referent into constituent components, each of which may itself be a referent.",
       "operator_codes": [
         "SP"
       ]
@@ -98,7 +98,7 @@
       "lean_constructor": "migration",
       "kind": "relational",
       "source_module": "SE.Transformation.Domain.TransformationFamily",
-      "description": "Transformations that relocate a referent across a relation, bearer, context, or structural position while maintaining linkage.",
+      "description": "Transformations that move a referent across a relation, bearer, context, or structural position, leaving its other relations in place.",
       "operator_codes": [
         "SH"
       ]
@@ -146,7 +146,7 @@
       "lean_constructor": "reorganization",
       "kind": "organizational",
       "source_module": "SE.Transformation.Domain.TransformationFamily",
-      "description": "Transformations that alter arrangement, ordering, or organizational placement without necessarily changing membership.",
+      "description": "Transformations that alter the arrangement or ordering of a referent's components without changing which components it has.",
       "operator_codes": [
         "RO"
       ]
@@ -171,7 +171,7 @@
       "lean_constructor": "versioning",
       "kind": "temporal",
       "source_module": "SE.Transformation.Domain.TransformationFamily",
-      "description": "Transformations that produce, identify, restore, or relate temporally ordered versions of a referent.",
+      "description": "Transformations that establish or restore a referent's place in a temporally ordered version chain.",
       "operator_codes": [
         "RV",
         "VS"

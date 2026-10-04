@@ -11,6 +11,56 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+---
+
+## [0.5.0] - 2026-10-04
+
+### Added
+
+- Added the effect semantics layer under `SE.Transformation.Effect`, with
+  public modules `Dimension`, `Model`, `Orthogonality`, and `Composition`.
+- Added eleven effect dimensions: content, arrangement, composition,
+  referentPopulation, representationPopulation, containment, binding,
+  association, lineage, evidence, and standing.
+- Added `footprint`, a conservative upper bound on the dimensions that one
+  atomic step of an operator may change, defined for all 17 operators.
+- Added `requirements`, a required-change condition for each operator as a
+  collection of clauses. Every clause must be satisfied, and a clause is
+  satisfied when at least one of its dimensions changes.
+- Added a derived `characteristic`, defined exactly when an operator's complete
+  requirement is a single singleton clause.
+- Added the abstract `StateModel`, in which a state is a transformation
+  configuration. A model supplies states, an agreement equivalence per
+  dimension, and an atomic step relation per operator, and satisfies a frame
+  law and a required-change law.
+- Added generic theorems: coherence of footprints and requirements,
+  frame-based preservation, required-change breakage, and satisfiability in the
+  maximal model. The maximal model also has a model-specific completeness
+  result for relations defined exactly by dimension agreement.
+- Added footprint-derived `EffectsDisjoint` and `EffectsOverlap`, with
+  consistency checks against the declared `AZ`/`AT` orthogonal and `PR`/`CL`
+  overlapping entries.
+- Added necessary conditions for restoration from footprints, and a necessary
+  footprint condition for declared inverse-like pairs. They do not show that any
+  operator pair restores anything.
+- Added `footprint` and `requirements` to every entry of the operator registry
+  export.
+- Added reference entries and citation identifiers for the new types,
+  vocabulary, predicates, and theorems.
+- Added regression checks in `SETest.Transformation.Effect`.
+- Added `docs/en/theory/effects.md`.
+
+### Changed
+
+- Tightened the descriptions of the BR, CP, EM, MG, PR, RO, RV, SH, SP, and VS
+  operators so that each names its intrinsic transformation.
+- Aligned the Decomposition, Migration, Reorganization, and Versioning family
+  descriptions with the tightened operator descriptions.
+- Updated the example pages and `docs/en/index.md` to match the revised
+  descriptions and to describe the effect semantics.
+- Extended the repository manifest scope to include operator effect footprints
+  and required-change conditions.
+
 ### Planned
 
 - Expand composition and orthogonality rule coverage, including investigating
@@ -18,6 +68,9 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 - Investigate a coherence law between composition and orthogonality, including
   whether absorbing, inverse-like, or redundant composition relations preclude
   orthogonality.
+- Define sequence-level effect semantics when needed, keeping the dimensions
+  touched somewhere in a sequence distinct from the dimensions that differ
+  between its initial and final configurations.
 
 ### Fixed
 
@@ -299,11 +352,6 @@ Follow these steps exactly when creating a new release.
 # Update GitHub Actions and pin all action references to immutable SHAs.
 uvx gha-tools autoupdate --pin=all --write .github/workflows
 
-# Update hooks.
-uvx prek update
-git add -A
-uvx prek run --all-files
-
 # Audit the resulting GitHub configuration for security findings.
 # NO .github\workflows\deploy-zensical.yml
 # YES  .github\workflows\deploy-zensical-lean.yml
@@ -371,7 +419,7 @@ git push origin vX.Y.Z
 Create GitHub Release after pushing tag, for example with a command like this:
 
 ```shell
-gh release create v0.4.0 --verify-tag --title "0.4.0"  --generate-notes
+gh release create v0.5.0 --verify-tag --title "0.5.0"  --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
@@ -383,7 +431,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.5.0
 [0.4.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.4.0
 [0.3.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.3.0
 [0.2.1]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.2.1

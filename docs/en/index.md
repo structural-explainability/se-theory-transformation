@@ -7,6 +7,7 @@ Transformations are defined independently.
 
 - [Lean API Reference](https://structural-explainability.github.io/se-theory-transformation/lean/)
 - [GitHub Repository](https://github.com/structural-explainability/se-theory-transformation)
+- [Vocabulary](./vocab.md)
 
 ## Scope
 

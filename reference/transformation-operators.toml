@@ -10,13 +10,17 @@
 # Kinds are derived transitively through familyKind.
 #
 # Lean is authoritative for all taxonomy mappings.
-# This file does not define persistence behavior.
+#
+# Footprints match SE.Transformation.footprint.
+# Requirements match SE.Transformation.requirements: each inner list is a
+# clause, every clause must be satisfied, and a clause is satisfied when at
+# least one of its dimensions changes.
+# Lean is authoritative for footprints and requirements.
 
 [meta]
 source = "se-theory-transformation"
 namespace = "se.transformation"
 artifact = "transformation-operators"
-version = "0.2.0"
 status = "canonical"
 
 [operator.AT]
@@ -25,7 +29,9 @@ code = "AT"
 label = "attest"
 family = "attestation"
 kind = "observational"
-description = "Records a verified claim about a referent. Adds attestation metadata or evidence. Does not define persistence behavior."
+description = "Records a verified claim about a referent. Adds attestation metadata or evidence.."
+footprint = ["evidence"]
+requirements = [["evidence"]]
 
 [operator.AZ]
 order = 2
@@ -34,6 +40,9 @@ label = "authorize"
 family = "normative"
 kind = "normative"
 description = "Grants permission, authority, or normative standing to a subject or referent within a defined scope."
+footprint = ["standing"]
+requirements = [["standing"]]
+
 
 [operator.BD]
 order = 3
@@ -42,7 +51,8 @@ label = "bind"
 family = "contextual"
 kind = "contextual"
 description = "Associates a referent with a context, bearer, scope, or applicability setting."
-
+footprint = ["binding"]
+requirements = [["binding"]]
 [operator.BR]
 order = 4
 code = "BR"
@@ -50,7 +60,8 @@ label = "branch"
 family = "branching"
 kind = "temporal"
 description = "Creates a divergent continuation from a referent, producing one or more forward paths."
-
+footprint = ["lineage"]
+requirements = [["lineage"]]
 [operator.CL]
 order = 5
 code = "CL"
@@ -58,6 +69,8 @@ label = "collapse"
 family = "scaling"
 kind = "structural"
 description = "Reduces structural scale or complexity by collapsing nested, redundant, or expanded structure."
+footprint = ["content", "composition", "arrangement"]
+requirements = [["composition", "arrangement"]]
 
 [operator.CP]
 order = 6
@@ -65,15 +78,18 @@ code = "CP"
 label = "copy"
 family = "replication"
 kind = "observational"
-description = "Produces a duplicate, replica, or copied representation of a referent."
-
+description = "Produces a faithful duplicate of a referent or of a representation of a referent, identical to its source in content, arrangement, and composition and derived from it."
+footprint = ["referentPopulation", "representationPopulation", "lineage"]
+requirements = [["referentPopulation", "representationPopulation"], ["lineage"]]
 [operator.EM]
 order = 7
 code = "EM"
 label = "embed"
 family = "containment"
 kind = "organizational"
-description = "Places a referent inside a containing structure, establishing containment or embedded placement."
+description = "Places a referent inside a containing structure, establishing containment."
+footprint = ["containment"]
+requirements = [["containment"]]
 
 [operator.EX]
 order = 8
@@ -82,6 +98,8 @@ label = "expand"
 family = "scaling"
 kind = "structural"
 description = "Increases structural scale, detail, or complexity by expanding a referent into a more elaborated form."
+footprint = ["content", "composition", "arrangement"]
+requirements = [["content", "composition", "arrangement"]]
 
 [operator.LK]
 order = 9
@@ -90,6 +108,8 @@ label = "link"
 family = "association"
 kind = "relational"
 description = "Establishes an association or relation between referents without implying containment or persistence."
+footprint = ["association"]
+requirements = [["association"]]
 
 [operator.MG]
 order = 10
@@ -97,47 +117,84 @@ code = "MG"
 label = "merge"
 family = "aggregation"
 kind = "structural"
-description = "Combines two or more referents or structural components into a unified referent or aggregate."
-
+description = "Combines two or more referents or components into a single unified referent."
+footprint = [
+    "content",
+    "arrangement",
+    "composition",
+    "referentPopulation",
+    "representationPopulation",
+    "containment",
+    "binding",
+    "association",
+    "lineage",
+    "evidence",
+    "standing",
+]
+requirements = [["composition", "referentPopulation"]]
 [operator.PR]
 order = 11
 code = "PR"
 label = "project"
 family = "projection"
 kind = "observational"
-description = "Derives a partial view, projection, or selected representation of a referent."
-
+description = "Derives a representation from a source referent without modifying the source. The representation may be partial or a selected form."
+footprint = [
+    "content",
+    "arrangement",
+    "composition",
+    "representationPopulation",
+    "lineage",
+]
+requirements = [["representationPopulation"], ["lineage"]]
 [operator.RO]
 order = 12
 code = "RO"
 label = "reorder"
 family = "reorganization"
 kind = "organizational"
-description = "Changes the ordering or arrangement of components without necessarily changing their membership."
-
+description = "Changes the ordering or arrangement of a referent's components without changing which components it has."
+footprint = ["arrangement"]
+requirements = [["arrangement"]]
 [operator.RV]
 order = 13
 code = "RV"
 label = "revert"
 family = "versioning"
 kind = "temporal"
-description = "Returns, restores, or relates a referent to a prior version along a provenance or version chain."
-
+description = "Restores a referent to the state of a prior version along a version chain, moving its position in that chain."
+footprint = [
+    "content",
+    "arrangement",
+    "composition",
+    "referentPopulation",
+    "representationPopulation",
+    "containment",
+    "binding",
+    "association",
+    "lineage",
+    "evidence",
+    "standing",
+]
+requirements = [["lineage"]]
 [operator.SH]
 order = 14
 code = "SH"
 label = "shift"
 family = "migration"
 kind = "relational"
-description = "Relocates a referent across a relation, bearer, context, or structural position while maintaining linkage."
-
+description = "Moves a referent from one relation, bearer, context, or structural position to another, leaving its other relations in place."
+footprint = ["binding", "association", "containment", "arrangement"]
+requirements = [["binding", "association", "containment", "arrangement"]]
 [operator.SP]
 order = 15
 code = "SP"
 label = "split"
 family = "decomposition"
 kind = "structural"
-description = "Divides a referent into two or more components, parts, branches, or sub-referents."
+description = "Divides a referent into two or more constituent components, each of which may itself be a referent."
+footprint = ["content", "arrangement", "composition", "referentPopulation"]
+requirements = [["composition"]]
 
 [operator.UB]
 order = 16
@@ -146,11 +203,14 @@ label = "unbind"
 family = "contextual"
 kind = "contextual"
 description = "Removes, releases, or severs a contextual binding between a referent and its current context, bearer, or scope."
-
+footprint = ["binding"]
+requirements = [["binding"]]
 [operator.VS]
 order = 17
 code = "VS"
 label = "version"
 family = "versioning"
 kind = "temporal"
-description = "Produces or identifies a temporally ordered version or successor of a referent."
+description = "Establishes a temporally ordered version or successor position for a referent and may materialize that version as a new referent or representation."
+footprint = ["lineage", "referentPopulation", "representationPopulation"]
+requirements = [["lineage"]]

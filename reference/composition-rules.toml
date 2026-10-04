@@ -24,7 +24,6 @@
 source = "se-theory-transformation"
 namespace = "se.transformation"
 artifact = "composition-rules"
-version = "0.2.0"
 status = "canonical"
 
 [composition.authorize_then_attest]

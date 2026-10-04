@@ -113,9 +113,37 @@ lean_symbol = "SE.Transformation.OrthogonalityRelation"
 lean_kind = "inductive"
 source_module = "SE.Transformation.Relation.Orthogonality"
 description = "Classification of a specified structural-independence relationship between two transformation operators."
+constructors = ["conflicting", "dependent", "orthogonal", "overlapping"]
+
+[type.Dimension]
+order = 6
+id = "Dimension"
+cite_id = "TR.TYPE.DIMENSION"
+name = "Effect dimension"
+lean_symbol = "SE.Transformation.Dimension"
+lean_kind = "inductive"
+source_module = "SE.Transformation.Effect.Dimension"
+description = "An aspect of a transformation configuration that an operator step may change."
 constructors = [
-    "conflicting",
-    "dependent",
-    "orthogonal",
-    "overlapping",
+    "content",
+    "arrangement",
+    "composition",
+    "referentPopulation",
+    "representationPopulation",
+    "containment",
+    "binding",
+    "association",
+    "lineage",
+    "evidence",
+    "standing",
 ]
+
+[type.StateModel]
+order = 7
+id = "StateModel"
+cite_id = "TR.TYPE.STATE_MODEL"
+name = "State model"
+lean_symbol = "SE.Transformation.StateModel"
+lean_kind = "structure"
+source_module = "SE.Transformation.Effect.Model"
+description = "Abstract model of transformation configurations with per-dimension agreement and atomic operator steps satisfying the frame law and the required-change law."
