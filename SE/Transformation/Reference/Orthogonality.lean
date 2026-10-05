@@ -56,12 +56,7 @@ theorem projectAndCollapse :
       some OrthogonalityRelation.overlapping :=
   rfl
 
-/-- The canonical orthogonality lookup is symmetric. -/
-theorem orthogonality_symm
-    (left right : OperatorCode) :
-    orthogonality? left right = orthogonality? right left := by
-  cases left <;> cases right <;> rfl
-
+-- RR.DEFINES: TR.RULE.SPLIT_AND_MERGE
 /-- Split and merge have canonically overlapping effect domains. -/
 @[simp]
 theorem splitAndMerge :
@@ -69,8 +64,14 @@ theorem splitAndMerge :
       some OrthogonalityRelation.overlapping :=
   rfl
 
+/-- The canonical orthogonality lookup is symmetric. -/
+theorem orthogonality_symm
+    (left right : OperatorCode) :
+    orthogonality? left right = orthogonality? right left := by
+  cases left <;> cases right <;> rfl
 /--
-An orthogonality relation is specified exactly for the two canonical unordered
+An orthogonality relation is specified exactly
+for the three canonical unordered
 pairs currently declared by this theory.
 -/
 theorem orthogonality_defined_iff

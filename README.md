@@ -14,13 +14,17 @@
 > Lean 4 formalization of foundational transformation theory for
 > Structural Explainability.
 
-This repository defines structural transformation vocabulary and relations.
+This repository defines structural transformation vocabulary,
+intrinsic effect semantics, and
+selected relations among transformation operators.
 
 It does not decide what persists through a transformation.
 
 ## Scope
 
 Transformation theory defines transformation kinds, families, operations,
+atomic effect semantics, effect dimensions, operator footprints,
+required-change conditions, finite sequences of atomic steps,
 composition relations, and orthogonality relations.
 
 Persistence judgments and operational policy are out of this scope.
@@ -87,7 +91,7 @@ Maintain:
 Documentation rule:
 
 - Describe concepts positively.
-- Define scope clearly in README.md, SE_MANIFEST.md, and docs/en/index.md.
+- Define scope clearly in README.md, SE_MANIFEST.toml, and docs/en/index.md.
 
 ### Clone and Open in VS Code
 

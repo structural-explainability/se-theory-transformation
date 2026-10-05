@@ -60,10 +60,16 @@ includes = [
     "transformation kind definitions",
     "operator-to-family mappings",
     "family-to-kind mappings",
+    "effect dimensions",
+    "operator effect footprints",
+    "operator required-change conditions",
+    "abstract transformation state model",
+    "atomic operator step semantics",
+    "sequence footprint upper bounds",
     "operator composition relations",
     "operator orthogonality relations",
     "machine-readable transformation registries",
-    "Lean formalization of transformation vocabulary",
+    "Lean formalization of transformation vocabulary and effect semantics",
 ]
 
 excludes = [

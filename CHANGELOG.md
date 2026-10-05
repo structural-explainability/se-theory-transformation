@@ -11,6 +11,40 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+### Added
+
+- Completed reference registration for sequence and coherence semantics.
+- Added stable citation and theorem-registry registration for the
+  `splitAndMerge` orthogonality rule.
+
+### Changed
+
+- Updated Lean and mathlib to v4.34.0.
+- Extended the declared Lean public surface to include
+  `SE.Transformation.Effect.Sequence` and
+  `SE.Transformation.Effect.Coherence`.
+- Updated repository scope and citation metadata to reflect the effect semantics
+  introduced in 0.5.0.
+- Updated README scope to include atomic effect semantics.
+- Updated the orthogonality reference surface to reflect the three currently
+  declared unordered operator pairs.
+- Tightened remaining operator descriptions to match the current Transformation
+  theory boundary and intrinsic-operation semantics.
+
+### Fixed
+
+- Completed stable citation identifiers for the sequence and coherence
+  declarations introduced in 0.5.0.
+- Corrected stale references to the repository manifest filename.
+- Corrected stale Transformation artifact wording in README documentation.
+- Corrected minor operator-description drift and punctuation.
+
+### Removed
+
+- Removed the duplicate effect-sequence regression module from the production
+  `SE.Transformation.Effect` tree; regression checks remain under `SETest`.
+- Removed the unused `reports` directory.
+
 ---
 
 ## [0.5.0] - 2026-10-04
@@ -82,7 +116,7 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ### Fixed
 
-- Consolidated scope to README.md, SE_MANIFEST.md, and docs/en/index.md.
+- Consolidated scope to README.md, SE_MANIFEST.toml, and docs/en/index.md.
 
 ---
 

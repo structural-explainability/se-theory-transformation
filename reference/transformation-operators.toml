@@ -29,7 +29,7 @@ code = "AT"
 label = "attest"
 family = "attestation"
 kind = "observational"
-description = "Records a verified claim about a referent. Adds attestation metadata or evidence.."
+description = "Records a verified claim about a referent. Adds attestation metadata or evidence."
 footprint = ["evidence"]
 requirements = [["evidence"]]
 
@@ -43,7 +43,6 @@ description = "Grants permission, authority, or normative standing to a subject 
 footprint = ["standing"]
 requirements = [["standing"]]
 
-
 [operator.BD]
 order = 3
 code = "BD"
@@ -53,15 +52,17 @@ kind = "contextual"
 description = "Associates a referent with a context, bearer, scope, or applicability setting."
 footprint = ["binding"]
 requirements = [["binding"]]
+
 [operator.BR]
 order = 4
 code = "BR"
 label = "branch"
 family = "branching"
 kind = "temporal"
-description = "Creates a divergent continuation from a referent, producing one or more forward paths."
+description = "Creates a divergent continuation path from a referent, along which later changes may proceed independently of the original path."
 footprint = ["lineage"]
 requirements = [["lineage"]]
+
 [operator.CL]
 order = 5
 code = "CL"
@@ -81,6 +82,7 @@ kind = "observational"
 description = "Produces a faithful duplicate of a referent or of a representation of a referent, identical to its source in content, arrangement, and composition and derived from it."
 footprint = ["referentPopulation", "representationPopulation", "lineage"]
 requirements = [["referentPopulation", "representationPopulation"], ["lineage"]]
+
 [operator.EM]
 order = 7
 code = "EM"
@@ -107,7 +109,7 @@ code = "LK"
 label = "link"
 family = "association"
 kind = "relational"
-description = "Establishes an association or relation between referents without implying containment or persistence."
+description = "Establishes an association or relation between referents without implying containment."
 footprint = ["association"]
 requirements = [["association"]]
 
@@ -132,6 +134,7 @@ footprint = [
     "standing",
 ]
 requirements = [["composition", "referentPopulation"]]
+
 [operator.PR]
 order = 11
 code = "PR"
@@ -147,6 +150,7 @@ footprint = [
     "lineage",
 ]
 requirements = [["representationPopulation"], ["lineage"]]
+
 [operator.RO]
 order = 12
 code = "RO"
@@ -156,6 +160,7 @@ kind = "organizational"
 description = "Changes the ordering or arrangement of a referent's components without changing which components it has."
 footprint = ["arrangement"]
 requirements = [["arrangement"]]
+
 [operator.RV]
 order = 13
 code = "RV"
@@ -177,6 +182,7 @@ footprint = [
     "standing",
 ]
 requirements = [["lineage"]]
+
 [operator.SH]
 order = 14
 code = "SH"
@@ -186,6 +192,7 @@ kind = "relational"
 description = "Moves a referent from one relation, bearer, context, or structural position to another, leaving its other relations in place."
 footprint = ["binding", "association", "containment", "arrangement"]
 requirements = [["binding", "association", "containment", "arrangement"]]
+
 [operator.SP]
 order = 15
 code = "SP"
@@ -205,6 +212,7 @@ kind = "contextual"
 description = "Removes, releases, or severs a contextual binding between a referent and its current context, bearer, or scope."
 footprint = ["binding"]
 requirements = [["binding"]]
+
 [operator.VS]
 order = 17
 code = "VS"

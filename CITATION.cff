@@ -29,22 +29,29 @@ license: MIT
 abstract: >
   Lean 4 formalization of foundational transformation theory for
   Structural Explainability. This repository defines transformation
-  operators, transformation families, transformation kinds,
-  operator-family-kind mappings, composition and orthogonality
-  relation vocabularies, Lean-side reference enumerations,
-  finite invariants, and machine-readable transformation registries.
+  operators, families, kinds, operator-family-kind mappings,
+  atomic effect semantics, effect dimensions, operator footprints,
+  required-change conditions, finite sequences of atomic steps,
+  composition and orthogonality relations, finite invariants,
+  reference declarations, and machine-readable transformation registries.
 
 keywords:
   - structural-explainability
   - transformation-theory
   - transformation-operators
-  - operator-registry
   - transformation-families
   - transformation-kinds
+  - effect-semantics
+  - effect-dimensions
+  - operator-footprints
+  - required-change-conditions
+  - atomic-steps
+  - sequence-footprint-upper-bounds
   - composition
   - orthogonality
+  - operator-registry
+  - machine-readable-semantics
   - lean4
   - theorem-proving
   - formal-verification
-  - machine-readable-semantics
   - proof-carrying

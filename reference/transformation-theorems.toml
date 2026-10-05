@@ -118,8 +118,17 @@ lean_kind = "theorem"
 source_module = "SE.Transformation.Reference.Orthogonality"
 description = "Projection and collapse are one of the canonical orthogonality pairs and are classified as overlapping."
 
-[theorem.OrthogonalitySymm]
+[theorem.SplitAndMerge]
 order = 10
+id = "SplitAndMerge"
+cite_id = "TR.RULE.SPLIT_AND_MERGE"
+name = "Split and merge"
+lean_symbol = "SE.Transformation.splitAndMerge"
+lean_kind = "theorem"
+source_module = "SE.Transformation.Reference.Orthogonality"
+description = "Split and merge are one of the canonical orthogonality pairs and are classified as overlapping."
+[theorem.OrthogonalitySymm]
+order = 11
 id = "OrthogonalitySymm"
 name = "Orthogonality lookup symmetry"
 lean_symbol = "SE.Transformation.orthogonality_symm"
@@ -128,16 +137,16 @@ source_module = "SE.Transformation.Reference.Orthogonality"
 description = "Reversing an operator pair cannot change the result of the canonical orthogonality lookup."
 
 [theorem.OrthogonalityDefinedIff]
-order = 11
+order = 12
 id = "OrthogonalityDefinedIff"
 name = "Orthogonality defined exactly for declared pairs"
 lean_symbol = "SE.Transformation.orthogonality_defined_iff"
 lean_kind = "theorem"
 source_module = "SE.Transformation.Reference.Orthogonality"
-description = "Characterizes exactly the two unordered operator pairs for which the canonical orthogonality lookup is defined."
+description = "Characterizes exactly the three unordered operator pairs for which the canonical orthogonality lookup is defined."
 
 [theorem.RequirementsNeNil]
-order = 12
+order = 13
 id = "RequirementsNeNil"
 cite_id = "TR.THM.REQUIREMENTS_NE_NIL"
 name = "Requirements nonempty"
@@ -147,7 +156,7 @@ source_module = "SE.Transformation.Effect.Dimension"
 description = "Every operator has at least one required-change clause."
 
 [theorem.RequirementsClauseNeNil]
-order = 13
+order = 14
 id = "RequirementsClauseNeNil"
 cite_id = "TR.THM.REQUIREMENTS_CLAUSE_NE_NIL"
 name = "Required clauses nonempty"
@@ -157,7 +166,7 @@ source_module = "SE.Transformation.Effect.Dimension"
 description = "Every required-change clause is nonempty."
 
 [theorem.RequirementsSubsetFootprint]
-order = 14
+order = 15
 id = "RequirementsSubsetFootprint"
 cite_id = "TR.THM.REQUIREMENTS_SUBSET_FOOTPRINT"
 name = "Requirements within footprint"
@@ -167,7 +176,7 @@ source_module = "SE.Transformation.Effect.Dimension"
 description = "Every dimension in a required-change clause lies in the operator footprint."
 
 [theorem.CharacteristicEqSomeIff]
-order = 15
+order = 16
 id = "CharacteristicEqSomeIff"
 cite_id = "TR.THM.CHARACTERISTIC_EQ_SOME_IFF"
 name = "Characteristic iff singleton requirement"
@@ -177,7 +186,7 @@ source_module = "SE.Transformation.Effect.Dimension"
 description = "An operator has characteristic d exactly when its complete requirement is the single clause containing only d."
 
 [theorem.StepPreserves]
-order = 16
+order = 17
 id = "StepPreserves"
 cite_id = "TR.THM.STEP_PRESERVES"
 name = "Frame-based preservation"
@@ -187,7 +196,7 @@ source_module = "SE.Transformation.Effect.Model"
 description = "If agreement on a set of dimensions suffices for a relation and the operator footprint avoids them, a step preserves the relation."
 
 [theorem.StepBreaks]
-order = 17
+order = 18
 id = "StepBreaks"
 cite_id = "TR.THM.STEP_BREAKS"
 name = "Required-change breakage"
@@ -197,7 +206,7 @@ source_module = "SE.Transformation.Effect.Model"
 description = "If some required clause has every dimension required for a relation, every step of the operator breaks the relation."
 
 [theorem.MaximalModelStepExists]
-order = 18
+order = 19
 id = "MaximalModelStepExists"
 cite_id = "TR.THM.MAXIMAL_MODEL_STEP_EXISTS"
 name = "Maximal model satisfiability"
@@ -207,7 +216,7 @@ source_module = "SE.Transformation.Effect.Model"
 description = "Every operator has an admissible step in the maximal model."
 
 [theorem.MaximalModelBreaksIff]
-order = 19
+order = 20
 id = "MaximalModelBreaksIff"
 cite_id = "TR.THM.MAXIMAL_MODEL_BREAKS_IFF"
 name = "Maximal model breakage completeness"
@@ -217,7 +226,7 @@ source_module = "SE.Transformation.Effect.Model"
 description = "In the maximal model, every step of an operator breaks agreement on a set of dimensions exactly when the set contains a required clause."
 
 [theorem.EffectsDisjointIff]
-order = 20
+order = 21
 id = "EffectsDisjointIff"
 cite_id = "TR.THM.EFFECTS_DISJOINT_IFF"
 name = "Effects disjoint iff"
@@ -227,7 +236,7 @@ source_module = "SE.Transformation.Effect.Orthogonality"
 description = "Two operators have disjoint effects exactly when no dimension lies in both footprints."
 
 [theorem.StepPreservesOfEffectsDisjoint]
-order = 21
+order = 22
 id = "StepPreservesOfEffectsDisjoint"
 cite_id = "TR.THM.STEP_PRESERVES_OF_EFFECTS_DISJOINT"
 name = "Disjoint effects preserve"
@@ -237,7 +246,7 @@ source_module = "SE.Transformation.Effect.Orthogonality"
 description = "A step of one operator preserves every dimension that a disjoint-effect operator may change."
 
 [theorem.DeclaredOrthogonalEffectsDisjoint]
-order = 22
+order = 23
 id = "DeclaredOrthogonalEffectsDisjoint"
 cite_id = "TR.THM.DECLARED_ORTHOGONAL_EFFECTS_DISJOINT"
 name = "Declared orthogonal consistency"
@@ -247,7 +256,7 @@ source_module = "SE.Transformation.Effect.Orthogonality"
 description = "Consistency check: every declared orthogonal pair has disjoint effects."
 
 [theorem.DeclaredOverlappingEffectsOverlap]
-order = 23
+order = 24
 id = "DeclaredOverlappingEffectsOverlap"
 cite_id = "TR.THM.DECLARED_OVERLAPPING_EFFECTS_OVERLAP"
 name = "Declared overlapping consistency"
@@ -257,7 +266,7 @@ source_module = "SE.Transformation.Effect.Orthogonality"
 description = "Consistency check: every declared overlapping pair has overlapping effects."
 
 [theorem.RestorationNeedsFootprint]
-order = 24
+order = 25
 id = "RestorationNeedsFootprint"
 cite_id = "TR.THM.RESTORATION_NEEDS_FOOTPRINT"
 name = "Restoration needs footprint"
@@ -267,7 +276,7 @@ source_module = "SE.Transformation.Effect.Composition"
 description = "Necessary condition: restoring every dimension of a required clause needs the restoring operator to be able to change one of them."
 
 [theorem.DeclaredInverseLikeFootprintNecessary]
-order = 25
+order = 26
 id = "DeclaredInverseLikeFootprintNecessary"
 cite_id = "TR.THM.DECLARED_INVERSE_LIKE_FOOTPRINT_NECESSARY"
 name = "Declared inverse-like footprint condition"
@@ -278,7 +287,7 @@ description = "Necessary footprint condition for declared inverse-like pairs; it
 
 
 [theorem.SequenceAgreeOfUntouched]
-order = 26
+order = 27
 id = "SequenceAgreeOfUntouched"
 cite_id = "TR.THM.SEQUENCE_AGREE_OF_UNTOUCHED"
 name = "Untouched dimension preserved by a sequence"
@@ -288,7 +297,7 @@ source_module = "SE.Transformation.Effect.Sequence"
 description = "A dimension outside the sequence footprint upper bound is preserved: the initial and final configurations agree on it."
 
 [theorem.SequencePreserves]
-order = 27
+order = 28
 id = "SequencePreserves"
 cite_id = "TR.THM.SEQUENCE_PRESERVES"
 name = "Frame-based preservation across a sequence"
@@ -298,7 +307,7 @@ source_module = "SE.Transformation.Effect.Sequence"
 description = "If agreement on a set of dimensions suffices for a relation and the sequence footprint upper bound avoids them, a sequence of steps preserves the relation."
 
 [theorem.SequenceAgreeThroughOfUntouched]
-order = 28
+order = 29
 id = "SequenceAgreeThroughOfUntouched"
 cite_id = "TR.THM.SEQUENCE_AGREE_THROUGH_OF_UNTOUCHED"
 name = "Untouched dimension preserved throughout a history"
@@ -308,7 +317,7 @@ source_module = "SE.Transformation.Effect.Sequence"
 description = "A dimension outside the bound of a two-part sequence is preserved from the initial to the intermediate and from the intermediate to the final configuration."
 
 [theorem.SequenceFootprintNotNetChange]
-order = 29
+order = 30
 id = "SequenceFootprintNotNetChange"
 cite_id = "TR.THM.SEQUENCE_FOOTPRINT_NOT_NET_CHANGE"
 name = "Touched is not net change"
@@ -318,7 +327,7 @@ source_module = "SE.Transformation.Effect.Sequence"
 description = "A dimension inside the sequence footprint upper bound may still agree between the initial and final configurations."
 
 [theorem.DeclaredInverseLikeEffectsOverlap]
-order = 30
+order = 31
 id = "DeclaredInverseLikeEffectsOverlap"
 cite_id = "TR.THM.DECLARED_INVERSE_LIKE_EFFECTS_OVERLAP"
 name = "Declared inverse-like pairs overlap"

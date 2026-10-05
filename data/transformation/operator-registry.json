@@ -12,7 +12,7 @@
       "label": "attest",
       "family": "attestation",
       "kind": "observational",
-      "description": "Records a verified claim about a referent. Adds attestation metadata or evidence..",
+      "description": "Records a verified claim about a referent. Adds attestation metadata or evidence.",
       "footprint": [
         "evidence"
       ],
@@ -63,7 +63,7 @@
       "label": "branch",
       "family": "branching",
       "kind": "temporal",
-      "description": "Creates a divergent continuation from a referent, producing one or more forward paths.",
+      "description": "Creates a divergent continuation path from a referent, along which later changes may proceed independently of the original path.",
       "footprint": [
         "lineage"
       ],
@@ -161,7 +161,7 @@
       "label": "link",
       "family": "association",
       "kind": "relational",
-      "description": "Establishes an association or relation between referents without implying containment or persistence.",
+      "description": "Establishes an association or relation between referents without implying containment.",
       "footprint": [
         "association"
       ],
