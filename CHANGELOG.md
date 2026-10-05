@@ -11,6 +11,44 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
+### Planned
+
+- Investigate sequence-level required net-change conditions.
+  The effect layer has an upper bound, `sequenceFootprintUpperBound`,
+  containing every dimension that may differ between
+  the initial and final configurations.
+  A complementary result may be possible
+  when one operator has a required-change clause
+  that no other operator in the sequence can touch:
+  at least one dimension in that clause must then
+  differ between the initial and final configurations.
+  Such a result could also support a
+  sequence-level breakage theorem complementary to
+  sequence-level preservation.
+  Net effects are not determined by an operator sequence alone
+  because steps are relations.
+  The current theory provides only necessary conditions
+  for restoration and does not establish that
+  a sequence restores a prior configuration.
+
+- Investigate coherence conditions for absorbing and redundant composition
+  relations, to be stated if such a relation is declared.
+  Candidate conditions should be derived from the
+  meanings of those relations together with the
+  footprint and required-change semantics,
+  rather than assumed from footprint overlap alone.
+  Investigate whether absorption requires the
+  second operator to cover effects that the first can or must produce, and
+  whether redundancy requires the first operator to account for the changes
+  required of the second.
+  Any resulting law should distinguish conservative may-change footprints
+  from required-change clauses and should be proved only
+  at the strength justified by the semantics.
+
+---
+
+## [0.5.1] - 2026-10-05
+
 ### Added
 
 - Completed reference registration for sequence and coherence semantics.
@@ -30,6 +68,8 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
   declared unordered operator pairs.
 - Tightened remaining operator descriptions to match the current Transformation
   theory boundary and intrinsic-operation semantics.
+- Clarify `OrthogonalityRelation.overlapping` as nonempty shared
+  effect dimensions, including containment of one effect domain by another.
 
 ### Fixed
 
@@ -473,7 +513,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.5.1
 [0.5.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.5.0
 [0.4.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.4.0
 [0.3.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.3.0

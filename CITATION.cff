@@ -12,7 +12,7 @@ message: "If you use this work, please cite it using the metadata in CITATION.cf
 type: software
 
 title: "SE Theory: Transformation"
-version: "0.5.0"
+version: "0.5.1"
 date-released: "2026-10-04"
 
 authors:

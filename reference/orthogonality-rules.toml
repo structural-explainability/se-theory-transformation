@@ -15,7 +15,7 @@
 #   conflicting  - operators cannot share a context without contradiction
 #   dependent    - one operator's applicability depends on the other
 #   orthogonal   - no shared effect domain; operators do not interfere
-#   overlapping  - partial shared effect domain
+#   overlapping  - operators share at least one effect dimension, including when one effect domain contains the other
 #
 # `inverseLike` is intentionally not an orthogonality value.
 #

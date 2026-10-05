@@ -47,7 +47,8 @@ inductive OrthogonalityRelation where
   /-- The operators have no shared effect domain and do not interfere. -/
   | orthogonal
 
-  /-- The operators share a partial effect domain. -/
+  /-- The operators share at least one effect dimension, including when one
+    operator's effect domain contains the other's. -/
   | overlapping
 deriving DecidableEq, Repr
 
