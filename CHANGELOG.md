@@ -501,7 +501,7 @@ git push origin vX.Y.Z
 Create GitHub Release after pushing tag, for example with a command like this:
 
 ```shell
-gh release create v0.5.0 --verify-tag --title "0.5.0"  --generate-notes
+gh release create v0.5.1 --verify-tag --title "0.5.1"  --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
