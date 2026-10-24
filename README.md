@@ -85,7 +85,7 @@ Maintain:
 - `lakefile.toml` and
 - `lean-toolchain`
 - `reference/theory-reference.toml` - hand-maintained configuration
-- `reference/*.toml` - hand-maintained/scaffolded reference source artifacts
+- `reference/*.toml` - reference source artifacts
 - Lean source + RR comments - hand-maintained theory source
 
 Documentation rule:

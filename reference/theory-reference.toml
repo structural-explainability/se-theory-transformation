@@ -1,7 +1,7 @@
 # ============================================================
 # reference/theory-reference.toml
 # ============================================================
-# Theory reference configuration for se-theory-reference-kit.
+# Theory reference configuration.
 #
 # The theory repository owns Lean source, reference TOML, and
 # generated JSON artifacts. The reusable reference kit owns the

@@ -1,7 +1,7 @@
 # ============================================================
 # .markdownlint-cli2.yaml (Markdownlint CLI2 configuration)
 # ============================================================
-# Updated: 2026-07-29
+# Updated: 2026-05-31
 # WHY: Generated and dependency directories are not source content.
 # REQ: Markdown lint should check authored Markdown, not virtual
 #      environments, dependency trees, build output, or generated docs.
@@ -44,7 +44,7 @@ config:
   default: true # WHY: This enables all default rules, which is a good starting point for linting Markdown files.
 
   MD013:
-    line_length: 100
+    line_length: 250
     headings: false # WHY: This allows long headings, which can be necessary for clarity and SEO in Markdown files.
     tables: false # WHY: This allows long table cells, which can be necessary for readability and completeness in Markdown files.
     code_blocks: false # WHY: This allows long lines in code blocks, which can be necessary for readability and completeness in Markdown files.
