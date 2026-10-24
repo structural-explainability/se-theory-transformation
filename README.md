@@ -53,31 +53,6 @@ Import the public surface:
 import SE.Transformation
 ```
 
-## Lean Module Convention
-
-Production Lean code uses the `SE.*` namespace.
-
-- `SE.lean` is the repository production entry point.
-- `SE/<Project>.lean` is the project public import surface.
-- Production modules live under `SE/<Project>/`.
-
-Test Lean code uses the `SETest.*` namespace.
-
-- `SETest.lean` is the repository test entry point.
-- `SETest/<Project>.lean` is the project test surface.
-- Test modules live under `SETest/<Project>/`.
-
-`Spec.lean` is used when the project defines a specification module.
-
-## Reference Configuration
-
-The theory-reference workflow is configured by:
-`reference/theory-reference.toml`.
-
-That file declares this repository's Lean public modules,
-reference artifact layout, export targets, and validation commands.
-Public symbols are declared in the reference artifacts.
-
 ## Developer
 
 Maintain:

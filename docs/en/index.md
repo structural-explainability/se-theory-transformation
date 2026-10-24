@@ -46,16 +46,16 @@ a canonical relation for that pair.
 Generated data mirrors the registered theory surface;
 it is not an independent source of semantics.
 
-## Build
+## Scope
 
-```shell
-lake build
-lake test
-lake lint
-```
+Repository scope is defined in `SE_MANIFEST.toml`.
+
+## Exclusions
+
+Repository exclusions are defined in `SE_MANIFEST.toml`.
 
 ## Import
 
-```lean
-import SE.Transformation
-```
+Downstream Lean projects should import the public surface:
+
+`import SE.Transformation`
