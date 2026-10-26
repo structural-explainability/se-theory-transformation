@@ -12,8 +12,8 @@ message: "If you use this work, please cite it using the metadata in CITATION.cf
 type: software
 
 title: "SE Theory: Transformation"
-version: "0.5.1"
-date-released: "2026-10-04"
+version: "0.6.0"
+date-released: "2026-10-26"
 
 authors:
   - family-names: Case
@@ -24,7 +24,7 @@ authors:
 repository-code: "https://github.com/structural-explainability/se-theory-transformation"
 url: "https://github.com/structural-explainability/se-theory-transformation"
 
-license: MIT
+license: Apache-2.0
 
 abstract: >
   Lean 4 formalization of foundational transformation theory for

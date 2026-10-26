@@ -1,12 +1,11 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
 
 public meta import Batteries.Tactic.Lint
-import Mathlib.Tactic.Linter.HashCommandLinter
 import all SE.Transformation
 
 /-!
@@ -35,8 +34,6 @@ public meta def docBlameSource : Linter where
   isFast := docBlame.isFast
 
 end SELint
-
-set_option linter.hashCommand false
 
 #lint- only
   unusedArguments

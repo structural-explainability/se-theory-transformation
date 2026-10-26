@@ -11,8 +11,6 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ## [Unreleased]
 
-- partial uvx pup-up, update of tooling and dev support files
-
 ### Planned
 
 - Investigate sequence-level required net-change conditions.
@@ -46,6 +44,19 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
   Any resulting law should distinguish conservative may-change footprints
   from required-change clauses and should be proved only
   at the strength justified by the semantics.
+
+---
+
+## [0.6.0] - 2026-10-26
+
+### Updated
+
+- moved out lint/
+- minor documentation updates
+- partial uvx pup-up of supporting files
+- clarifications
+- Updated license notice.
+- Added headers to Lean files.
 
 ---
 
@@ -504,7 +515,7 @@ git push origin vX.Y.Z
 Create GitHub Release after pushing tag, for example with a command like this:
 
 ```shell
-gh release create v0.5.1 --verify-tag --title "0.5.1"  --generate-notes
+gh release create v0.6.0 --verify-tag --title "0.6.0"  --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
@@ -516,7 +527,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.5.1...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-transformation/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.6.0
 [0.5.1]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.5.1
 [0.5.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.5.0
 [0.4.0]: https://github.com/structural-explainability/se-theory-transformation/releases/tag/v0.4.0
