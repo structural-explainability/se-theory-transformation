@@ -460,33 +460,6 @@ uvx se-manifest-schema validate-manifest --strict
 # Format Markdown.
 npx markdownlint-cli2 --fix
 
-# update lean
-elan self update
-lake update
-
-# build Lean (source of truth)
-# lake clean
-lake build
-lake test
-lake lint
-
-# check docs (may not work on windows/runs via gh action)
-# cd docbuild
-# lake build SE.Transformation:docs
-# cd ..
-
-# Generate JSON artifacts and catalog from reference TOML.
-uvx se-theory-reference-kit@latest inspect
-uvx se-theory-reference-kit@latest export
-uvx se-theory-reference-kit@latest catalog
-
-# Validate the reference artifacts against the Lean public surface.
-uvx se-theory-reference-kit@latest validate --strict
-
-# Verify generated artifacts are current without rewriting them.
-uvx se-theory-reference-kit@latest export --check
-uvx se-theory-reference-kit@latest catalog --check
-
 .\rel.ps1
 .\sit.ps1
 ```
