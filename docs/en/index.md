@@ -1,50 +1,41 @@
 # SE Theory: Transformation
 
-> Lean 4 formalization of foundational transformation theory for
-> Structural Explainability (SE).
+> Lean 4 formalization of foundational Transformation theory
+> for Structural Explainability.
 
-Transformation theory defines named atomic changes,
-their taxonomy, their effect constraints,
-and selected relations among transformation operators.
+This repository formalizes transformation vocabulary,
+operator classifications, effect constraints, and
+selected structural relationships among transformations.
 
-- [Transformation Vocabulary](./vocab.md)
-- [Effect Semantics](./theory/effects.md)
+Lean source files under `SE/` are authoritative for formal definitions,
+predicates, assumptions, theorems, and proof obligations.
+
 - [Lean API Reference](https://structural-explainability.github.io/se-theory-transformation/lean/)
 - [GitHub Repository](https://github.com/structural-explainability/se-theory-transformation)
+- [Transformation Vocabulary](vocab.md)
+- [Effect Semantics](theory/effects.md)
+structural-explainability
+- [Research Doubts and Open Questions](https://github.com/structural-explainability/se-theory-transformation/blob/main/DOUBTS.md)
+- [Research Decisions](https://github.com/structural-explainability/se-theory-transformation/blob/main/DECISIONS.md)
 
-## Scope
 
-Transformation theory defines transformation kinds, families, operations,
-atomic effect semantics, composition relations, and orthogonality relations.
+## Transformation
 
-Persistence judgments and operational policy are out of this scope.
+Transformation theory provides a formal vocabulary
+for describing and relating changes to modeled structures.
 
-## Authority
+It specifies transformation operators, their effect constraints,
+and relationships among operations where those relationships
+have been defined.
 
-Lean source is authoritative for taxonomy semantics,
-operator effect semantics, and structural relations.
+The vocabulary and effect models are formal abstractions.
+Their use in a concrete application requires justification
+that the modeled operations and effects adequately represent
+the intended transformations.
 
-The taxonomy path is:
-
-```mermaid
-flowchart LR
-    OC["OperatorCode"] --> TF["TransformationFamily"]
-    TF --> TK["TransformationKind"]
-```
-
-`operatorFamily` and `familyKind` are the sole authoritative mappings.
-Derived lists and reference artifacts mirror those functions.
-
-`footprint` and `requirements` define the effect constraints for each operator.
-`characteristic` is derived from the complete required-change condition.
-`StateModel` defines the abstract semantics of atomic operator steps.
-
-Composition and orthogonality are explicitly partial.
-Absence of a rule means that this theory has not specified
-a canonical relation for that pair.
-
-Generated data mirrors the registered theory surface;
-it is not an independent source of semantics.
+Transformation theory does not independently determine
+whether an operation preserves the identity of an
+intended real-world referent.
 
 ## Scope
 
