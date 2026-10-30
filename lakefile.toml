@@ -48,7 +48,7 @@ testDriver = "SETest"
 [[lean_lib]]
 name = "SE.Transformation"
 roots = ["SE.Transformation"]
-globs = ["SE.Transformation.*"]
+globs = ["SE", "SE.Transformation.*"]
 
 
 # ============================================================
