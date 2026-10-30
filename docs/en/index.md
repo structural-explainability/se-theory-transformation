@@ -18,7 +18,6 @@ structural-explainability
 - [Research Doubts and Open Questions](https://github.com/structural-explainability/se-theory-transformation/blob/main/DOUBTS.md)
 - [Research Decisions](https://github.com/structural-explainability/se-theory-transformation/blob/main/DECISIONS.md)
 
-
 ## Transformation
 
 Transformation theory provides a formal vocabulary
